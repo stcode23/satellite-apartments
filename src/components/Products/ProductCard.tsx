@@ -53,8 +53,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       // data-aos="fade-up"
       className="max-w-full bg-white rounded-lg  overflow-hidden  shadow-xl hover:shadow-2xl transition-shadow duration-300"
     >
-      <div className="bg-white relative p-2 hover:border-primary border -t overflow-hidden  rounded-lg ">
-        Standard Apartment
+      <div className="bg-white relative  hover:border -primary border -t overflow-hidden  rounded-lg ">
         <Link href={`/products/${productID}`}>
           {" "}
           <img
@@ -65,10 +64,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
             // }
             src="https://res.cloudinary.com/dvao98wnj/image/upload/v1738849472/385327d1_edited_a943_k0mz9c.webp"
             alt={title}
-            className="w-full h-[250px] object-cover rounded-lg hover:scale-110 transition-transform duration-300 "
+            className="w-full h-[250px] object-cover  hover:scale-110 transition-transform duration-300 "
           />
         </Link>
-        <div className=" flex flex-col  border-t- pt-2   ga -rounded-lg  bg-white bg-opacity-65">
+        <div className=" p-2 flex flex-col  border-t- pt-3   ga -rounded-lg  bg-white bg-opacity-65">
           <Paragraph1 className=" text-[14px] xl:text-[16px] font-bold  whitespace-nowrap w-[100%] truncate overflow-hidden">
             {" "}
             {title}{" "}
@@ -89,13 +88,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <div className="text-[#00ab41] flex items-center gap-2">
             <Paragraph2>24/7 front desk</Paragraph2>
           </div>
-          <div className="text-[#00ab41] flex items-center gap-2">
+          <div className=" flex items-center gap-2">
             <Paragraph2>Private kitchen</Paragraph2>
           </div>
-          <div className="text-[#00ab41] flex items-center gap-2">
+          <div className=" flex items-center gap-2">
             <Paragraph2>Free Wifi</Paragraph2>
           </div>
           <div className=" flex items-center gap-2">
+          
             <Paragraph2>Sleeps 2</Paragraph2>
           </div>
           <div className=" flex items-center gap-2">
@@ -107,14 +107,17 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <div className=" flex items-center gap-2">
             <Paragraph2>Refrigerator</Paragraph2>
           </div>
+          <div className=" flex items-center gap-2">
+            <Paragraph2>Rating: 4.9 / 20 reviews</Paragraph2>
+          </div>
           {product.availableAmount === "0" ? (
-            <div className=" flex px-2 text-[13px] justify-center py-1 sm:hidden- w-full items-center rounded-lg bg-black text-white text-center">
+            <div className=" flex px-2 text-[13px] justify-center py-2 sm:hidden- w-full items-center rounded-lg bg-black text-white text-center">
               Out of Stock
             </div>
           ) : (
             <button
               onClick={handleAddToCart}
-              className="whitespace-nowrap font-semibold   flex justify-center py-1 bg-primary hover:bg-black rounded-lg w-full  text-white "
+              className="whitespace-nowrap font-semibold   flex justify-center py-2 bg-primary hover:bg-black rounded-lg w-full  text-white "
             >
               <ParagraphLink2>Reserve</ParagraphLink2>
             </button>
