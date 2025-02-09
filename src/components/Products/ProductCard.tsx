@@ -51,7 +51,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   return (
     <div
       // data-aos="fade-up"
-      className="max-w-full bg-white rounded-lg  overflow-hidden  shadow-xl hover:shadow-2xl transition-shadow duration-300"
+      className="max-w-full bg-white text-p_black rounded-lg  overflow-hidden  -shadow-xl hover:shadow-2xl transition-shadow duration-300"
     >
       <div className="bg-white relative  hover:border -primary border -t overflow-hidden  rounded-lg ">
         <Link href={`/products/${productID}`}>
@@ -67,7 +67,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             className="w-full h-[250px] object-cover  hover:scale-110 transition-transform duration-300 "
           />
         </Link>
-        <div className=" p-2 flex flex-col  border-t- pt-3   ga -rounded-lg  bg-white bg-opacity-65">
+        <div className=" p-4 space-y-2 flex flex-col  border-t- pt-3   ga -rounded-lg  bg-white bg-opacity-65">
           <Paragraph1 className=" text-[14px] xl:text-[16px] font-bold  whitespace-nowrap w-[100%] truncate overflow-hidden">
             {" "}
             {title}{" "}
@@ -82,34 +82,46 @@ const ProductCard: React.FC<ProductCardProps> = ({
             </span>{" "}
             per day
           </Paragraph2>
-          <div className=" text-[#00ab41] flex items-center gap-2">
+          <div className=" flex items-center gap-2">
+          <img src="https://res.cloudinary.com/dvao98wnj/image/upload/v1738956143/star_dpebdl.png" className="h-5 w-5" alt="" />
+            <Paragraph2>Rating: 4.9 / 20 reviews</Paragraph2>
+          </div>
+          <div className=" text-[#00ab41]- flex- hidden items-center gap-2">
+          <img src="https://res.cloudinary.com/dvao98wnj/image/upload/v1738956143/car_mq6vfz.png" className="h-5 w-5" alt="" />
             <Paragraph2>Free self parking</Paragraph2>
           </div>
-          <div className="text-[#00ab41] flex items-center gap-2">
-            <Paragraph2>24/7 front desk</Paragraph2>
+          <div className="text-[#00ab41]- hidden -flex items-center gap-2">
+          <img className="h-5 w-5" src="https://res.cloudinary.com/dvao98wnj/image/upload/v1738956143/information-desk_1_oie3bi.png" alt="" />
+          <Paragraph2>24/7 front desk</Paragraph2>
           </div>
           <div className=" flex items-center gap-2">
+          <img src="https://res.cloudinary.com/dvao98wnj/image/upload/v1738974673/cutlery_slxw6n.png" className="h-5 w-5" alt="" />
             <Paragraph2>Private kitchen</Paragraph2>
           </div>
           <div className=" flex items-center gap-2">
+          <img src="https://res.cloudinary.com/dvao98wnj/image/upload/v1738974673/wi-fi_ghbzfg.png" className="h-5 w-5" alt="" />
+
             <Paragraph2>Free Wifi</Paragraph2>
           </div>
           <div className=" flex items-center gap-2">
           
+          <img src="https://res.cloudinary.com/dvao98wnj/image/upload/v1738956143/people_klqw04.png" className="h-5 w-5" alt="" />
+
             <Paragraph2>Sleeps 2</Paragraph2>
           </div>
           <div className=" flex items-center gap-2">
+          <img src="https://res.cloudinary.com/dvao98wnj/image/upload/v1738956143/sleeping_genoab.png" className="h-5 w-5" alt="" />
             <Paragraph2>1 Double Bed</Paragraph2>
           </div>
           <div className=" flex items-center gap-2">
+          <img src="https://res.cloudinary.com/dvao98wnj/image/upload/v1738956143/ac_bbbogn.png" className="h-5 w-5" alt="" />
             <Paragraph2>Air conditioning</Paragraph2>
           </div>
           <div className=" flex items-center gap-2">
+          <img src="https://res.cloudinary.com/dvao98wnj/image/upload/v1738956143/fridge_o7hbfu.png" className="h-5 w-5" alt="" />
             <Paragraph2>Refrigerator</Paragraph2>
           </div>
-          <div className=" flex items-center gap-2">
-            <Paragraph2>Rating: 4.9 / 20 reviews</Paragraph2>
-          </div>
+          
           {product.availableAmount === "0" ? (
             <div className=" flex px-2 text-[13px] justify-center py-2 sm:hidden- w-full items-center rounded-lg bg-black text-white text-center">
               Out of Stock

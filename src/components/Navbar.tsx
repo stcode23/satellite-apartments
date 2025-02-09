@@ -10,6 +10,7 @@ import CartSummary from "./Cart/CartSummary";
 import useCartStore, { useCartCount } from "@/stores/cartStore";
 import SearchBar from "./SearchBar";
 import CurrencySwitcher from "./CurrencySwitcher";
+import TopNav from "./TopNav";
 
 function Navbar() {
   const pathname = usePathname();
@@ -32,13 +33,17 @@ function Navbar() {
   }
 
   return (
-    <div
+
+    <div className="fixed w-full z-20">
+            <TopNav />
+
+       <div
       className={
         ["/contact-us", "/privacy-policy", "/terms-of-service"].includes(
           pathname
         )
-          ? "bg-bg_gray- bg-white py-[8px]-- border-b border-primary -  fixed flex w-full z-20 py-[8px] "
-          : " bg-white py-[8px]- fixed flex w-full border-b border-primary- z-20"
+          ? "bg-bg_gray- bg-white py-[8px]-- border-b border-primary -   flex w-full z-20 py-[8px] "
+          : " bg-white py-[8px]-  flex w-full border-b border-primary- z-20"
       }
     >
       <div className="  w-full">
@@ -216,6 +221,8 @@ function Navbar() {
         )}
       </div>
     </div>
+    </div>
+   
   );
 }
 

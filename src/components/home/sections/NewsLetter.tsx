@@ -29,11 +29,10 @@ function NewsLetter() {
   return (
     <div className="bg-bg_gray py-[50px]">
       <div className="container1">
-        <Header3 className="text-center">Newsletter</Header3>
-        <Paragraph2 className="text-center">
-          Stay up to date with the latest beauty trends and exclusive offers
-          from GrandioseGrin.
-        </Paragraph2>
+      <Header3 className="text-center">Newsletter</Header3>
+<Paragraph2 className="text-center">
+  Stay informed about the latest apartment availability, exclusive offers, and updates from Satellite Apartments.
+</Paragraph2>
 
         <div className="pl-4 flex border border-primary text-[14px] bg-white rounded-full mt-4 overflow-hidden">
           <input

@@ -37,9 +37,9 @@ const Section2: React.FC<Section2Props> = ({ featuredProducts }) => {
           </Header3>
         </div>
         {/* data-aos="fade-right" */}
-        <div className="flex- grid grid-cols-3 items-center justify-center -overflow-y-auto scrollbar-hide-   gap-[24px] xl:gap-[30px]-">
+        <div className="flex- grid grid-cols-1 sm:grid-cols-3 items-center justify-center -overflow-y-auto scrollbar-hide-   gap-[24px] xl:gap-[30px]-">
           {featuredProducts && featuredProducts.length > 0
-            ? featuredProducts.slice(0, 8).map((product: any) => (
+            ? featuredProducts.slice(0, 6).map((product: any) => (
                 <div className=" ">
                   <ProductCard
                     key={product.id}
@@ -58,6 +58,15 @@ const Section2: React.FC<Section2Props> = ({ featuredProducts }) => {
                     className="h-[200px] min-w-[250px] bg-gray-200 rounded-md animate-pulse"
                   ></div>
                 ))}
+        </div>
+        <div className=" pb- pt-8 flex justify-center xl:hidden-  ">
+          <Button
+            text="View More Apartments "
+            href="/products"
+            isLink={true}
+            border="border-2 border-primary "
+            additionalClasses="border-white bg-primary xl:w-fit flex justify-center  w-full "
+          />
         </div>
       </div>
     </div>

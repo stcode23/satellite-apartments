@@ -78,7 +78,7 @@ function Overview() {
       <HeroSection />
       <Section2  />
       <Section2B featuredProducts={trendingProducts} />
-      <Section3 latestProducts={latestProducts} />
+      {/* <Section3 latestProducts={latestProducts} /> */}
       <Features />
       <NewsLetter />
       <Section6 />

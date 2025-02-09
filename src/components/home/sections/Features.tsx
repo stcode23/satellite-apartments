@@ -5,30 +5,31 @@ import AOS from "aos";
 function Features() {
   const features = [
     {
-      title: "Worldwide Shipping",
+      title: "Prime Location",
       description:
-        "We deliver to over 100 countries, ensuring your orders reach you no matter where you are.",
+        "Situated in the heart of Satellite Town, each apartment offers easy access to key attractions and conveniences.",
       icon: "https://res.cloudinary.com/dtipo8fg3/image/upload/v1732732969/planet-earth_jgsslh.png", // Replace with actual image path
     },
     {
-      title: "Best Quality",
+      title: "Modern Comfort",
       description:
-        "Our products are crafted with premium materials, offering you unmatched quality and durability.",
-      icon: "https://res.cloudinary.com/dtipo8fg3/image/upload/v1732732972/makeup_xrfl3s.png", // Replace with actual image path
+        "Experience fully furnished apartments with premium amenities designed for relaxation and convenience.",
+      icon: "https://res.cloudinary.com/dvao98wnj/image/upload/v1738977068/double-bed_xaaqs9.png", // Replace with actual image path
     },
     {
-      title: "Best Offer",
+      title: "Flexible Stays",
       description:
-        "Enjoy unbeatable prices and incredible deals that make your shopping more rewarding.",
-      icon: "https://res.cloudinary.com/dtipo8fg3/image/upload/v1732732969/tag_lihdso.png", // Replace with actual image path
+        "Choose from a variety of rental options, whether you need a short-term getaway or a longer stay.",
+      icon: "https://res.cloudinary.com/dvao98wnj/image/upload/v1738976955/eco-hotel_x5odlf.png", // Replace with actual image path
     },
     {
-      title: "Secure Payment",
+      title: "Secure Payments",
       description:
-        "Your transactions are protected with advanced encryption, ensuring complete peace of mind.",
+        "Book with confidence using our secure international payment options, designed for your peace of mind.",
       icon: "https://res.cloudinary.com/dtipo8fg3/image/upload/v1732732969/lock_fgzy8m.png", // Replace with actual image path
     },
   ];
+  
 
     React.useEffect(() => {
       AOS.init({
@@ -37,7 +38,7 @@ function Features() {
     });
 
   return (
-    <div className="container1 py-[50px] text-p_black">
+    <div className="container1 py-[100px] text-p_black">
       <div className="grid grid-cols-1 sm:grid-cols-4  gap-[24px] sm:gap-[36px] items-start">
         {features.map((feature, index) => (
           <div

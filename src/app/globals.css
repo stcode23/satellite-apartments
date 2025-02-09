@@ -90,6 +90,15 @@ html, body {
   }
 }
 
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 .slider-container3 {
   width: 100%;
 }
@@ -101,6 +110,10 @@ html, body {
 
 .animate-slider3 {
   animation: slide3 90s linear infinite;
+}
+
+.bounce-animation {
+  animation: bounce 2s infinite;
 }
 
 .hover-black::before {

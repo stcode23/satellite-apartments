@@ -23,72 +23,78 @@ function Footer() {
           : " bg-white sm:py-[100px]-"
       }
     >
-      <div className="  bg-[#4A4A4A]  ">
+      <div className="  bg-bg_gray [#4A4A4A]  ">
         <div className=" container1 py-[32px] sm:py-[40px] ">
           {/* desktop */}
-          <div className="sm:flex hidden items-start justify-between mb-[30px]">
-            <div className="w-[200px] relative hidden">
-              <img src="/images/logo2.png" alt="photographer" />
+          <div className="sm:flex hidden items-start justify-between ">
+            <div className="w-[300px] relative hidden- space-y-4">
+              <img src="/images/logo2.png" className="h-[200px]-" alt="photographer" />
+
+              <Paragraph2>   Premium short-term rental apartments in the heart of Satellite Town, offering comfort, style, and convenience. 
+              </Paragraph2>
+              
             </div>
-            <div className=" flex gap-[48px]">
+            <div className=" flex gap-1 [48px] flex-col">
+
+<Paragraph2 className=" font-bold text-sm">MORE</Paragraph2>
               <Link href="/">
-                <ParagraphLink1
+                <ParagraphLink2
                   className={
                     pathname === "/"
-                      ? "text-[#ECECEC] font-bold "
-                      : " text-[#ECECEC] "
+                      ? "text-[#ECECEC]- font-bold- "
+                      : " text-[#ECECEC]- "
                   }
                 >
                   Home
-                </ParagraphLink1>
+                </ParagraphLink2>
               </Link>{" "}
               <Link href="/about-us">
                 {" "}
-                <ParagraphLink1
+                <ParagraphLink2
                   className={
                     pathname === "/about-us"
-                      ? "text-[#ECECEC] font-bold "
-                      : " text-[#ECECEC] "
+                      ? "text-[#ECECEC]- font-bold- "
+                      : " text-[#ECECEC]- "
                   }
                 >
                   About
-                </ParagraphLink1>
+                </ParagraphLink2>
               </Link>
               <Link href="/products">
                 {" "}
-                <ParagraphLink1
+                <ParagraphLink2
                   className={
                     pathname === "/products"
-                      ? "text-[#ECECEC] font-bold "
-                      : " text-[#ECECEC] "
+                      ? "text-[#ECECEC]- font-bold- "
+                      : " text-[#ECECEC]- "
                   }
                 >
                   Shop
-                </ParagraphLink1>
+                </ParagraphLink2>
               </Link>
               <Link href="/blogs">
                 {" "}
-                <ParagraphLink1
+                <ParagraphLink2
                   className={
                     pathname === "/blogs"
-                      ? "text-[#ECECEC] font-bold "
-                      : " text-[#ECECEC] "
+                      ? "text-[#ECECEC]- font-bold- "
+                      : " text-[#ECECEC]- "
                   }
                 >
                   Blog
-                </ParagraphLink1>
+                </ParagraphLink2>
               </Link>
               <Link href="/contact-us">
                 {" "}
-                <ParagraphLink1
+                <ParagraphLink2
                   className={
                     pathname === "/contact-us"
-                      ? "text-[#ECECEC] font-bold "
-                      : " text-[#ECECEC] "
+                      ? "text-[#ECECEC]- font-bold- "
+                      : " text-[#ECECEC]- "
                   }
                 >
                   Contact us
-                </ParagraphLink1>
+                </ParagraphLink2>
               </Link>
             </div>
             <div className=" flex flex-col py-4 gap-2 items-center- justify-center-">
@@ -128,7 +134,7 @@ function Footer() {
                 </Link>
               </div>
 
-              <div className=" flex items-center gap-2 text-[#ECECEC] ">
+              <div className=" flex items-center gap-2 text-[#ECECEC]- ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -146,7 +152,7 @@ function Footer() {
 
                 <Paragraph2> grandiosegrin@gmail.com</Paragraph2>
               </div>
-              <div className=" flex items-center gap-2 text-[#ECECEC] ">
+              <div className=" flex items-center gap-2 text-[#ECECEC]- ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -165,8 +171,7 @@ function Footer() {
                 <Paragraph2> +234 707 832 8640</Paragraph2>
               </div>
             </div>
-          </div>
-          <div className=" sm:flex justify-center items-center hidden py-4">
+
             <div className=" py-2 px-4 rounded-lg bg-white flex justify-center items-center gap-2 flex-col">
               <p className=" text-[12px]  ">
                 {" "}
@@ -188,6 +193,9 @@ function Footer() {
               </div>
             </div>
           </div>
+          <div className=" sm:flex justify-center items-center hidden py-4">
+            
+          </div>
 
           {/* mobile  */}
           <div className=" mb-[24px] sm:hidden sm:mb-[110px]">
@@ -195,31 +203,31 @@ function Footer() {
               {" "}
               <Link href="/">
                 {" "}
-                <ParagraphLink1 className=" text-[#ECECEC]  ">
+                <ParagraphLink2 className=" text-[#ECECEC]-  ">
                   Home{" "}
-                </ParagraphLink1>
+                </ParagraphLink2>
               </Link>
               <Link href="/about-us">
                 {" "}
-                <ParagraphLink2 className=" text-[#ECECEC]  ">
+                <ParagraphLink2 className=" text-[#ECECEC]-  ">
                   About{" "}
                 </ParagraphLink2>
               </Link>
               <Link href="/products">
                 {" "}
-                <ParagraphLink2 className=" text-[#ECECEC] ">
+                <ParagraphLink2 className=" text-[#ECECEC]- ">
                   Shop
                 </ParagraphLink2>
               </Link>
               <Link href="/blog">
                 {" "}
-                <ParagraphLink2 className=" text-[#ECECEC] ">
+                <ParagraphLink2 className=" text-[#ECECEC]- ">
                   Blog
                 </ParagraphLink2>
               </Link>
               <Link href="/contact-us">
                 {" "}
-                <ParagraphLink2 className=" text-[#ECECEC] ">
+                <ParagraphLink2 className=" text-[#ECECEC]- ">
                   Contact us
                 </ParagraphLink2>
               </Link>
@@ -251,7 +259,7 @@ function Footer() {
                     />
                   </Link>
                 </div>
-                <div className=" flex items-center gap-2 text-[#ECECEC] ">
+                <div className=" flex items-center gap-2 text-[#ECECEC]- ">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -269,7 +277,7 @@ function Footer() {
 
                   <Paragraph2> grandiosegrin@gmail.com</Paragraph2>
                 </div>
-                <div className=" flex items-center gap-2 text-[#ECECEC] ">
+                <div className=" flex items-center gap-2 text-[#ECECEC]- ">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -300,7 +308,7 @@ function Footer() {
             </div>
           </div>
 
-          <div className=" border-t pt-[24px] sm:pt-[32px] flex flex-wrap justify-between">
+          <div className=" border-t border-p_black pt-[24px] sm:pt-[32px] flex flex-wrap justify-between">
             <div className=" flex justify-center items-center sm:hidden py-4">
               <div className=" py-2 px-4 rounded-lg bg-white flex justify-center items-center gap-2 flex-col">
                 <p className=" text-[12px]  ">
@@ -323,26 +331,33 @@ function Footer() {
                 </div>
               </div>
             </div>
-            <ParagraphLink2 className=" text-[14px] text-[#ECECEC] ">
-              © 2024 GrandioseGrin Ltd. All rights reserved.
+            <ParagraphLink2 className="  text-[#ECECEC]- ">
+              © 2025 Satellite Apartment Ltd. All rights reserved.
             </ParagraphLink2>
+            <Link href="/privacy-policy" className="">
+                {" "}
+                <ParagraphLink2 className="  text-[#ECECEC]- ">
+                Built with ❤️ by Cybalbuzz
+                </ParagraphLink2>
+              </Link>
+           
             <div className="flex flex-wrap gap-[24px] items-center">
               <Link href="/privacy-policy" className="">
                 {" "}
-                <ParagraphLink2 className=" text-[14px] text-[#ECECEC] underline ">
+                <ParagraphLink2 className="  text-[#ECECEC]- underline ">
                   Privacy Policy
                 </ParagraphLink2>
               </Link>
 
               <Link href="/terms-of-service">
-                <ParagraphLink2 className=" text-[14px] text-[#ECECEC] underline">
+                <ParagraphLink2 className="  text-[#ECECEC]- underline">
                   Terms of Service{" "}
                 </ParagraphLink2>
               </Link>
 
               {/* <Link href="/">
                 {" "}
-                <ParagraphLink2 className=" text-[#ECECEC] underline">
+                <ParagraphLink2 className=" text-[#ECECEC]- underline">
                   Cookies Settings{" "}
                 </ParagraphLink2>
               </Link> */}

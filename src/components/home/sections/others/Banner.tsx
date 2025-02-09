@@ -72,22 +72,22 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
               additionalClasses="border-primary xl:w-fit- flex justify-center  w-full "
             />{" "} */}
           </div>
-          <div className="p-4 bg-white rounded-[20px]">
-            <div className="grid grid-cols-4 w-full items-center">
-              <div className="border-r px-4">
+          <div className="p-4 bg-white bg-opacity-80  rounded-[20px]">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 w-full items-center">
+              <div className="sm:border-r px-4">
                 <ParagraphLink1 className="text-start font-bold">
                   Check-in
                 </ParagraphLink1>
                 <div>
-                  <input type="text" placeholder="Add date" />
+                  <input type="text" placeholder="Add  date" className=" bg-white bg-opacity-0" />
                 </div>
               </div>
-              <div className="border-r px-4">
+              <div className="sm:border-r px-4">
                 <ParagraphLink1 className="text-start font-bold">
                   Check-out
                 </ParagraphLink1>
                 <div>
-                  <input type="text" placeholder="Add date" />
+                  <input type="text" placeholder="Add date" className=" bg-white bg-opacity-0"/>
                 </div>
               </div>
               <div className="border-r px-4">
@@ -95,7 +95,7 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
                   Guest
                 </ParagraphLink1>
                 <div>
-                  <input type="text" placeholder="Number of guests" />
+                  <input type="text" placeholder="Number of guests" className=" bg-white bg-opacity-0"/>
                 </div>
               </div>
               <div className="px-4">
@@ -129,13 +129,13 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
           />{" "}
         </div>
       </div>
-      <div className="w-[100%] relative sm:h-[550px] h-[250px] border- border-primary-   rounded-lg- mx-auto overflow-hidden rou">
+      <div className="w-[100%] relative sm:h-screen [550px] h-[450px] border- border-primary-   rounded-lg- mx-auto overflow-hidden rou">
         {images.map((image, index) => (
           <img
             key={index}
             src={image.src}
             alt={`Banner ${index + 1}`}
-            className={`absolute top-0 left-0 w-[100%] mx-auto sm:h-[550px] opacity-85 h-[250px] transition-transform duration-500 ${
+            className={`absolute top-0 left-0 w-[100%] mx-auto sm:h-screen [550px] opacity-85 h-[450px] transition-transform duration-500 ${
               index === currentIndex ? "translate-x-0" : "translate-x-full"
             }`}
           />
@@ -144,7 +144,7 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
       <div className="flex justify-between items-center mt-2">
         <button
           onClick={prevSlide}
-          className="absolute sm:-left-4- - left-2 top-1/2 transform -translate-y-1/2 text-bg_gray bg-black bg-opacity-60 p-1 font-bold rounded-full"
+          className="absolute sm:-left-4-  - left-2 top-1/2 transform -translate-y-1/2 text-bg_gray bg-black- bg-opacity-60 p-1 font-bold rounded-full"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -152,7 +152,7 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-6"
+            className="size-6 hidden"
           >
             <path
               strokeLinecap="round"
@@ -163,7 +163,7 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
         </button>
         <button
           onClick={nextSlide}
-          className="absolute bg-black bg-opacity-60 - right-2 sm:-right-4- top-1/2 transform -translate-y-1/2  text-bg_gray p-1 font-bold rounded-full"
+          className="absolute bg-black- bg-opacity-60 - right-2 sm:-right-4- top-1/2 transform -translate-y-1/2  text-bg_gray p-1 font-bold rounded-full"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -171,7 +171,7 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-6"
+            className="size-6 hidden"
           >
             <path
               strokeLinecap="round"

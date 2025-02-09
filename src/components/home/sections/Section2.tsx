@@ -23,7 +23,7 @@ function Section2() {
       <div className=" container1 pt-[24px] xl:pt-[50px]  text-p_black">
         {" "}
         <div
-          className=" flex flex-col gap-[8px] xl:gap-[24px] items-center w-full mb-[24px] xl:mb-[64px]"
+          className=" flex text-center flex-col gap-[8px] xl:gap-[24px] items-center w-full mb-[24px] xl:mb-[64px]"
           data-aos="fade-up"
         >
           <Header3>The Satellite Apartments & Shortlet Homes </Header3>
@@ -49,14 +49,10 @@ function Section2() {
               />{" "}
               <div className=" space-y-[20px] xl:space-y-[32px] p-[24px] xl:p-[32px] flex flex-col w-full">
                 <Header4>Your Perfect Stay Awaits</Header4>{" "}
-                <Paragraph1>
-                  Offering premium short-term rental accommodations designed for
-                  comfort and convenience. Each apartment is fully furnished,
-                  featuring modern amenities and thoughtful details to ensure a
-                  luxurious experience. Whether for business or leisure, these
-                  spaces provide the ideal setting for relaxation and
-                  productivity.
-                </Paragraph1>
+<Paragraph1>
+  A home away from home with fully furnished apartments that cater to all your needs. Each unit boasts a modern kitchen, cozy living spaces with a flat-screen TV, and luxurious beds designed for ultimate comfort. Enjoy complimentary cleaning services, free high-speed Wi-Fi, and 24/7 front desk support to ensure a seamless stay. On-site car parking adds convenience to your travel plans.  
+
+</Paragraph1>
                 <Button
                   text="Book an apartment"
                   href="/apply"
@@ -74,12 +70,8 @@ function Section2() {
               <div className="space-y-[24px] xl:space-y-[32px] p-[24px] xl:p-[32px]">
                 <Header4>At the Center of the African Experience</Header4>{" "}
                 <Paragraph1>
-                  Experience the vibrant culture, rich heritage, and unmatched
-                  energy of Lagos from a space designed for comfort and
-                  convenience. Surrounded by the bustling charm of Satellite
-                  Town, these accommodations provide the perfect retreat after a
-                  day of exploration, business, or leisure. Immerse yourself in
-                  the rhythm of Africa while enjoying a modern, luxurious haven.
+                    Nestled in a quiet and serene location, the apartments are less than 30 minutes from essential amenities, including pharmacies, supermarkets, restaurants, schools, hospitals, and Lagos' major commercial hubs. Whether you're visiting for business, leisure, or a family trip, these apartments provide the perfect balance of comfort, convenience, and accessibility.  
+
                 </Paragraph1>
                 {/* <img src="/images/people.svg" alt="branding" className="w-" />{" "} */}
               </div>

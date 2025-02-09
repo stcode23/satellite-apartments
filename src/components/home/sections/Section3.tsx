@@ -10,6 +10,7 @@ import Link from "next/link";
 import React from "react";
 import AOS from "aos";
 import ProductCard from "@/components/Products/ProductCard";
+import Button from "@/components/Button";
 
 interface Section3Props {
   latestProducts: any;
@@ -60,6 +61,15 @@ const Section3: React.FC<Section3Props> = ({ latestProducts }) => {
                     className="h-[200px] xl:min-w-[250px] bg-gray-200 rounded-md animate-pulse"
                   ></div>
                 ))}
+        </div>
+        <div className=" pb- pt-8 flex justify-center xl:hidden-  ">
+          <Button
+            text="View More Products "
+            href="/products"
+            isLink={true}
+            border="border-2 border-primary "
+            additionalClasses="border-white bg-primary xl:w-fit flex justify-center  w-full "
+          />
         </div>
       </div>
     </div>
