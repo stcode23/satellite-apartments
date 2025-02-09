@@ -56,7 +56,7 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
   return (
     <div className="relative container1- flex justify-center items-center">
       <div className="absolute z-10 p-4">
-        <div className="flex flex-col bg-primary bg-opacity-50 p-8 rounded-[20px] justify-center items-center">
+        <div className="flex flex-col bg-primary w-full bounce-animation bg-opacity-50 p-8 rounded-[20px] justify-center items-center">
           <div className=" flex flex-col space-y-5 pb-6 ">
             <Header3 className=" text-white">Apartments & Suites </Header3>
             {/* <Paragraph1 className=" w-[500px]">
@@ -73,13 +73,17 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
             />{" "} */}
           </div>
           <div className="p-4 bg-white bg-opacity-80  rounded-[20px]">
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 w-full items-center">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-4 w-full items-center">
               <div className="sm:border-r px-4">
                 <ParagraphLink1 className="text-start font-bold">
                   Check-in
                 </ParagraphLink1>
                 <div>
-                  <input type="text" placeholder="Add  date" className=" bg-white bg-opacity-0" />
+                  <input
+                    type="text"
+                    placeholder="Add  date"
+                    className=" bg-white bg-opacity-0"
+                  />
                 </div>
               </div>
               <div className="sm:border-r px-4">
@@ -87,7 +91,11 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
                   Check-out
                 </ParagraphLink1>
                 <div>
-                  <input type="text" placeholder="Add date" className=" bg-white bg-opacity-0"/>
+                  <input
+                    type="text"
+                    placeholder="Add date"
+                    className=" bg-white bg-opacity-0"
+                  />
                 </div>
               </div>
               <div className="border-r px-4">
@@ -95,7 +103,11 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
                   Guest
                 </ParagraphLink1>
                 <div>
-                  <input type="text" placeholder="Number of guests" className=" bg-white bg-opacity-0"/>
+                  <input
+                    type="text"
+                    placeholder="Number of guests"
+                    className=" bg-white bg-opacity-0"
+                  />
                 </div>
               </div>
               <div className="px-4">
