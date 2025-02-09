@@ -48,7 +48,7 @@ function Navbar() {
     >
       <div className="  w-full">
         <div className=" container1 flex justify-between font-semibold- w-full items-center">
-          <div className="lg:hidden-">
+          <div className="lg:hidden- border p-2 flex items-center rounded-lg">
             <button onClick={toggleMenu} className="focus:outline-none">
               <Image
                 height={2}

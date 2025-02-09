@@ -55,7 +55,7 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
 
   return (
     <div className="relative container1- flex justify-center items-center">
-      <div className="absolute z-10">
+      <div className="absolute z-10 p-4">
         <div className="flex flex-col bg-primary bg-opacity-50 p-8 rounded-[20px] justify-center items-center">
           <div className=" flex flex-col space-y-5 pb-6 ">
             <Header3 className=" text-white">Apartments & Suites </Header3>
@@ -129,13 +129,13 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
           />{" "}
         </div>
       </div>
-      <div className="w-[100%] relative sm:h-screen [550px] h-[450px] border- border-primary-   rounded-lg- mx-auto overflow-hidden rou">
+      <div className="w-[100%] relative sm: h-screen [550px] h-[450px]- border- border-primary- bg-p_black   rounded-lg- mx-auto overflow-hidden rou">
         {images.map((image, index) => (
           <img
             key={index}
             src={image.src}
             alt={`Banner ${index + 1}`}
-            className={`absolute top-0 left-0 w-[100%] mx-auto sm:h-screen [550px] opacity-85 h-[450px] transition-transform duration-500 ${
+            className={`absolute top-0 left-0 w-[100%] mx-auto sm: h-screen [550px] opacity-85 h-[450px]- object-cover transition-transform duration-500 ${
               index === currentIndex ? "translate-x-0" : "translate-x-full"
             }`}
           />
