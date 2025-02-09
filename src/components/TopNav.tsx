@@ -4,7 +4,7 @@ import Link from "next/link";
 
 function TopNav() {
   return (
-    <div className=" bg-primary flex w-full text-white  py-1">
+    <div className=" bg-primary  w-full text-white  py-1 hidden sm:flex">
       <div className=" container1 flex w-full ">
         <div className=" flex w-full justify-between items-center">
           {" "}
