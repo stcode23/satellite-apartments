@@ -1,5 +1,5 @@
 import React from "react";
-import { Paragraph1, ParagraphLink2 } from "../Text";
+import { Paragraph1, Paragraph2, ParagraphLink2 } from "../Text";
 import { useExchangeRateStore } from "@/stores/exchangeRateStore";
 
 
@@ -29,7 +29,7 @@ const ProductCartCard: React.FC<ProductCartCardProps> = ({
       : displayPrice; // Format for NGN (comma-separated)
 
   return (
-    <div className="flex relative justify-between items-start bg-white p-2 px-3 rounded-lg">
+    <div className="flex relative justify-between items-start bg-white p-2  rounded-lg">
       <div className="flex gap-2 items-center">
         <img
           src={product.productImageURL1.replace(
@@ -37,14 +37,46 @@ const ProductCartCard: React.FC<ProductCartCardProps> = ({
             "/upload/w_100,f_auto/"
           )}
           alt={product.name}
-          className="w-16 h-16 object-cover rounded"
+          className="w-26 h-26 object-cover rounded"
         />
-        <div className=" space-y-2">
+        <div className=" space-y-2-">
           <ParagraphLink2 className="font-bold truncate overflow-hidden whitespace-nowrap w-[150px]">
             {product.name}
           </ParagraphLink2>
-          <div className="flex gap-4 items-center ">
-            <Paragraph1 className="text-gray-500">Qt:</Paragraph1>
+          <Paragraph2 className=" whitespace-nowrap">
+            {`${currencySymbol} ${new Intl.NumberFormat("en-US").format(
+              Number(formattedPrice * product.quantity)
+            )}`} per day
+          </Paragraph2>
+          <div className=" flex items-center gap-2">
+            <img
+              src="https://res.cloudinary.com/dvao98wnj/image/upload/v1738956143/star_dpebdl.png"
+              className="h-5 w-5"
+              alt=""
+            />
+            <img
+              src="https://res.cloudinary.com/dvao98wnj/image/upload/v1738956143/star_dpebdl.png"
+              className="h-5 w-5"
+              alt=""
+            />
+            <img
+              src="https://res.cloudinary.com/dvao98wnj/image/upload/v1738956143/star_dpebdl.png"
+              className="h-5 w-5"
+              alt=""
+            />{" "}
+            <img
+              src="https://res.cloudinary.com/dvao98wnj/image/upload/v1738956143/star_dpebdl.png"
+              className="h-5 w-5"
+              alt=""
+            />{" "}
+            <img
+              src="https://res.cloudinary.com/dvao98wnj/image/upload/v1738956143/star_dpebdl.png"
+              className="h-5 w-5"
+              alt=""
+            />
+          </div>
+          <div className="flex- gap-4 items-center hidden">
+            <Paragraph2 className="text-gray-500">Qt:</Paragraph2>
             <div className="flex gap-4 items-center justify-between border rounded-lg px-4">
               <button
                 onClick={() => onQuantityChange(product.id, -1)}
@@ -64,14 +96,9 @@ const ProductCartCard: React.FC<ProductCartCardProps> = ({
         </div>
       </div>
       <div>
-        <Paragraph1 className="font-bold whitespace-nowrap">
-          {`${currencySymbol} ${new Intl.NumberFormat("en-US").format(
-            Number(formattedPrice * product.quantity)
-          )}`}
-        </Paragraph1>
         <button
           onClick={() => onRemove(product.id)}
-          className="absolute right-4 bottom-4 text-[12px] text-gray-500"
+          className="absolute right-4 top-4 text-[12px] text-gray-500"
         >
           &#x2715;
         </button>

@@ -2,27 +2,27 @@ import React from "react";
 import localFont from "next/font/local";
 
 const body_Font_Medium = localFont({
-  src: "../app/fonts/Zodiak/fonts/Zodiak-Regular.woff",
+  src: "../app/fonts/BonaNovaSC/fonts/BonaNovaSC-Regular.ttf",
 });
 
 const body_Font_Regular = localFont({
-  src: "../app/fonts/Zodiak/fonts/Zodiak-Regular.woff",
+  src: "../app/fonts/BonaNovaSC/fonts/BonaNovaSC-Regular.ttf",
 });
 
 const body_Font_Light = localFont({
-  src: "../app/fonts/Zodiak/fonts/Zodiak-Light.woff",
+  src: "../app/fonts/BonaNovaSC/fonts/BonaNovaSC-Regular.ttf",
 });
 
 const body_Font_Bold = localFont({
-  src: "../app/fonts/Zodiak/fonts/Zodiak-Bold.woff",
+  src: "../app/fonts/BonaNovaSC/fonts/BonaNovaSC-Bold.ttf",
 });
 
 const body_p_regular = localFont({
-  src: "../app/fonts/GeneralSans/fonts/GeneralSans-Regular.woff",
+  src: "../app/fonts/Zodiak/fonts/Zodiak-Regular.ttf",
 });
 
 const body_p_light = localFont({
-  src: "../app/fonts/GeneralSans/fonts/GeneralSans-Light.woff",
+  src: "../app/fonts/Zodiak/fonts/Zodiak-Regular.ttf",
 });
 
 // Header Component
@@ -31,7 +31,7 @@ export const Header1: React.FC<{
   className?: string;
 }> = ({ children, className = "" }) => (
   <h1
-    className={`text-[24px] sm:text-[32px]   ${body_Font_Medium.className} ${className}`}
+    className={`text-[24px] uppercase sm:text-[32px]   ${body_Font_Medium.className} ${className}`}
   >
     {children}
   </h1>
@@ -42,7 +42,7 @@ export const Header1Plus: React.FC<{
   className?: string;
 }> = ({ children, className = "" }) => (
   <h1
-    className={`text-[24px] sm:text-[32px] ${body_Font_Regular.className} ${className}`}
+    className={`text-[24px] uppercase sm:text-[32px] ${body_Font_Regular.className} ${className}`}
   >
     {children}
   </h1>
@@ -53,7 +53,7 @@ export const Header2: React.FC<{
   className?: string;
 }> = ({ children, className = "" }) => (
   <h2
-    className={`text-[16px] sm:text-[20px]  font-bold ${body_Font_Bold.className} ${className}`}
+    className={`text-[16px] uppercase sm:text-[20px]  font-bold ${body_Font_Bold.className} ${className}`}
   >
     {children}
   </h2>
@@ -64,7 +64,7 @@ export const Header3: React.FC<{
   className?: string;
 }> = ({ children, className = "" }) => (
   <h3
-    className={`text-[20px] sm:text-[24px] md:text-[32px]   font-bold ${body_Font_Regular.className} ${className}`}
+    className={`text-[20px] uppercase sm:text-[24px] md:text-[32px]   font-bold ${body_Font_Regular.className} ${className}`}
   >
     {children}
   </h3>
@@ -75,7 +75,7 @@ export const Header4: React.FC<{
   className?: string;
 }> = ({ children, className = "" }) => (
   <h4
-    className={`text-[20px] sm:text-[24px]    font-bold ${body_Font_Regular.className} ${className}`}
+    className={`text-[20px] uppercase sm:text-[24px]    font-bold ${body_Font_Regular.className} ${className}`}
   >
     {children}
   </h4>

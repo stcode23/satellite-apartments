@@ -60,7 +60,7 @@ function TopNav() {
                 />
               </svg>
 
-              <Paragraph2> grandiosegrin@gmail.com</Paragraph2>
+              <Paragraph2> stapt@gmail.com</Paragraph2>
             </div>
             <div className=" flex items-center gap-2 text-[#ECECEC]- ">
               <svg

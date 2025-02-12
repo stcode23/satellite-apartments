@@ -122,7 +122,7 @@ const CartSummary: React.FC<CartSummaryProps> = ({ isOpen, onClose }) => {
     >
       {/* Header */}
       <div className="flex items-center justify-between p-4">
-        <Header4 className="text-lg font-semibold">Cart</Header4>
+        <Header4 className="text-lg font-semibold">Selected Space</Header4>
         <button
           onClick={onClose}
           className="text-gray-500 hover:text-gray-700 border px-2 py-1 rounded-lg"
@@ -148,16 +148,16 @@ const CartSummary: React.FC<CartSummaryProps> = ({ isOpen, onClose }) => {
             />
           ))
         ) : (
-          <p className="text-center text-gray-500">Your cart is empty.</p>
+          <p className="text-center text-gray-500">Empty</p>
         )}
       </div>
 
       {/* Summary */}
       <div className="p-4 border-t space-y-2">
         <div className="flex justify-between">
-          <Paragraph1>Shipping:</Paragraph1>
+          <Paragraph1>Tax:</Paragraph1>
           <Paragraph1 className="text-gray-500">
-            Calculated at checkout
+            Calculated at Reservation Checkout
           </Paragraph1>
         </div>
         <div className="flex justify-between font-semibold">
