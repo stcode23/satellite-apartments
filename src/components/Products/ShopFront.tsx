@@ -249,7 +249,7 @@ function Overview() {
       bgColor: "bg-black",
     },
     {
-      name: "Single Products",
+      name: "Standard Apartments",
       BackgroundURL:
         "https://res.cloudinary.com/dtipo8fg3/image/upload/v1733537996/kitera-dent-brwX1UMmeEc-unsplash_didfn4.jpg",
       bgColor: "bg-secondary",
@@ -261,7 +261,7 @@ function Overview() {
     //   bgColor: "bg-primary",
     // },
     {
-      name: "Wholesale and Bulk Products",
+      name: "Premium Suites",
       BackgroundURL:
         "https://res.cloudinary.com/dtipo8fg3/image/upload/v1733538011/enecta-cannabis-extracts-80wCkpt-IKE-unsplash_o77f6s.jpg",
       bgColor: "bg-black",
@@ -281,18 +281,18 @@ function Overview() {
           <div className="animate-spin rounded-full h-[100px] w-[100px] border-t-2 border-b-2 border-primary"></div>
         </div>
       )}
-      <div className=" container1 min-h-screen  py-[24px] xl:py-[70px] pt-[70px] text-p_black">
+      <div className=" container1 min-h-screen  py-[24px] sm:py-[120px] pt-[70px] text-p_black">
         <div className=" grid grid-cols-1 xl:grid-cols-6 gap-4">
-          <div className=" xl:flex hidden border-r">
-            <CategorySelector
+          <div className=" xl:flex- hidden border-r">
+            {/* <CategorySelector
               categories={categories}
               selectedCategory={selectedCategory}
               setSelectedCategory={setSelectedCategory}
               closeMenu={() => setIsCOpen(false)} // Pass the close function
-            />
+            /> */}
           </div>
 
-          <div className=" xl:col-span-5">
+          <div className=" xl:col-span-6">
             <div
               className=" hidden -flex flex-col text-center gap-[8px] xl:gap-[24px] items-center w-full mb-[24px] xl:mb-[64px]"
               data-aos="fade-up"
@@ -307,9 +307,9 @@ function Overview() {
                 elegance, and radiance.
               </Paragraph1>
             </div>
-            <div className=" mb-4 xl:hidden pt-2">
+            {/* <div className=" mb-4 xl:hidden pt-2">
               <SearchBar />
-            </div>
+            </div> */}
             <div className=" flex gap-2 w-full mb-2 whitespace-nowrap  overflow-x-auto scrollbar-hide  ">
               {sections.map((section, index) => (
                 <div
@@ -328,7 +328,7 @@ function Overview() {
                     }}
                   ></div>
                   <div className="bg-black  bg-opacity-55 rounded-lg py-2 px-2 text-white relative z-10">
-                    <ParagraphLink2 className=" font-bold">
+                    <ParagraphLink2 className=" font-bold uppercase">
                       {" "}
                       {section.name}
                     </ParagraphLink2>
@@ -339,14 +339,14 @@ function Overview() {
 
             <div className=" flex w-full justify-between items-center mb-4">
               <div className=" relative xl:hidden">
-                <button
+                {/* <button
                   onClick={() => setIsCOpen(!isCOpen)}
                   className="  w-fit px-2 py-1 border rounded-lg "
                 >
                   <ParagraphLink1 className="  ">Categories</ParagraphLink1>
-                </button>
+                </button> */}
 
-                <div
+                {/* <div
                   className={`fixed top-0 left-0 h-full z-20 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
                     isCOpen ? "translate-x-0" : "-translate-x-full"
                   }`}
@@ -358,10 +358,10 @@ function Overview() {
                     setSelectedCategory={setSelectedCategory}
                     closeMenu={() => setIsCOpen(false)} // Pass the close function
                   />
-                </div>
+                </div> */}
               </div>
 
-              <div className="relative inline- ">
+              {/* <div className="relative inline- ">
                 <div
                   onClick={() => setIsOpen(!isOpen)}
                   className=" flex gap-4 bg-white w-fit cursor-pointe rounded-lg p-2"
@@ -396,11 +396,11 @@ function Overview() {
                     </div>
                   </div>
                 )}
-              </div>
+              </div> */}
             </div>
             {/* data-aos="fade-right" */}
 
-            <div className="grid grid-cols-2 xl:grid-cols-5 sm:grid-cols-1 gap-2 xl:gap-4 [30px] ">
+            <div className="grid grid-cols-1 sm:grid-cols-3  gap-2 xl:gap-4 [30px] ">
               {displayedProducts.length > 0 ? (
                 displayedProducts.map((product) => (
                   <ProductCard
@@ -415,7 +415,7 @@ function Overview() {
                 // Display this if no products match the search query
                 <div className="col-span-full mt-6 text-center p-4">
                   <p className="text-gray-500 text-lg pb-4">
-                    No products found for "
+                    No Apartment found for "
                     <span className="font-semibold">{searchQuery}</span>"
                   </p>
                   <Link
@@ -423,7 +423,7 @@ function Overview() {
                     className=" text-primary font underline"
                   >
                     {" "}
-                    Browse other products{" "}
+                    Browse other Apartments{" "}
                   </Link>
                 </div>
               ) : (

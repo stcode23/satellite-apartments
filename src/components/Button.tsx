@@ -5,7 +5,7 @@ import Link from "next/link";
 import localFont from "next/font/local";
 
 const body_Font = localFont({
-  src: "../app/fonts/GeneralSans/fonts/GeneralSans-Regular.woff",
+  src: "../app/fonts/Zodiak/fonts/Zodiak-Regular.woff",
 });
 
 interface ButtonProps {

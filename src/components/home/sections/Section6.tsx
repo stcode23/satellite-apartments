@@ -24,12 +24,13 @@ function section6() {
         {" "}
         <div className="flex flex-col xl:gap-[24px] items-center w-full text-center pb-[64px]">
           <Header1Plus>
-            Discover Your Best <span className="text-primary">Self</span> with
-            GrandioseGrin
+            Discover Your Perfect <span className="text-primary">Stay</span>{" "}
+            at Satellite Apartments
           </Header1Plus>
           <Paragraph1 className="max-w-[883px] text-center">
-            Have questions or need guidance? Our team is here to help you find
-            the perfect products for your beauty journey.
+            Have questions or need assistance? Our team is here to help you find
+            the ideal apartment for your visit, ensuring a seamless and
+            memorable experience.
           </Paragraph1>
           <Button
             text="Contact Us Today"

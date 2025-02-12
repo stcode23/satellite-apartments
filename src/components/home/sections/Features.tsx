@@ -52,7 +52,7 @@ function Features() {
               className="w-16 h-16 mx-auto"
             />
             <Header4 className="text-lg font-semibold">{feature.title}</Header4>
-            <p className="text-sm text-gray-600">{feature.description}</p>
+            <Paragraph2 className="text-sm text-gray-600">{feature.description}</Paragraph2>
           </div>
         ))}
       </div>

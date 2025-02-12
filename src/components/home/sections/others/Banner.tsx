@@ -56,7 +56,7 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
   return (
     <div className="relative container1- flex justify-center items-center">
       <div className="absolute z-10 p-4">
-        <div className="flex flex-col bg-primary w-full bounce-animation bg-opacity-50 p-8 rounded-[20px] justify-center items-center">
+        <div className="flex- hidden flex-col bg-primary w-full bounce-animation bg-opacity-50 p-8 rounded-[20px] justify-center items-center">
           <div className=" flex flex-col space-y-5 pb-6 ">
             <Header3 className=" text-white">Apartments & Suites </Header3>
             {/* <Paragraph1 className=" w-[500px]">
@@ -72,7 +72,7 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
               additionalClasses="border-primary xl:w-fit- flex justify-center  w-full "
             />{" "} */}
           </div>
-          <div className="p-4 bg-white bg-opacity-80  rounded-[20px]">
+          <div className="p-4 hidden bg-white bg-opacity-70  rounded-[20px]">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-4 w-full items-center">
               <div className="sm:border-r px-4">
                 <ParagraphLink1 className="text-start font-bold">
@@ -124,21 +124,31 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
         </div>
       </div>
 
-      <div className=" absolute top-0 left-[200px] hidden h-full w-[300px] bg-opacity-75 bg-white z-10">
-        <div className=" flex flex-col space-y-5 p-8 ">
+      <div className=" absolute sm:top-0 top-[35%] left-[0] sm:left-[200px] hidden- sm:h-full w-[full] sm:w-[400px]  bg-opacity-75 bg-white z-10">
+        <div className=" flex flex-col space-y-5 p-8 sm:pt-[100px] ">
           <Header3 className=" ">Apartments & Suites </Header3>
           <Paragraph1>
             Discover the perfect blend of comfort and elegance with our
             thoughtfully designed apartments and suites. Each space is tailored
             to provide a luxurious and relaxing experience
           </Paragraph1>{" "}
-          <Button
-            text="Learn More"
-            href="/products"
-            isLink={true}
-            border="border-2 border-primary "
-            additionalClasses="border-primary xl:w-fit- flex justify-center  w-full "
-          />{" "}
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 w-full items-center">
+            <Button
+              text="Book Now"
+              href="/products"
+              isLink={true}
+              border="border2 border-primary "
+              additionalClasses="border-primary xl:w-fit- flex justify-center  w-full "
+            />{" "}
+            <Button
+              text="Learn More"
+              href="/products"
+              isLink={true}
+              backgroundColor="bg-p_black"
+              border="border2 border-p_black "
+              additionalClasses="border-primary xl:w-fit- flex justify-center  w-full "
+            />{" "}
+          </div>
         </div>
       </div>
       <div className="w-[100%] relative sm: h-screen [550px] h-[450px]- border- border-primary- bg-p_black   rounded-lg- mx-auto overflow-hidden rou">

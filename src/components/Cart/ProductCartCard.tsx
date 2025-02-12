@@ -39,16 +39,16 @@ const ProductCartCard: React.FC<ProductCartCardProps> = ({
           alt={product.name}
           className="w-26 h-26 object-cover rounded"
         />
-        <div className=" space-y-2-">
+        <div className=" space-y-1">
           <ParagraphLink2 className="font-bold truncate overflow-hidden whitespace-nowrap w-[150px]">
             {product.name}
           </ParagraphLink2>
           <Paragraph2 className=" whitespace-nowrap">
             {`${currencySymbol} ${new Intl.NumberFormat("en-US").format(
               Number(formattedPrice * product.quantity)
-            )}`} per day
+            )}`} 
           </Paragraph2>
-          <div className=" flex items-center gap-2">
+          <div className=" flex items-center gap-2 pb-4">
             <img
               src="https://res.cloudinary.com/dvao98wnj/image/upload/v1738956143/star_dpebdl.png"
               className="h-5 w-5"
@@ -75,8 +75,8 @@ const ProductCartCard: React.FC<ProductCartCardProps> = ({
               alt=""
             />
           </div>
-          <div className="flex- gap-4 items-center hidden">
-            <Paragraph2 className="text-gray-500">Qt:</Paragraph2>
+          <div className="flex gap-4 items-center hidden-">
+            <Paragraph2 className="text-gray-500">Days:</Paragraph2>
             <div className="flex gap-4 items-center justify-between border rounded-lg px-4">
               <button
                 onClick={() => onQuantityChange(product.id, -1)}
