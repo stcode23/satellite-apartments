@@ -84,7 +84,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </Paragraph2>
           <div className=" flex items-center gap-2">
             <img
-              src="https://res.cloudinary.com/dvao98wnj/image/upload/v1738956143/star_dpebdl.png"
+              src="https://res.cloudinary.com/dvao98wnj/image/upload/v1739439140/star_ewvgre.png"
               className="h-5 w-5"
               alt=""
             />

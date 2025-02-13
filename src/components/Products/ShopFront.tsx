@@ -245,13 +245,13 @@ function Overview() {
     {
       name: "All",
       BackgroundURL:
-        "https://res.cloudinary.com/dcb4ilgmr/image/upload/v1736021991/utilities/images_2_ufuh7a.jpg",
+        "https://res.cloudinary.com/dvao98wnj/image/upload/v1739438626/outsite-co-R-LK3sqLiBw-unsplash_lsdfkh.jpg",
       bgColor: "bg-black",
     },
     {
       name: "Standard Apartments",
       BackgroundURL:
-        "https://res.cloudinary.com/dtipo8fg3/image/upload/v1733537996/kitera-dent-brwX1UMmeEc-unsplash_didfn4.jpg",
+        "https://res.cloudinary.com/dvao98wnj/image/upload/v1739438628/jason-briscoe-GliaHAJ3_5A-unsplash_buyidn.jpg",
       bgColor: "bg-secondary",
     },
     // {
@@ -263,7 +263,7 @@ function Overview() {
     {
       name: "Premium Suites",
       BackgroundURL:
-        "https://res.cloudinary.com/dtipo8fg3/image/upload/v1733538011/enecta-cannabis-extracts-80wCkpt-IKE-unsplash_o77f6s.jpg",
+        "https://res.cloudinary.com/dvao98wnj/image/upload/v1739438630/naomi-hebert-MP0bgaS_d1c-unsplash_hpvmp6.jpg",
       bgColor: "bg-black",
     },
   ];
@@ -400,7 +400,7 @@ function Overview() {
             </div>
             {/* data-aos="fade-right" */}
 
-            <div className="grid grid-cols-1 sm:grid-cols-3  gap-2 xl:gap-4 [30px] ">
+            <div className="grid grid-cols-1 sm:grid-cols-4  gap-2 xl:gap-4 [30px] ">
               {displayedProducts.length > 0 ? (
                 displayedProducts.map((product) => (
                   <ProductCard

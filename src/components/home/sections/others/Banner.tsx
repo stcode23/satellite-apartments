@@ -55,11 +55,11 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
 
   return (
     <div className="relative container1- flex justify-center items-center">
-      <div className="absolute z-10 p-4">
-        <div className="flex- hidden flex-col bg-primary w-full bounce-animation bg-opacity-50 p-8 rounded-[20px] justify-center items-center">
-          <div className=" flex flex-col space-y-5 pb-6 ">
-            <Header3 className=" text-white">Apartments & Suites </Header3>
-            {/* <Paragraph1 className=" w-[500px]">
+      <div className="absolute z-10 p-2 sm:p-4">
+        <div className="flex - hidden- flex-col bg-primary w-full bounce-animation bg-opacity-50 sm:p-8 rounded-[20px] justify-center items-center">
+          <div className=" flex flex-col space-y-5 sm:pb-6 ">
+            {/* <Header3 className=" text-white">Apartments & Suites </Header3>
+            <Paragraph1 className=" w-[500px]">
               Discover the perfect blend of comfort and elegance with our
               thoughtfully designed apartments and suites. Each space is
               tailored to provide a luxurious and relaxing experience
@@ -72,9 +72,17 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
               additionalClasses="border-primary xl:w-fit- flex justify-center  w-full "
             />{" "} */}
           </div>
-          <div className="p-4 hidden bg-white bg-opacity-70  rounded-[20px]">
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-4 w-full items-center">
-              <div className="sm:border-r px-4">
+          <div className="p-4 hidden- bg-white bg-opacity-70  rounded-[20px] flex flex-col items-center ">
+            <Header3 className=" text-white- text-center">
+              Apartments & Suites{" "}
+            </Header3>
+            <Paragraph1 className=" max-w-[800px] - text-center">
+              Explore our premium apartments designed to offer modern comfort
+              and luxury. Booking your ideal stay is just a few clicks away:
+              {/* ensuring a seamless and stress-free experience. */}
+            </Paragraph1>{" "}
+            <div className="grid grid-cols-1 gap-4 py-4 sm:grid-cols-4 w-full items-center">
+              <div className="sm:border-r border-primary flex w-full flex-col gap-2 items-center   px-4">
                 <ParagraphLink1 className="text-start font-bold">
                   Check-in
                 </ParagraphLink1>
@@ -82,11 +90,11 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
                   <input
                     type="text"
                     placeholder="Add  date"
-                    className=" bg-white bg-opacity-0"
+                    className=" bg-white bg-opacity-50 p-2 rounded-lg text-center outline-none  "
                   />
                 </div>
               </div>
-              <div className="sm:border-r px-4">
+              <div className="sm:border-r border-primary flex w-full flex-col gap-2 items-center px-4">
                 <ParagraphLink1 className="text-start font-bold">
                   Check-out
                 </ParagraphLink1>
@@ -94,11 +102,11 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
                   <input
                     type="text"
                     placeholder="Add date"
-                    className=" bg-white bg-opacity-0"
+                    className=" bg-white bg-opacity-50 p-2 rounded-lg text-center outline-none"
                   />
                 </div>
               </div>
-              <div className="border-r px-4">
+              <div className="sm:border-r border-primary flex w-full flex-col gap-2 items-center px-4">
                 <ParagraphLink1 className="text-start font-bold">
                   Guest
                 </ParagraphLink1>
@@ -106,7 +114,7 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
                   <input
                     type="text"
                     placeholder="Number of guests"
-                    className=" bg-white bg-opacity-0"
+                    className=" bg-white bg-opacity-50 p-2 rounded-lg text-center outline-none"
                   />
                 </div>
               </div>
@@ -124,7 +132,7 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
         </div>
       </div>
 
-      <div className=" absolute sm:top-0 top-[35%] left-[0] sm:left-[200px] hidden- sm:h-full w-[full] sm:w-[400px]  bg-opacity-75 bg-white z-10">
+      <div className=" absolute sm:top-0 top-[35%] left-[0] sm:left-[200px] hidden - sm:h-full w-[full] sm:w-[400px]  bg-opacity-75 bg-white z-10">
         <div className=" flex flex-col space-y-5 p-8 sm:pt-[100px] ">
           <Header3 className=" ">Apartments & Suites </Header3>
           <Paragraph1>
