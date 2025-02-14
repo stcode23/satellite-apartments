@@ -11,7 +11,7 @@ function MapView() {
 
       <Button
         text="Find direction"
-        href="https://www.google.com/maps/dir/?api=1&destination=15+Awori+Street,+Satellite+Town,+Lagos,+Nigeria"
+        href="https://www.google.com/maps/dir/?api=1&destination=Satellite+Apartment+Awori+Street,+Satellite+Town,+Lagos,+Nigeria"
         isLink={true}
         border="border-2 border-primary"
         additionalClasses="border-primary xl:w-fit flex justify-center w-full mt-4"
