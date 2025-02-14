@@ -1,6 +1,6 @@
 import React from "react";
 import { useExchangeRateStore } from "@/stores/exchangeRateStore";
-import { Header2, Paragraph1, Paragraph2 } from "@/components/Text";
+import { Header2, Header3, Paragraph1, Paragraph2 } from "@/components/Text";
 import Button from "@/components/Button";
 
 const Pricing = () => {
@@ -52,9 +52,9 @@ const Pricing = () => {
 
   return (
     <div className="bg-bg_gray py-10 px-5">
-      <Header2 className="text-3xl font-bold text-center text-gray-800 mb-8">
+      <Header3 className="text-3xl font-bold text-center text-gray-800 mb-8">
         Pricing Plans
-      </Header2>
+      </Header3>
       <div className="grid gap-8 grid-cols-1 md:grid-cols-3">
         {plans.map((plan, index) => {
           const displayPrice =

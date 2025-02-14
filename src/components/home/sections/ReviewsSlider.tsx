@@ -1,4 +1,4 @@
-import { Header2, Paragraph1, Paragraph2 } from "@/components/Text";
+import { Header1, Header2, Header3, Paragraph1, Paragraph2 } from "@/components/Text";
 import React, { useState, useEffect } from "react";
 
 const ReviewsSlider = () => {
@@ -37,9 +37,9 @@ const ReviewsSlider = () => {
 
   return (
     <div className="bg-bg_gray  py-10 px-5">
-      <Header2 className="text-3xl font-bold text-center text-gray-800 mb-8">
+      <Header3 className="text-3xl font-bold text-center text-gray-800 mb-8">
         What Our Guests Say
-      </Header2>
+      </Header3>
       <div className="relative max-w-full mx-auto">
         <div className="overflow-hidden">
           <div
