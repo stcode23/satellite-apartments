@@ -28,15 +28,20 @@ function Footer() {
           {/* desktop */}
           <div className="sm:flex hidden items-start justify-between ">
             <div className="w-[300px] relative hidden- space-y-4">
-              <img src="/images/logo2.png" className="h-[200px]-" alt="photographer" />
+              <img
+                src="/images/logo2.png"
+                className="h-[200px]-"
+                alt="photographer"
+              />
 
-              <Paragraph2>   Premium short-term rental apartments in the heart of Satellite Town, offering comfort, style, and convenience. 
+              <Paragraph2>
+                {" "}
+                Premium short-term rental apartments in the heart of Satellite
+                Town, offering comfort, style, and convenience.
               </Paragraph2>
-              
             </div>
             <div className=" flex gap-1 [48px] flex-col">
-
-<Paragraph2 className=" font-bold text-sm">MORE</Paragraph2>
+              <Paragraph2 className=" font-bold text-sm">MORE</Paragraph2>
               <Link href="/">
                 <ParagraphLink2
                   className={
@@ -69,10 +74,10 @@ function Footer() {
                       : " text-[#ECECEC]- "
                   }
                 >
-                  Shop
+                  Apartments & Suites
                 </ParagraphLink2>
               </Link>
-              <Link href="/blogs">
+              {/* <Link href="/blogs">
                 {" "}
                 <ParagraphLink2
                   className={
@@ -83,7 +88,7 @@ function Footer() {
                 >
                   Blog
                 </ParagraphLink2>
-              </Link>
+              </Link> */}
               <Link href="/contact-us">
                 {" "}
                 <ParagraphLink2
@@ -97,7 +102,7 @@ function Footer() {
                 </ParagraphLink2>
               </Link>
             </div>
-            <div className=" flex flex-col py-4 gap-2 items-center- justify-center-">
+            <div className=" flex flex-col  gap-2 items-center- justify-center-">
               <div className=" flex gap-4 items-center mb-2">
                 <Link
                   href="https://www.instagram.com/grandiosegrin"
@@ -105,7 +110,7 @@ function Footer() {
                   rel="noopener noreferrer"
                 >
                   <img
-                    src="https://res.cloudinary.com/dcb4ilgmr/image/upload/v1729676533/utilities/templates/instagram_2_ujmgac.png"
+                    src="https://res.cloudinary.com/dvao98wnj/image/upload/v1739497214/instagram_xheimp.png"
                     alt=""
                     className="w-[20px] h-[20px]"
                   />
@@ -116,7 +121,7 @@ function Footer() {
                   rel="noopener noreferrer"
                 >
                   <img
-                    src="https://res.cloudinary.com/dcb4ilgmr/image/upload/v1729676725/utilities/templates/facebook-app-symbol_x2whit.png"
+                    src="https://res.cloudinary.com/dvao98wnj/image/upload/v1739497214/facebook-app-symbol_uqjczg.png"
                     alt=""
                     className="w-[20px] h-[20px]"
                   />
@@ -127,7 +132,7 @@ function Footer() {
                   rel="noopener noreferrer"
                 >
                   <img
-                    src="https://res.cloudinary.com/dcb4ilgmr/image/upload/v1729675779/utilities/templates/twitter_3_sihd1i.png"
+                    src="https://res.cloudinary.com/dvao98wnj/image/upload/v1739497214/twitter_txevzm.png"
                     alt=""
                     className="w-[20px] h-[20px]"
                   />
@@ -150,7 +155,7 @@ function Footer() {
                   />
                 </svg>
 
-                <Paragraph2> grandiosegrin@gmail.com</Paragraph2>
+                <Paragraph2> stapartments@gmail.com</Paragraph2>
               </div>
               <div className=" flex items-center gap-2 text-[#ECECEC]- ">
                 <svg
@@ -193,9 +198,7 @@ function Footer() {
               </div>
             </div>
           </div>
-          <div className=" sm:flex justify-center items-center hidden py-4">
-            
-          </div>
+          <div className=" sm:flex justify-center items-center hidden py-4"></div>
 
           {/* mobile  */}
           <div className=" mb-[24px] sm:hidden sm:mb-[110px]">
@@ -216,15 +219,15 @@ function Footer() {
               <Link href="/products">
                 {" "}
                 <ParagraphLink2 className=" text-[#ECECEC]- ">
-                  Shop
+                  Apartments & Suites
                 </ParagraphLink2>
               </Link>
-              <Link href="/blog">
+              {/* <Link href="/blog">
                 {" "}
                 <ParagraphLink2 className=" text-[#ECECEC]- ">
                   Blog
                 </ParagraphLink2>
-              </Link>
+              </Link> */}
               <Link href="/contact-us">
                 {" "}
                 <ParagraphLink2 className=" text-[#ECECEC]- ">
@@ -239,21 +242,21 @@ function Footer() {
                     rel="noopener noreferrer"
                   >
                     <img
-                      src="https://res.cloudinary.com/dcb4ilgmr/image/upload/v1729676533/utilities/templates/instagram_2_ujmgac.png"
+                      src="https://res.cloudinary.com/dvao98wnj/image/upload/v1739497214/instagram_xheimp.png"
                       alt="instagram"
                       className="w-[14px] h-[14px]"
                     />
                   </Link>
                   <Link href="/">
                     <img
-                      src="https://res.cloudinary.com/dcb4ilgmr/image/upload/v1729676725/utilities/templates/facebook-app-symbol_x2whit.png"
+                      src="https://res.cloudinary.com/dvao98wnj/image/upload/v1739497214/facebook-app-symbol_uqjczg.png"
                       alt="facebook"
                       className="w-[14px] h-[14px]"
                     />
                   </Link>
                   <Link href="/">
                     <img
-                      src="https://res.cloudinary.com/dcb4ilgmr/image/upload/v1729675779/utilities/templates/twitter_3_sihd1i.png"
+                      src="https://res.cloudinary.com/dvao98wnj/image/upload/v1739497214/twitter_txevzm.png"
                       alt=""
                       className="w-[14px] h-[14px]"
                     />
@@ -275,7 +278,7 @@ function Footer() {
                     />
                   </svg>
 
-                  <Paragraph2> grandiosegrin@gmail.com</Paragraph2>
+                  <Paragraph2> stapartments@gmail.com</Paragraph2>
                 </div>
                 <div className=" flex items-center gap-2 text-[#ECECEC]- ">
                   <svg
@@ -334,14 +337,14 @@ function Footer() {
             <ParagraphLink2 className="  text-[#ECECEC]- ">
               © 2025 Satellite Apartment Ltd. All rights reserved.
             </ParagraphLink2>
-            <Link href="/privacy-policy" className="">
-                {" "}
-                <ParagraphLink2 className="  text-[#ECECEC]- ">
+            <Link href="/privacy-policy" className="sm:py-0 py-2">
+              {" "}
+              <ParagraphLink2 className="  text-[#ECECEC]- ">
                 Built with ❤️ by Cybalbuzz
-                </ParagraphLink2>
-              </Link>
-           
-            <div className="flex flex-wrap gap-[24px] items-center">
+              </ParagraphLink2>
+            </Link>
+
+            <div className="flex flex-wrap gap-[24px]  items-center">
               <Link href="/privacy-policy" className="">
                 {" "}
                 <ParagraphLink2 className="  text-[#ECECEC]- underline ">

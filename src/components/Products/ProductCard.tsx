@@ -27,7 +27,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const displayPrice =
     selectedCurrency === "USD" && exchangeRate > 0
       ? price / exchangeRate // Convert to USD
-      : price; // Default to NGN
+      : price; // Default to NGNg
 
   const currencySymbol = selectedCurrency === "USD" ? "$" : "₦";
 

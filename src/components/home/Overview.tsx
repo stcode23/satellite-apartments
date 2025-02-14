@@ -10,6 +10,8 @@ import { db } from "@/lib/firebase"; // Firestore setup
 import { collection, getDocs } from "firebase/firestore"; // Firestore methods
 import NewsLetter from "./sections/NewsLetter";
 import Features from "./sections/Features";
+import MapView from "./sections/MapView";
+import ReviewsSlider from "./sections/ReviewsSlider";
 
 interface Product {
   id: string;
@@ -76,8 +78,11 @@ function Overview() {
   return (
     <div>
       <HeroSection />
-      <Section2  />
-      <Section2B featuredProducts={trendingProducts} />
+      <Section2 />
+      <MapView />
+      <Section2B />
+      <ReviewsSlider />
+
       {/* <Section3 latestProducts={latestProducts} /> */}
       <Features />
       <NewsLetter />

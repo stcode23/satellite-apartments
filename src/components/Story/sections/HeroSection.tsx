@@ -20,30 +20,29 @@ function HeroSection() {
         >
           <div className=" flex flex-col xl:w-[60%] w-full xl:space-y-[24px] ">
             <Header3 className="text-white col-span-1">
-              Discover the beauty of self-care with
-              <span className="border-primary  "> GrandioseGrin's </span>{" "}
-              premium cosmetics.
+              Experience comfort and style with our
+              <span className="border-primary"> premium apartments. </span>
             </Header3>
             <Paragraph3 className="xl:mt-[16px] mb-[24px] xl:mb-[48px] text-white">
-              At GrandioseGrin, we celebrate your unique beauty, offering
-              products that nourish, inspire, and enhance your natural glow.
+              We provide thoughtfully designed spaces that combine luxury,
+              convenience, and a relaxing environment for every guest.
             </Paragraph3>
 
             <Button
-              text="Start Your Beauty Journey"
-              href="/products"
+              text="Book Your Stay Now"
+              href="/booking"
               isLink={true}
-              additionalClasses="border-primary xl:w-fit w-full  "
+              additionalClasses="border-primary xl:w-fit w-full"
             />
           </div>
         </div>
 
         {/* Background image overlay */}
         <div
-          className="absolute inset-0 bg-cover xl:-top-[100px] xl:-left-[0px] -left-[150px] -top-[24px] bg-center- z-0"
+          className="absolute inset-0 bg-cover xl:-top-[800px] xl:-left-[0px] -left-[150px] -top-[104px] bg-center- z-0"
           style={{
             backgroundImage:
-              "url('https://res.cloudinary.com/dtipo8fg3/image/upload/v1731517423/istockphoto-637324230-612x612as_w7eazz.jpg')",
+              "url('https://res.cloudinary.com/dvao98wnj/image/upload/v1739475559/b1a98dcc_edited_17d0_li0qq9.webp')",
           }}
         ></div>
         {/* Dark overlay for the background image */}

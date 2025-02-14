@@ -48,7 +48,7 @@ const ProductCartCard: React.FC<ProductCartCardProps> = ({
               Number(formattedPrice * product.quantity)
             )}`} 
           </Paragraph2>
-          <div className=" flex items-center gap-2 pb-4">
+          <div className=" flex- items-center gap-2 pb-4 hidden">
             <img
               src="https://res.cloudinary.com/dvao98wnj/image/upload/v1738956143/star_dpebdl.png"
               className="h-5 w-5"

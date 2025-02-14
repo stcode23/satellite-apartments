@@ -12,6 +12,8 @@ interface ButtonProps {
   text: string;
   onClick?: () => void;
   href?: string;
+  target?: string;
+  rel?: string;
   color?: string;
   border?: string;
   backgroundColor?: string;
@@ -28,6 +30,8 @@ const Button: React.FC<ButtonProps> = ({
   type,
   disabled,
   href,
+  target,
+  rel,
   color = "text-white",
   border = "border",
   backgroundColor = "bg-primary",
@@ -52,7 +56,14 @@ const Button: React.FC<ButtonProps> = ({
 
   if (isLink && href) {
     return (
-      <Link href={href} passHref className={commonClasses} onClick={onClick}>
+      <Link
+        href={href}
+        target={target}
+        passHref
+        className={commonClasses}
+        onClick={onClick}
+        rel={rel}
+      >
         <p>{content}</p>
       </Link>
     );

@@ -47,7 +47,7 @@ function Navbar() {
       >
         <div className="  w-full">
           <div className=" container1 flex justify-between font-semibold- w-full items-center">
-            <div className="lg:hidden- border p-2 flex items-center rounded-lg">
+            <div className="lg:hidden border p-2 flex items-center rounded-lg">
               <button onClick={toggleMenu} className="focus:outline-none">
                 <Image
                   height={2}
@@ -76,7 +76,7 @@ function Navbar() {
             <div className=" border-2 border-primary rounded-full w-2 h-2 p- absolute top-1 -left-1 "></div>
             <HeaderAny className=" text-[24px]">GrandioseGrin</HeaderAny>{" "}
           </div> */}
-            <div className="  gap-[48px] items-center hidden -lg:flex">
+            <div className="  gap-[48px] items-center hidden lg:flex">
               <Link href="/">
                 <ParagraphLink1
                   className={pathname === "/" ? "text-primary font-bold " : " "}

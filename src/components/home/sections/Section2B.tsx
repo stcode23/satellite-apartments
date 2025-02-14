@@ -1,76 +1,120 @@
-"use client";
-
-import Button from "@/components/Button";
-import {
-  Header3,
-  Header4,
-  Paragraph1,
-  ParagraphLink1,
-} from "@/components/Text";
-import Link from "next/link";
 import React from "react";
-import AOS from "aos";
-import RandomFaces from "./others/RandomFaces";
-import ProductCard from "@/components/Products/ProductCard";
+import { useExchangeRateStore } from "@/stores/exchangeRateStore";
+import { Header2, Paragraph1, Paragraph2 } from "@/components/Text";
+import Button from "@/components/Button";
 
-interface Section2Props {
-  featuredProducts: any;
-}
+const Pricing = () => {
+  const { selectedCurrency, exchangeRate } = useExchangeRateStore();
 
-const Section2: React.FC<Section2Props> = ({ featuredProducts }) => {
-  React.useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    });
-  });
+  const currencySymbol = selectedCurrency === "USD" ? "$" : "₦";
+
+  const plans = [
+    {
+      title: "Basic Apartments",
+      price: 30000,
+      features: [
+        "1 Bedroom",
+        "Free Wi-Fi",
+        "Basic Kitchen Setup",
+        "Weekly Cleaning Service",
+      ],
+      image:
+        "https://res.cloudinary.com/dvao98wnj/image/upload/v1739438630/naomi-hebert-MP0bgaS_d1c-unsplash_hpvmp6.jpg",
+    },
+    {
+      title: "Standard Apartments",
+      price: 35000,
+      features: [
+        "2 Bedrooms",
+        "Smart TV",
+        "Fully Equipped Kitchen",
+        "Bi-Weekly Cleaning Service",
+        "Quiet Location",
+      ],
+      image:
+        "https://res.cloudinary.com/dvao98wnj/image/upload/v1739438626/outsite-co-R-LK3sqLiBw-unsplash_lsdfkh.jpg",
+    },
+    {
+      title: "Premium Suites",
+      price: 40000,
+      features: [
+        "3 Bedrooms",
+        "Luxury Furnishings",
+        "24/7 Concierge Service",
+        "Daily Cleaning Service",
+        "Private Balcony",
+        "Free Parking",
+      ],
+      image:
+        "https://res.cloudinary.com/dvao98wnj/image/upload/v1739438628/jason-briscoe-GliaHAJ3_5A-unsplash_buyidn.jpg",
+    },
+  ];
 
   return (
-    <div>
-      <div className=" container1 pt-[34px] - xl:pt-[50px]  text-p_black">
+    <div className="bg-bg_gray py-10 px-5">
+      <Header2 className="text-3xl font-bold text-center text-gray-800 mb-8">
+        Pricing Plans
+      </Header2>
+      <div className="grid gap-8 grid-cols-1 md:grid-cols-3">
+        {plans.map((plan, index) => {
+          const displayPrice =
+            selectedCurrency === "USD" && exchangeRate > 0
+              ? plan.price / exchangeRate // Convert to USD
+              : plan.price; // Default to NGN
+
+          const formattedPrice =
+            selectedCurrency === "USD"
+              ? displayPrice.toFixed(2) // Format for USD with 2 decimal places
+              : new Intl.NumberFormat("en-NG").format(displayPrice); // Format for NGN (comma-separated)
+
+          return (
+            <div
+              key={index}
+              className="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+            >
+              <img
+                src={plan.image}
+                alt={plan.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-5">
+                <Paragraph1 className="text-xl font-bold text-gray-800 mb-3">
+                  {plan.title}
+                </Paragraph1>
+                <Paragraph2>
+                  {" "}
+                  <span className=" font-bold">
+                    {" "}
+                    {`${currencySymbol} ${formattedPrice}`}{" "}
+                  </span>{" "}
+                  per day
+                </Paragraph2>
+                <ul className="text-gray-600 mb-4 space-y-2">
+                  {plan.features.map((feature, i) => (
+                    <li key={i} className="flex items-center">
+                      <span className="inline-block w-2 h-2 bg-primary rounded-full mr-2"></span>
+                      <Paragraph2>{feature}</Paragraph2>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className=" flex justify-center mt-8">
         {" "}
-        <div
-          className=" flex flex-col gap-[8px] xl:gap-[24px] text-center items-center w-full mb-[24px] xl:mb-[64px]"
-          data-aos="fade-up"
-        >
-          <Header3>
-            Available <span className="text-primary">Spaces</span>
-          </Header3>
-        </div>
-        {/* data-aos="fade-right" */}
-        <div className="flex- grid grid-cols-1 sm:grid-cols-3 items-center justify-center -overflow-y-auto scrollbar-hide-   gap-[24px] xl:gap-[30px]-">
-          {featuredProducts && featuredProducts.length > 0
-            ? featuredProducts.slice(0, 6).map((product: any) => (
-                <div className=" ">
-                  <ProductCard
-                    key={product.id}
-                    image={product.productImageURL1}
-                    title={product.name}
-                    price={product.currentPrice}
-                    product={product}
-                  />
-                </div>
-              ))
-            : Array(8)
-                .fill(null)
-                .map((_, index) => (
-                  <div
-                    key={index}
-                    className="h-[200px] min-w-[250px] bg-gray-200 rounded-md animate-pulse"
-                  ></div>
-                ))}
-        </div>
-        <div className=" pb- pt-8 flex justify-center xl:hidden-  ">
-          <Button
-            text="View More Apartments "
-            href="/products"
-            isLink={true}
-            border="border-2 border-primary "
-            additionalClasses="border-white bg-primary xl:w-fit flex justify-center  w-full "
-          />
-        </div>
+        <Button
+          text="Book Now"
+          href="/products"
+          isLink={true}
+          border="border-2 border-primary "
+          additionalClasses="border-primary xl:w-fit- flex justify-center  w-full- "
+        />
       </div>
     </div>
   );
 };
 
-export default Section2;
+export default Pricing;

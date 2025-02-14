@@ -66,15 +66,12 @@ const CartSummary: React.FC<CartSummaryProps> = ({ isOpen, onClose }) => {
     }
   }, [cart]);
 
-    const currencySymbol = selectedCurrency === "USD" ? "$" : "₦";
-
+  const currencySymbol = selectedCurrency === "USD" ? "$" : "₦";
 
   const subtotal = products.reduce(
     (total, product) => total + product.currentPrice * product.quantity,
     0
   );
-
-  
 
   const handleQuantityChange = (productId: string, delta: number) => {
     const cartStore = useCartStore.getState();
@@ -116,13 +113,15 @@ const CartSummary: React.FC<CartSummaryProps> = ({ isOpen, onClose }) => {
 
   return (
     <div
-      className={`fixed top-0 z-20 border right-0 h-full text-p_black w-full sm:w-[400px] bg-bg_gray shadow-lg transform ${
+      className={`fixed top-0 z-20 border right-0 h-full scrollbar-hide text-p_black w-full sm:w-[400px] bg-bg_gray shadow-lg transform ${
         isOpen ? "translate-x-0" : "translate-x-full"
-      } transition-transform duration-300 ease-in-out`}
+      } transition-transform duration-300 ease-in-out overflow-y-auto`}
     >
       {/* Header */}
       <div className="flex items-center justify-between p-4">
-        <Header4 className="text-lg font-semibold">Selected Space</Header4>
+        <Header4 className="text-lg font-semibold">
+          Pending Reservations
+        </Header4>
         <button
           onClick={onClose}
           className="text-gray-500 hover:text-gray-700 border px-2 py-1 rounded-lg"
@@ -131,13 +130,31 @@ const CartSummary: React.FC<CartSummaryProps> = ({ isOpen, onClose }) => {
         </button>
       </div>
 
+      <div className="px-4 border-t space-y-1">
+        <div className="flex justify-between">
+          <Paragraph1>Check-in Date:</Paragraph1>
+          <Paragraph1 className="text-gray-500">12/4/2025 </Paragraph1>
+        </div>
+        <div className="flex justify-between">
+          <Paragraph1>Check-out Date:</Paragraph1>
+          <Paragraph1 className="text-gray-500">12/4/2025 </Paragraph1>
+        </div>
+        <div className="flex justify-between">
+          <Paragraph1>Number of Guest:</Paragraph1>
+          <Paragraph1 className="text-gray-500">1 </Paragraph1>
+        </div>
+      </div>
       {/* Product List */}
-      <div className="p-4 relative space-y-4 overflow-y-auto h-[300px] scrollbar-hide">
+      <div className="flex justify-between px-4 pt-2">
+        <Paragraph1 className=" font-bold">Selected Apartment:</Paragraph1>
+      </div>
+      <div className="p-4 relative space-y-4 overflow-y-auto h-[200px] scrollbar-hide">
         {isloading && (
           <div className=" absolute inset-0 flex items-center justify-center bg-white bg-opacity-50 z-50">
             <div className="animate-spin rounded-full h-[100px] w-[100px] border-t-2 border-b-2 border-primary"></div>
           </div>
         )}
+
         {products.length > 0 ? (
           products.map((product) => (
             <ProductCartCard
@@ -153,8 +170,9 @@ const CartSummary: React.FC<CartSummaryProps> = ({ isOpen, onClose }) => {
       </div>
 
       {/* Summary */}
+
       <div className="p-4 border-t space-y-2">
-        <div className="flex justify-between">
+        <div className="flex justify-between ">
           <Paragraph1>Tax:</Paragraph1>
           <Paragraph1 className="text-gray-500">
             Calculated at Reservation Checkout

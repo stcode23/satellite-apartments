@@ -4,30 +4,31 @@ import { Header3, Header4, Paragraph1 } from "../Text";
 const HotLines = () => {
   const contacts = [
     {
-      title: "Sales",
+      title: "Bookings",
       description:
-        "Would you like to join the circle of GrandioseGrin Cosmetics? If yes, do well to contact us.",
+        "Have questions about availability or need assistance with making a reservation? Feel free to contact us directly.",
       phone: "+234 707 832 8640",
     },
     {
-      title: "Complaints",
+      title: "Customer Support",
       description:
-        "Feel free to reach out to us at any time if you have a complaint about any of our products or services.",
+        "For any inquiries or assistance during your stay, our dedicated support team is here for you 24/7.",
       phone: "+234 707 832 8640",
     },
     {
-      title: "Returns",
+      title: "Feedback",
       description:
-        "Do you wish to return any of our products due to a defect or inappropriate choice? Reach us via WhatsApp now.",
+        "We value your feedback! Let us know about your experience or any suggestions for improvement.",
       phone: "+234 707 832 8640",
     },
     {
-      title: "Dealership",
+      title: "Partnerships",
       description:
-        "Would you like to become a dealer with GrandioseGrin Cosmetics? Yes, do well to contact us.",
+        "Interested in partnering with us or exploring business opportunities? Get in touch today!",
       phone: "+234 707 832 8640",
     },
   ];
+
 
   return (
     <div className="bg-[#f8f5c9] py-12">

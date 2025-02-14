@@ -289,7 +289,7 @@ const FormComponent = () => {
               ) : null}
             </div>
 
-            <div className="mb-6">
+            <div className="mb-6 hidden">
               <p className="text-gray-700">
                 <ParagraphLink1 className="  text-cente font-bold ">
                   {" "}

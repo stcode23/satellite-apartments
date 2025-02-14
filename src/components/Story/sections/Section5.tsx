@@ -24,41 +24,42 @@ function Section5() {
   const faqs = [
     {
       id: 1,
-      question: "Q. What types of skincare and beauty products do you offer?",
+      question: "Q. What types of apartments do you offer?",
       answer:
-        "At GrandioseGrin, we offer a wide range of skincare and cosmetic products, including moisturizers, serums, cleansers, and makeup. Each product is crafted to support different skin types and beauty needs.",
+        "We offer a range of accommodations, including Basic Apartments, Standard Apartments, and Premium Suites, designed to cater to various needs and budgets.",
     },
     {
       id: 2,
-      question: "Q. How can I place an order?",
+      question: "Q. How can I book an apartment?",
       answer:
-        "Placing an order is simple! Browse our collection, add items to your cart, and follow the checkout process. If you have any questions, our customer support team is here to help.",
+        "Booking is easy! Enter your check-in and check-out dates, the number of guests, and let our system find available options for you. Follow the guided process to confirm your reservation.",
     },
     {
       id: 3,
-      question: "Q. How long will it take to receive my order?",
+      question: "Q. What amenities are included?",
       answer:
-        "We aim to process and ship all orders within 2-3 business days. Shipping times may vary based on your location, but you’ll receive a tracking link as soon as your order is on its way!",
+        "Our apartments come with fully equipped kitchens, comfortable beds, free Wi-Fi, flat-screen TVs, air conditioning, 24/7 front desk support, and complimentary cleaning services.",
     },
     {
       id: 4,
-      question: "Q. Can I return or exchange products?",
+      question: "Q. Is parking available on the property?",
       answer:
-        "Yes, we offer a hassle-free return and exchange policy. If you’re not completely satisfied with your purchase, contact us within 30 days to initiate a return or exchange.",
+        "Yes, we offer secure parking spaces for all our guests, ensuring the safety of your vehicle during your stay.",
     },
     {
       id: 5,
-      question: "Q. Are your products suitable for sensitive skin?",
+      question: "Q. What is the cancellation policy?",
       answer:
-        "Many of our products are designed with gentle, skin-friendly ingredients suitable for sensitive skin. Please check each product's description for specific details, and reach out if you need personalized advice.",
+        "Our cancellation policy depends on the booking terms. Please review the terms during checkout or contact our support team for details.",
     },
     {
       id: 6,
-      question: "Q. Do you offer samples or trial sizes?",
+      question: "Q. Are your apartments located near key attractions?",
       answer:
-        "Yes, we occasionally offer samples and trial sizes for select products. Keep an eye on our website or subscribe to our newsletter to stay updated on sample availability.",
+        "Yes, our apartments are situated in a quiet, accessible location, less than 30 minutes away from supermarkets, pharmacies, restaurants, schools, hospitals, and Lagos' major commercial hubs.",
     },
   ];
+
 
   return (
     <div>
@@ -69,11 +70,11 @@ function Section5() {
           data-aos="fade-up"
         >
           <Header3>
-            Frequently Asked <span className=" text-primary">Questions</span>{" "}
+            Frequently Asked <span className=" text-primary">Questions</span>
           </Header3>
-          <Paragraph1 className=" max-w-[883px] text-center ">
-            Find answers to all your questions about our skincare and beauty
-            products, ordering, and more.
+          <Paragraph1 className="max-w-[883px] text-center">
+            Get all the information you need about our apartments, booking
+            process, amenities, and more.
           </Paragraph1>
         </div>
         <div

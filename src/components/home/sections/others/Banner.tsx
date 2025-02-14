@@ -55,9 +55,9 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
 
   return (
     <div className="relative container1- flex justify-center items-center">
-      <div className="absolute z-10 p-2 sm:p-4">
-        <div className="flex - hidden- flex-col bg-primary w-full bounce-animation bg-opacity-50 sm:p-8 rounded-[20px] justify-center items-center">
-          <div className=" flex flex-col space-y-5 sm:pb-6 ">
+      <div className="absolute z-10 p-2 xl:p-4">
+        <div className="flex - hidden- flex-col bg-primary w-full bounce-animation bg-opacity-50 xl:p-8 rounded-[20px] justify-center items-center">
+          <div className=" flex flex-col space-y-5 xl:pb-6 ">
             {/* <Header3 className=" text-white">Apartments & Suites </Header3>
             <Paragraph1 className=" w-[500px]">
               Discover the perfect blend of comfort and elegance with our
@@ -81,8 +81,8 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
               and luxury. Booking your ideal stay is just a few clicks away:
               {/* ensuring a seamless and stress-free experience. */}
             </Paragraph1>{" "}
-            <div className="grid grid-cols-1 gap-4 py-4 sm:grid-cols-4 w-full items-center">
-              <div className="sm:border-r border-primary flex w-full flex-col gap-2 items-center   px-4">
+            <div className="grid grid-cols-1 gap-4 py-4 xl:grid-cols-4 w-full items-center">
+              <div className="xl:border-r border-primary flex w-full flex-col gap-2 items-center   px-4">
                 <ParagraphLink1 className="text-start font-bold">
                   Check-in
                 </ParagraphLink1>
@@ -94,7 +94,7 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
                   />
                 </div>
               </div>
-              <div className="sm:border-r border-primary flex w-full flex-col gap-2 items-center px-4">
+              <div className="xl:border-r border-primary flex w-full flex-col gap-2 items-center px-4">
                 <ParagraphLink1 className="text-start font-bold">
                   Check-out
                 </ParagraphLink1>
@@ -106,7 +106,7 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
                   />
                 </div>
               </div>
-              <div className="sm:border-r border-primary flex w-full flex-col gap-2 items-center px-4">
+              <div className="xl:border-r border-primary flex w-full flex-col gap-2 items-center px-4">
                 <ParagraphLink1 className="text-start font-bold">
                   Guest
                 </ParagraphLink1>
@@ -132,15 +132,15 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
         </div>
       </div>
 
-      <div className=" absolute sm:top-0 top-[35%] left-[0] sm:left-[200px] hidden - sm:h-full w-[full] sm:w-[400px]  bg-opacity-75 bg-white z-10">
-        <div className=" flex flex-col space-y-5 p-8 sm:pt-[100px] ">
+      <div className=" absolute xl:top-0 top-[35%] left-[0] xl:left-[200px] hidden - xl:h-full w-[full] xl:w-[400px]  bg-opacity-75 bg-white z-10">
+        <div className=" flex flex-col space-y-5 p-8 xl:pt-[100px] ">
           <Header3 className=" ">Apartments & Suites </Header3>
           <Paragraph1>
             Discover the perfect blend of comfort and elegance with our
             thoughtfully designed apartments and suites. Each space is tailored
             to provide a luxurious and relaxing experience
           </Paragraph1>{" "}
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 w-full items-center">
+          <div className="grid grid-cols-2 gap-4 xl:grid-cols-2 w-full items-center">
             <Button
               text="Book Now"
               href="/products"
@@ -159,13 +159,13 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
           </div>
         </div>
       </div>
-      <div className="w-[100%] relative sm: h-screen [550px] h-[450px]- border- border-primary- bg-p_black   rounded-lg- mx-auto overflow-hidden rou">
+      <div className="w-[100%] relative xl: h-screen [550px] h-[450px]- border- border-primary- bg-p_black   rounded-lg- mx-auto overflow-hidden rou">
         {images.map((image, index) => (
           <img
             key={index}
             src={image.src}
             alt={`Banner ${index + 1}`}
-            className={`absolute top-0 left-0 w-[100%] mx-auto sm: h-screen [550px] opacity-85 h-[450px]- object-cover transition-transform duration-500 ${
+            className={`absolute top-0 left-0 w-[100%] mx-auto xl: h-screen [550px] opacity-85 h-[450px]- object-cover transition-transform duration-500 ${
               index === currentIndex ? "translate-x-0" : "translate-x-full"
             }`}
           />
@@ -174,7 +174,7 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
       <div className="flex justify-between items-center mt-2">
         <button
           onClick={prevSlide}
-          className="absolute sm:-left-4-  - left-2 top-1/2 transform -translate-y-1/2 text-bg_gray bg-black- bg-opacity-60 p-1 font-bold rounded-full"
+          className="absolute xl:-left-4-  - left-2 top-1/2 transform -translate-y-1/2 text-bg_gray bg-black- bg-opacity-60 p-1 font-bold rounded-full"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -193,7 +193,7 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
         </button>
         <button
           onClick={nextSlide}
-          className="absolute bg-black- bg-opacity-60 - right-2 sm:-right-4- top-1/2 transform -translate-y-1/2  text-bg_gray p-1 font-bold rounded-full"
+          className="absolute bg-black- bg-opacity-60 - right-2 xl:-right-4- top-1/2 transform -translate-y-1/2  text-bg_gray p-1 font-bold rounded-full"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
