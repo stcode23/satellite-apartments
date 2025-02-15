@@ -22,6 +22,8 @@ import {
   ParagraphLink1,
   ParagraphLink2,
 } from "@/components/Text";
+import Section1 from "./Section1";
+import Section2 from "./Section2";
 
 type Product = {
   id: number;
@@ -220,6 +222,18 @@ const Checkout: React.FC<CheckoutProps> = ({
         saveInfo: true,
       });
     }
+  };
+
+  const [innerTab, setInnerTab] = useState(0);
+
+  const handleInnerNext = () => {
+    if (innerTab < 2) {
+      setInnerTab((prev) => prev + 1);
+    }
+  };
+
+  const handleInnerBack = () => {
+    setInnerTab((prev) => (prev > 0 ? prev - 1 : prev));
   };
 
   const totalBill = total + totalShippingFee;
@@ -443,213 +457,272 @@ const Checkout: React.FC<CheckoutProps> = ({
 
       {/* Information Tab */}
       {activeTab === 0 && (
-        <Formik
-          initialValues={shippingInfo}
-          validationSchema={validationSchema}
-          onSubmit={(values) => {
-            handleNext(values);
-            handleSaveInfo(values, values.saveInfo);
-          }}
-        >
-          {({ setFieldValue }) => (
-            <Form className="space-y-4 min-h-screen">
-              <div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <ParagraphLink2 className="block text-sm font-bold text-gray-700">
-                      Email
-                    </ParagraphLink2>
-                    <Field
-                      name="email"
-                      type="email"
-                      className="mt-1 block w-full p-2 border rounded-md"
-                    />
-                    <ErrorMessage
-                      name="email"
-                      component="div"
-                      className="text-red-500 text-sm"
-                    />
-                  </div>
-                  <div>
-                    <ParagraphLink2 className="block text-sm font-bold text-gray-700">
-                      Phone number
-                    </ParagraphLink2>
-                    <Field
-                      name="phoneNumber"
-                      className="mt-1 block w-full p-2 border rounded-md"
-                    />
-                    <ErrorMessage
-                      name="phoneNumber"
-                      component="div"
-                      className="text-red-500 text-sm"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <ParagraphLink2 className="block text-sm font-bold text-gray-700">
-                  Country
-                </ParagraphLink2>
-                <Field
-                  name="country"
-                  as="select"
-                  className="mt-1 block w-full p-2 border rounded-md"
-                  onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-                    handleCountryChange(
-                      e.target.value,
-                      setFieldValue,
-                      totalProductWeight
-                    )
-                  }
-                >
-                  <option value="">Select Country</option>
-                  {countries.map((country) => (
-                    <option key={country.code} value={country.code}>
-                      {country.name}
-                    </option>
-                  ))}
-                </Field>
-                <ErrorMessage
-                  name="country"
-                  component="div"
-                  className="text-red-500 text-sm"
-                />
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <ParagraphLink2 className="block text-sm font-bold text-gray-700">
-                    First Name
-                  </ParagraphLink2>
-                  <Field
-                    name="firstName"
-                    className="mt-1 block w-full p-2 border rounded-md"
-                  />
-                  <ErrorMessage
-                    name="firstName"
-                    component="div"
-                    className="text-red-500 text-sm"
-                  />
-                </div>
-                <div>
-                  <ParagraphLink2 className="block text-sm font-bold text-gray-700">
-                    Last Name
-                  </ParagraphLink2>
-                  <Field
-                    name="lastName"
-                    className="mt-1 block w-full p-2 border rounded-md"
-                  />
-                  <ErrorMessage
-                    name="lastName"
-                    component="div"
-                    className="text-red-500 text-sm"
-                  />
-                </div>
-              </div>
-              <div>
-                <ParagraphLink2 className="block text-sm font-bold text-gray-700">
-                  Address
-                </ParagraphLink2>
-                <Field
-                  name="address"
-                  className="mt-1 block w-full p-2 border rounded-md"
-                />
-                <ErrorMessage
-                  name="address"
-                  component="div"
-                  className="text-red-500 text-sm"
-                />
-              </div>
-              <div>
-                <ParagraphLink2 className="block text-sm font-bold text-gray-700">
-                  City
-                </ParagraphLink2>
-                <Field
-                  name="city"
-                  className="mt-1 block w-full p-2 border rounded-md"
-                />
-                <ErrorMessage
-                  name="city"
-                  component="div"
-                  className="text-red-500 text-sm"
-                />
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <ParagraphLink2 className="block text-sm font-bold text-gray-700">
-                    State
-                  </ParagraphLink2>
+        <div>
+          <div className="">
+            
 
-                  <Field
-                    name="state"
-                    as="select"
-                    className="mt-1 block w-full p-2 border rounded-md"
-                    onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-                      handleStateChange(
-                        e.target.value,
-                        setFieldValue,
-                        totalProductWeight
-                      )
-                    }
-                  >
-                    <option value="">Select State</option>
-                    {states.map((state) => (
-                      <option key={state.id} value={state.name}>
-                        {state.name}
-                      </option>
-                    ))}
-                  </Field>
-                  <ErrorMessage
-                    name="state"
-                    component="div"
-                    className="text-red-500 text-sm"
-                  />
-                </div>
+            {/* Inner Tab Content */}
+            <div className="">
+              {innerTab === 0 && (
                 <div>
-                  <ParagraphLink2 className="block text-sm font-bold text-gray-700">
-                    Zip Code
-                  </ParagraphLink2>
-                  <Field
-                    name="zipCode"
-                    className="mt-1 block w-full p-2 border rounded-md"
-                  />
-                  {/* <ErrorMessage
+                  <Section1 />
+                </div>
+              )}
+              {innerTab === 1 && (
+                <div>
+                  <Section2 />
+                </div>
+              )}
+              {innerTab === 2 && (
+                <div>
+                  {" "}
+                  <Formik
+                    initialValues={shippingInfo}
+                    validationSchema={validationSchema}
+                    onSubmit={(values) => {
+                      handleNext(values);
+                      handleSaveInfo(values, values.saveInfo);
+                    }}
+                  >
+                    {({ setFieldValue }) => (
+                      <Form className="space-y-4 min-h-screen">
+                        <div>
+                          <div className="grid grid-cols-2 gap-4">
+                            <div>
+                              <ParagraphLink2 className="block text-sm font-bold text-gray-700">
+                                Email
+                              </ParagraphLink2>
+                              <Field
+                                name="email"
+                                type="email"
+                                className="mt-1 block w-full p-2 border rounded-md"
+                              />
+                              <ErrorMessage
+                                name="email"
+                                component="div"
+                                className="text-red-500 text-sm"
+                              />
+                            </div>
+                            <div>
+                              <ParagraphLink2 className="block text-sm font-bold text-gray-700">
+                                Phone number
+                              </ParagraphLink2>
+                              <Field
+                                name="phoneNumber"
+                                className="mt-1 block w-full p-2 border rounded-md"
+                              />
+                              <ErrorMessage
+                                name="phoneNumber"
+                                component="div"
+                                className="text-red-500 text-sm"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <ParagraphLink2 className="block text-sm font-bold text-gray-700">
+                            Country
+                          </ParagraphLink2>
+                          <Field
+                            name="country"
+                            as="select"
+                            className="mt-1 block w-full p-2 border rounded-md"
+                            onChange={(
+                              e: React.ChangeEvent<HTMLSelectElement>
+                            ) =>
+                              handleCountryChange(
+                                e.target.value,
+                                setFieldValue,
+                                totalProductWeight
+                              )
+                            }
+                          >
+                            <option value="">Select Country</option>
+                            {countries.map((country) => (
+                              <option key={country.code} value={country.code}>
+                                {country.name}
+                              </option>
+                            ))}
+                          </Field>
+                          <ErrorMessage
+                            name="country"
+                            component="div"
+                            className="text-red-500 text-sm"
+                          />
+                        </div>
+                        <div className="grid grid-cols-2 gap-4">
+                          <div>
+                            <ParagraphLink2 className="block text-sm font-bold text-gray-700">
+                              First Name
+                            </ParagraphLink2>
+                            <Field
+                              name="firstName"
+                              className="mt-1 block w-full p-2 border rounded-md"
+                            />
+                            <ErrorMessage
+                              name="firstName"
+                              component="div"
+                              className="text-red-500 text-sm"
+                            />
+                          </div>
+                          <div>
+                            <ParagraphLink2 className="block text-sm font-bold text-gray-700">
+                              Last Name
+                            </ParagraphLink2>
+                            <Field
+                              name="lastName"
+                              className="mt-1 block w-full p-2 border rounded-md"
+                            />
+                            <ErrorMessage
+                              name="lastName"
+                              component="div"
+                              className="text-red-500 text-sm"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <ParagraphLink2 className="block text-sm font-bold text-gray-700">
+                            Address
+                          </ParagraphLink2>
+                          <Field
+                            name="address"
+                            className="mt-1 block w-full p-2 border rounded-md"
+                          />
+                          <ErrorMessage
+                            name="address"
+                            component="div"
+                            className="text-red-500 text-sm"
+                          />
+                        </div>
+                        <div>
+                          <ParagraphLink2 className="block text-sm font-bold text-gray-700">
+                            City
+                          </ParagraphLink2>
+                          <Field
+                            name="city"
+                            className="mt-1 block w-full p-2 border rounded-md"
+                          />
+                          <ErrorMessage
+                            name="city"
+                            component="div"
+                            className="text-red-500 text-sm"
+                          />
+                        </div>
+                        <div className="grid grid-cols-2 gap-4">
+                          <div>
+                            <ParagraphLink2 className="block text-sm font-bold text-gray-700">
+                              State
+                            </ParagraphLink2>
+
+                            <Field
+                              name="state"
+                              as="select"
+                              className="mt-1 block w-full p-2 border rounded-md"
+                              onChange={(
+                                e: React.ChangeEvent<HTMLSelectElement>
+                              ) =>
+                                handleStateChange(
+                                  e.target.value,
+                                  setFieldValue,
+                                  totalProductWeight
+                                )
+                              }
+                            >
+                              <option value="">Select State</option>
+                              {states.map((state) => (
+                                <option key={state.id} value={state.name}>
+                                  {state.name}
+                                </option>
+                              ))}
+                            </Field>
+                            <ErrorMessage
+                              name="state"
+                              component="div"
+                              className="text-red-500 text-sm"
+                            />
+                          </div>
+                          <div>
+                            <ParagraphLink2 className="block text-sm font-bold text-gray-700">
+                              Zip Code
+                            </ParagraphLink2>
+                            <Field
+                              name="zipCode"
+                              className="mt-1 block w-full p-2 border rounded-md"
+                            />
+                            {/* <ErrorMessage
                     name="zipCode"
                     component="div"
                     className="text-red-500 text-sm"
                   /> */}
-                </div>
-              </div>
-              <div className="flex items-center gap-2 text-[12px] ">
-                <Field
-                  type="checkbox"
-                  name="saveInfo"
-                  // className="mr-2"
-                  className="form-checkbox min-h-4 min-w-4 text-orange-500 appearance-none checked:bg-primary checked:border-transparent focus:outline-none border border-primary rounded checked:after:content-['✓'] checked:after:text-white checked:after:text-xs checked:after:flex checked:after:justify-center"
-                />
-                <ParagraphLink2>
-                  Save this information for next time
-                </ParagraphLink2>
-              </div>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2 text-[12px] ">
+                          <Field
+                            type="checkbox"
+                            name="saveInfo"
+                            // className="mr-2"
+                            className="form-checkbox min-h-4 min-w-4 text-orange-500 appearance-none checked:bg-primary checked:border-transparent focus:outline-none border border-primary rounded checked:after:content-['✓'] checked:after:text-white checked:after:text-xs checked:after:flex checked:after:justify-center"
+                          />
+                          <ParagraphLink2>
+                            Save this information for next time
+                          </ParagraphLink2>
+                        </div>
 
-              <div>
-                <ParagraphLink2 className="block text-sm font-bold text-gray-700">
-                  Message/Note
-                </ParagraphLink2>
-                <Field
-                  name="note"
-                  className="mt-1 block w-full p-2 border rounded-md"
-                  placeholder="Add a message or ask for product advice, or write a note for your friend if this is a gift..."
-                />
-              </div>
+                        <div>
+                          <ParagraphLink2 className="block text-sm font-bold text-gray-700">
+                            Message/Note
+                          </ParagraphLink2>
+                          <Field
+                            name="note"
+                            className="mt-1 block w-full p-2 border rounded-md"
+                            placeholder="Add a message or ask for product advice, or write a note for your friend if this is a gift..."
+                          />
+                        </div>
+                        <button
+                          type="submit"
+                          className="w-full font-bold bg-primary text-white py-2 rounded-md hover:bg-black "
+                        >
+                          <ParagraphLink2>Next</ParagraphLink2>
+                        </button>
+                      </Form>
+                    )}
+                  </Formik>
+                </div>
+              )}
+            </div>
+
+            {/* Navigation Buttons */}
+            <div className="mt-4 flex gap-4">
               <button
-                type="submit"
-                className="w-full font-bold bg-primary text-white py-2 rounded-md hover:bg-black "
+                className="p-2 bg-gray-300 rounded disabled:opacity-50"
+                onClick={handleInnerBack}
+                disabled={innerTab === 0}
               >
-                <ParagraphLink2>Next</ParagraphLink2>
+                Back
               </button>
-            </Form>
-          )}
-        </Formik>
+
+              {/* Show handleInnerNext for inner tabs 1 & 2 */}
+              {innerTab < 2 && (
+                <button
+                  className="p-2 bg-blue-500 text-white rounded"
+                  onClick={handleInnerNext}
+                >
+                  Next
+                </button>
+              )}
+
+              {/* Show handleNext on the last inner tab */}
+              {innerTab === 2 && (
+                <button
+                  className="p-2 bg-green-500 text-white rounded"
+                  // onClick={handleNext}
+                >
+                  Go to Tab 2
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
       )}
 
       {/* Payment Tab */}

@@ -30,23 +30,23 @@ const ProductCartCard: React.FC<ProductCartCardProps> = ({
 
   return (
     <div className="flex relative justify-between items-start bg-white p-2  rounded-lg">
-      <div className="flex gap-2 items-center">
+      <div className="flex flex-col gap-2 items-center">
         <img
           src={product.productImageURL1.replace(
             "/upload/",
             "/upload/w_100,f_auto/"
           )}
           alt={product.name}
-          className="w-26 h-26 object-cover rounded"
+          className="w-full h-[100px] object-cover bg-gray-100 rounded"
         />
         <div className=" space-y-1">
-          <ParagraphLink2 className="font-bold truncate overflow-hidden whitespace-nowrap w-[150px]">
+          <ParagraphLink2 className="font-bold truncate overflow-hidden whitespace-nowra-p w-[150px]-">
             {product.name}
           </ParagraphLink2>
           <Paragraph2 className=" whitespace-nowrap">
             {`${currencySymbol} ${new Intl.NumberFormat("en-US").format(
               Number(formattedPrice * product.quantity)
-            )}`} 
+            )}`} per day
           </Paragraph2>
           <div className=" flex- items-center gap-2 pb-4 hidden">
             <img
@@ -75,7 +75,7 @@ const ProductCartCard: React.FC<ProductCartCardProps> = ({
               alt=""
             />
           </div>
-          <div className="flex gap-4 items-center hidden-">
+          <div className="flex gap-4 items-center hidden -">
             <Paragraph2 className="text-gray-500">Days:</Paragraph2>
             <div className="flex gap-4 items-center justify-between border rounded-lg px-4">
               <button
@@ -95,10 +95,10 @@ const ProductCartCard: React.FC<ProductCartCardProps> = ({
           </div>
         </div>
       </div>
-      <div>
+      <div className="hidden">
         <button
           onClick={() => onRemove(product.id)}
-          className="absolute right-4 top-4 text-[12px] text-gray-500"
+          className="absolute right-4  top-4 text-[12px] text-gray-500"
         >
           &#x2715;
         </button>

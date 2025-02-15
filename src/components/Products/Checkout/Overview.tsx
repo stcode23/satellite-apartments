@@ -114,7 +114,7 @@ const CheckOutOverview = () => {
 
   // Calculate total product weight
   const totalProductWeight = products.reduce(
-    (total, product) => total + product.productWeight  * product.quantity,
+    (total, product) => total + product.productWeight * product.quantity,
     0
   );
 
@@ -172,16 +172,18 @@ const CheckOutOverview = () => {
 
   return (
     <div>
-      <div className="container1  py-[100px]">
-        <Header4 className=" mb-4">Checkout</Header4>
-        <div className=" grid grid-cols-1 sm:grid-cols-5 gap-8 bg-white  rounded-lg">
+      <div className="container1  py-[120px]">
+        <Header4 className=" mb-4">Reservation</Header4>
+        <div className=" grid grid-cols-1 sm:grid-cols-12 gap-8 bg-white  rounded-lg">
           <div className="block sm:hidden">
             <div className=" flex justify-between bg-bg_gray p-2 px-2 rounded-lg items-center ">
               <button
                 onClick={toggleSummary}
                 className=" flex gap-1 items-center text-[12px] text-primary "
               >
-                {isSummaryVisible ? "Hide order summary" : "Show order summary"}{" "}
+                {isSummaryVisible
+                  ? "Hide booking summary"
+                  : "Show booking summary"}{" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -216,6 +218,28 @@ const CheckOutOverview = () => {
               <div className=" space-y-2 mt-4">
                 {/* Products list */}
                 <div className="space-y-4 overflow-y-auto bg-bg_gray p-2 rounded-lg h-[300px] scrollbar-hide">
+                  <div className="px-4- border-t space-y-1">
+                    <div className="flex justify-between">
+                      <Paragraph1>Check-in Date:</Paragraph1>
+                      <Paragraph1 className="text-gray-500">
+                        12/4/2025{" "}
+                      </Paragraph1>
+                    </div>
+                    <div className="flex justify-between">
+                      <Paragraph1>Check-out Date:</Paragraph1>
+                      <Paragraph1 className="text-gray-500">
+                        12/4/2025{" "}
+                      </Paragraph1>
+                    </div>
+                    <div className="flex justify-between">
+                      <Paragraph1>Number of Guest:</Paragraph1>
+                      <Paragraph1 className="text-gray-500">1 </Paragraph1>
+                    </div>
+
+                    <div className="flex justify-between">
+                      <Paragraph1 className=" font-bold">Selected Apartment:</Paragraph1>
+                    </div>
+                  </div>
                   {products.length > 0 ? (
                     products.map((product) => (
                       <ProductCartCard
@@ -263,7 +287,7 @@ const CheckOutOverview = () => {
           </div>
 
           {/* Right section - Product Images */}
-          <div className=" sm:col-span-3">
+          <div className=" xl:col-span-8">
             <div className=" sm:p-4 bg-bg_gray rounded-lg">
               <Checkout
                 products={products}
@@ -277,9 +301,28 @@ const CheckOutOverview = () => {
           </div>
 
           {/* Left section - Product Details */}
-          <div className="sm:col-span-2 hidden sm:block">
-            <div className=" bg-bg_gray rounded-lg p-4">
-              <div className=" space-y-4 overflow-y-auto h-[300px]  rounded-lg scrollbar-hide">
+          <div className="sm:col-span-4 hidden sm:block">
+            <div className=" bg- bg_gray border rounded-lg p-4">
+              <div className="px-4- border-t- space-y-1">
+                <div className="flex justify-between">
+                  <Paragraph1>Check-in Date:</Paragraph1>
+                  <Paragraph1 className="text-gray-500">12/4/2025 </Paragraph1>
+                </div>
+                <div className="flex justify-between">
+                  <Paragraph1>Check-out Date:</Paragraph1>
+                  <Paragraph1 className="text-gray-500">12/4/2025 </Paragraph1>
+                </div>
+                <div className="flex justify-between">
+                  <Paragraph1>Number of Guest:</Paragraph1>
+                  <Paragraph1 className="text-gray-500">1 </Paragraph1>
+                </div>
+                <div className="flex justify-between  pt-2">
+                  <Paragraph1 className=" font-bold">
+                    Selected Apartment:
+                  </Paragraph1>
+                </div>
+              </div>
+              <div className=" space-y-4 overflow-y-auto h-[200px] bg-bg_gray p-2  rounded-lg scrollbar-hide">
                 {products.length > 0 ? (
                   products.map((product) => (
                     <ProductCartCard
@@ -328,7 +371,7 @@ const CheckOutOverview = () => {
           </div>
         </div>
       </div>
-      <Section6 />
+      {/* <Section6 /> */}
     </div>
   );
 };

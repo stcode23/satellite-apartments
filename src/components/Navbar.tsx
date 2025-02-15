@@ -84,14 +84,16 @@ function Navbar() {
                   Home
                 </ParagraphLink1>
               </Link>
-              <Link href="/products">
+              <Link href="/reservation/checkout">
                 {" "}
                 <ParagraphLink1
                   className={
-                    pathname === "/products" ? "text-primary font-bold " : "  "
+                    pathname === "/reservation/checkout"
+                      ? "text-primary font-bold "
+                      : "  "
                   }
                 >
-                  Apartments & Suites
+                  Make a Reservation
                 </ParagraphLink1>
               </Link>
 
@@ -130,10 +132,10 @@ function Navbar() {
               </Link>
 
               {/* <SearchBar toggleMenu={toggleMenu} /> */}
-              <CurrencySwitcher />
             </div>
+            <CurrencySwitcher />
 
-            <div
+            {/* <div
               onClick={() => toggleCart()}
               className=" border rounded-lg p-2 cursor-pointer flex relative "
             >
@@ -155,9 +157,9 @@ function Navbar() {
               <div className=" absolute -top-2 -right-4 bg-primary p-1 px-2 text-white text-[10px] rounded-full">
                 {cartCount > 0 ? cartCount : 0}
               </div>
-            </div>
+            </div> */}
 
-            <CartSummary isOpen={cartOpen} onClose={() => toggleCart()} />
+            {/* <CartSummary isOpen={cartOpen} onClose={() => toggleCart()} /> */}
           </div>
 
           {/* mobile dropdown */}
@@ -173,16 +175,16 @@ function Navbar() {
                     Home
                   </ParagraphLink1>
                 </Link>
-                <Link href="/products" onClick={toggleMenu}>
+                <Link href="/reservation/checkout" onClick={toggleMenu}>
                   {" "}
                   <ParagraphLink1
                     className={
-                      pathname === "/products"
+                      pathname === "/reservation/checkout"
                         ? "text-primary font-bold "
                         : "  "
                     }
                   >
-                    Apartments & Suites
+                    Make a Reservation
                   </ParagraphLink1>
                 </Link>
                 <Link href="/about-us" onClick={toggleMenu}>
@@ -220,7 +222,7 @@ function Navbar() {
                     Contact us
                   </ParagraphLink1>
                 </Link>
-                <CurrencySwitcher />
+                {/* <CurrencySwitcher /> */}
                 {/* <SearchBar toggleMenu={toggleMenu} /> */}
               </div>{" "}
             </div>

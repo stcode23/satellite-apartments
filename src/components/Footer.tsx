@@ -18,9 +18,9 @@ function Footer() {
   return (
     <div
       className={
-        ["/products", "/blog"].includes(pathname)
+        ["/reservation", "/blog", "/reservation/checkout"].includes(pathname)
           ? "bg-bg_gray hidden sm:py-[100px]-"
-          : " bg-white sm:py-[100px]-"
+          : " bg-white  sm:py-[100px]-"
       }
     >
       <div className="  bg-bg_gray [#4A4A4A]  ">
@@ -65,11 +65,11 @@ function Footer() {
                   About
                 </ParagraphLink2>
               </Link>
-              <Link href="/products">
+              <Link href="/reservation">
                 {" "}
                 <ParagraphLink2
                   className={
-                    pathname === "/products"
+                    pathname === "/reservation"
                       ? "text-[#ECECEC]- font-bold- "
                       : " text-[#ECECEC]- "
                   }
@@ -216,7 +216,7 @@ function Footer() {
                   About{" "}
                 </ParagraphLink2>
               </Link>
-              <Link href="/products">
+              <Link href="/reservation">
                 {" "}
                 <ParagraphLink2 className=" text-[#ECECEC]- ">
                   Apartments & Suites
