@@ -4,7 +4,14 @@ import React, { useState } from "react";
 import { auth } from "@/lib/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/navigation";
-import { Header1, Header2, Header3, Paragraph1, Paragraph2, ParagraphLink1 } from "@/components/Text";
+import {
+  Header1,
+  Header2,
+  Header3,
+  Paragraph1,
+  Paragraph2,
+  ParagraphLink1,
+} from "@/components/Text";
 import Link from "next/link";
 
 function LoginForm() {
@@ -46,7 +53,7 @@ function LoginForm() {
             {" "}
             <Header3 className=" mb-2">Hello Admin!</Header3>
             <Paragraph1 className=" font-bold- mb-6">
-              Login to your dashboard to see new orders and form submissions.
+              Login to your dashboard to see new reservations and form submissions.
             </Paragraph1>
             <div className=" flex flex-col gap-[18px] ">
               <div>

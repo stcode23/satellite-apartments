@@ -63,33 +63,41 @@ function SummaryBlocks() {
   return (
     <div>
       <div>
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-4">
-          <div className="col-span-1">
-            <div className="w-full bg-white rounded-lg p-6 border-b-4 border-secondary">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+          <div className="col-span-1 hidden">
+            <div className="w-full bg-white  rounded-lg p-6 shadow-lg-">
               {/* Total revenue */}
               <HeaderAny>Total Revenue</HeaderAny>
-              <HeaderAny className="text-black text">₦ {totalRevenue.toLocaleString()}</HeaderAny>
+              <HeaderAny className="text-black text">
+                ₦ {totalRevenue.toLocaleString()}
+              </HeaderAny>
             </div>
           </div>
-          <div className="hidden sm:block col-span-1">
-            <div className="w-full bg-white rounded-lg p-6 border-b-4 border-secondary">
+          <div className="hidden- sm:block col-span-1">
+            <div className="w-full bg-white rounded-lg p-6 shadow-lg-">
               {/* Total products sold */}
-              <HeaderAny>Total Products Sold</HeaderAny>
-              <HeaderAny className="text-black">{totalProductsSold.toLocaleString()}</HeaderAny>
+              <HeaderAny>Total Bookings</HeaderAny>
+              <HeaderAny className="text-black">
+                {totalProductsSold.toLocaleString()}
+              </HeaderAny>
             </div>
           </div>
           <div className="hidden sm:block col-span-1">
-            <div className="w-full bg-white rounded-lg p-6 border-b-4 border-secondary">
+            <div className="w-full bg-white rounded-lg p-6 shadow-lg-">
               {/* Available products */}
-              <HeaderAny>Available Product</HeaderAny>
-              <HeaderAny className="text-black">{availableProducts.toLocaleString()}</HeaderAny>
+              <HeaderAny>Current Occupancy</HeaderAny>
+              <HeaderAny className="text-black">
+                {availableProducts.toLocaleString()}
+              </HeaderAny>
             </div>
           </div>
           <div className="col-span-1">
-            <div className="w-full bg-white rounded-lg p-6 border-b-4 border-secondary">
+            <div className="w-full bg-white rounded-lg p-6 shadow-lg-">
               {/* Pending orders */}
-              <HeaderAny>Pending Order</HeaderAny>
-              <HeaderAny className="text-black">{pendingOrders.toLocaleString()}</HeaderAny>
+              <HeaderAny>Upcoming Check-ins</HeaderAny>
+              <HeaderAny className="text-black">
+                {pendingOrders.toLocaleString()}
+              </HeaderAny>
             </div>
           </div>
         </div>

@@ -57,7 +57,7 @@ const SearchBar: React.FC<SearchInputProps> = ({ orders, onSearchResults }) => {
         type="text"
         value={searchTerm}
         onChange={handleChange}
-        placeholder="Search orders (name, email, address...)"
+        placeholder="Search for Reservation (Id, name, email, address...)"
         className="w-full outline-none text-gray-600 placeholder-gray-400"
       />
     </div>

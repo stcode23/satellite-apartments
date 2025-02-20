@@ -584,7 +584,7 @@ function NewOrders() {
                   </div>
                 </div>
                 <div className=" h-screen space-y-4 overflow-y-auto scrollable-div px-2 ">
-                  <Header5 className="pt-3">New Orders</Header5>
+                  <Header5 className="pt-3">New Reservations</Header5>
 
                   {filteredOrders.map((order, index) => (
                     <div

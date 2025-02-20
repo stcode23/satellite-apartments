@@ -57,7 +57,7 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
     <div className="relative container1- flex justify-center items-center">
       <div className="absolute z-10 p-2 xl:p-4">
         <div className="flex - hidden- flex-col bg-primary w-full bounce-animation bg-opacity-50 xl:p-8 rounded-[20px] justify-center items-center">
-          <div className=" flex flex-col space-y-5 xl:pb-6 ">
+          <div className=" flex flex-col space-y-5 xl:pb-6- ">
             {/* <Header3 className=" text-white">Apartments & Suites </Header3>
             <Paragraph1 className=" w-[500px]">
               Discover the perfect blend of comfort and elegance with our
@@ -81,8 +81,8 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
               and luxury. Booking your ideal stay is just a few clicks away:
               {/* ensuring a seamless and stress-free experience. */}
             </Paragraph1>{" "}
-            <div className="grid grid-cols-1 gap-4 py-4 xl:grid-cols-4 w-full items-center">
-              <div className="xl:border-r border-primary flex w-full flex-col gap-2 items-center   px-4">
+            <div className="grid grid-cols-2 gap-4 py-4 xl:grid-cols-4 w-full items-center">
+              <div className="xl:border-r border-primary flex w-full flex-col gap-2 items-center p-4">
                 <ParagraphLink1 className="text-start font-bold">
                   Check-in
                 </ParagraphLink1>
@@ -94,7 +94,7 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
                   />
                 </div>
               </div>
-              <div className="xl:border-r border-primary flex w-full flex-col gap-2 items-center px-4">
+              <div className="xl:border-r border-primary flex w-full flex-col gap-2 items-center p-4">
                 <ParagraphLink1 className="text-start font-bold">
                   Check-out
                 </ParagraphLink1>
@@ -106,7 +106,7 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
                   />
                 </div>
               </div>
-              <div className="xl:border-r border-primary flex w-full flex-col gap-2 items-center px-4">
+              <div className="xl:border-r border-primary flex w-full flex-col gap-2 items-center p-4">
                 <ParagraphLink1 className="text-start font-bold">
                   Guest
                 </ParagraphLink1>
@@ -118,15 +118,27 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
                   />
                 </div>
               </div>
-              <div className="px-4">
-                <Button
-                  text="Check Availability"
-                  href="/products"
-                  isLink={true}
-                  border="border-2 border-primary"
-                  additionalClasses="border-primary xl:w-fit flex justify-center w-full"
-                />
+              <div className="xl:border-r- border-primary flex w-full flex-col gap-2 items-center p-4">
+                <ParagraphLink1 className="text-start font-bold">
+                  Apartment Type
+                </ParagraphLink1>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Number of guests"
+                    className=" bg-white bg-opacity-50 p-2 rounded-lg text-center outline-none"
+                  />
+                </div>
               </div>
+            </div>
+            <div className="px-4">
+              <Button
+                text="Check Availability"
+                href="/products"
+                isLink={true}
+                border="border-2- border-primary-"
+                additionalClasses="border-primary xl:w-fit flex justify-center w-full"
+              />
             </div>
           </div>
         </div>

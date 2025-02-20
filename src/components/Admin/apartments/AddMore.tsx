@@ -21,20 +21,7 @@ type ProductValues = {
   productImagePublicId4?: string;
   productImageURL5: string;
   productImagePublicId5?: string;
-  currentPrice: number;
-  oldPrice: number;
-  availableAmount: number;
-  productWeight: number;
   category: string;
-  selectedCategory: any;
-  sub_category: string;
-  selectedSubCategory: any;
-  description: string;
-  isFeatured: boolean;
-  isTrending: boolean;
-  isElite: boolean;
-  isSpecial: boolean;
-  isBudget: boolean;
 };
 
 const initialValues: ProductValues = {
@@ -49,20 +36,7 @@ const initialValues: ProductValues = {
   productImagePublicId4: "",
   productImageURL5: "",
   productImagePublicId5: "",
-  currentPrice: 0,
-  oldPrice: 0,
-  availableAmount: 0,
-  productWeight: 0,
   category: "",
-  selectedCategory: {},
-  sub_category: "",
-  selectedSubCategory: {},
-  description: "",
-  isFeatured: false,
-  isTrending: false,
-  isElite: false,
-  isSpecial: false,
-  isBudget: false,
 };
 
 interface Category {
