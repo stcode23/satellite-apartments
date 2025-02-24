@@ -63,7 +63,7 @@ export const metadata: Metadata = {
       "https://res.cloudinary.com/dtipo8fg3/image/upload/v1731517338/istockphoto-637324230-612x612_gzcdkm.jpg",
   },
 };
-
+sdfghjkl
 export default function RootLayout({
   children,
 }: Readonly<{

@@ -12,6 +12,7 @@ import CategorySelector from "./CategorySelector";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import SearchBar from "./SearchBar";
+import TodayDate from "./TodayDate";
 
 interface Product {
   id: string;
@@ -141,7 +142,7 @@ function ProductSections() {
           (product) => product.availableAmount > 0
         );
         break;
-       case "Out of Stock":
+      case "Out of Stock":
         setLoading(true);
         filteredProducts = filteredProducts.filter(
           (product) => product.availableAmount <= 0
@@ -164,18 +165,16 @@ function ProductSections() {
     setLoading(false);
   }, [selectedCategory, activeFilter, products]);
 
-
-   useEffect(() => {
-     if (searchQuery) {
-       const filteredProducts = products.filter((product) =>
-         product.name.toLowerCase().includes(searchQuery.toLowerCase())
-       );
-       setDisplayedProducts(filteredProducts);
-     } else {
-       setDisplayedProducts(products);
-     }
-   }, [searchQuery, products]);
-  
+  useEffect(() => {
+    if (searchQuery) {
+      const filteredProducts = products.filter((product) =>
+        product.name.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setDisplayedProducts(filteredProducts);
+    } else {
+      setDisplayedProducts(products);
+    }
+  }, [searchQuery, products]);
 
   const filters = [
     "All",
@@ -188,10 +187,10 @@ function ProductSections() {
     "Low Stock",
   ];
 
-   const handleRefetch = () => {
-     setLoading(true); // Optionally show loading indicator
-     setRefetch((prev) => !prev); // Toggle refetch state to trigger useEffect
-   };
+  const handleRefetch = () => {
+    setLoading(true); // Optionally show loading indicator
+    setRefetch((prev) => !prev); // Toggle refetch state to trigger useEffect
+  };
 
   if (loading)
     return (
@@ -230,8 +229,8 @@ function ProductSections() {
                     </span>
                   </ParagraphLink1>
                 </div>
-                <ParagraphLink1>Today, 12th October 2025</ParagraphLink1>
-                <div className=" flex gap-2 items-center">
+                <TodayDate />
+                <div className=" hidden flex- gap-2 items-center">
                   {/* <CategoryEditor onRefetch={refetch} /> */}
                   <SearchBar />
 

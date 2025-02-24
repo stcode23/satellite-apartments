@@ -24,7 +24,7 @@ type Product = {
   initials: string;
   name: string;
   productImageURL1: string;
-  quantity: number;
+  selectedCategory: any;
   price: number;
   TotalPaid: any;
 };
@@ -78,7 +78,7 @@ function NewOrders() {
             id: doc.id,
             name: `${doc.data().firstName} ${doc.data().lastName}`,
             initials: doc.data().firstName[0] + doc.data().lastName[0], // Assuming you have firstName and lastName in your form
-            products: data.products || [],
+            products: data.selectedApartments || [],
             quantity: products.reduce(
               (total: any, product: any) => total + (product.quantity || 0),
               0
@@ -330,48 +330,34 @@ function NewOrders() {
                           alt={product.name}
                           className="w-16 h-16 object-cover rounded"
                         />
-                        <ParagraphLink2 className="font-bold text-[14px] col-span-2 ">
-                          {product.name}
-                        </ParagraphLink2>
-                        <Paragraph1 className="text-gray-500 ">
-                          ₦{" "}
-                          {new Intl.NumberFormat("en-US", {}).format(
-                            Number(product.price)
-                          )}{" "}
-                        </Paragraph1>
-                        <Paragraph1 className="text-gray-500 ">
-                          Qt: {product.quantity}
-                        </Paragraph1>
-                        <div>
-                          <Paragraph1 className="font-bold">
-                            ₦{" "}
-                            {new Intl.NumberFormat("en-US", {}).format(
-                              Number(product.price * product.quantity)
-                            )}{" "}
-                          </Paragraph1>
+                        <div className=" flex flex-col gap-2">
+                          <Paragraph2 className=" font-bold  w-[150px]-">
+                            No. {product.name}
+                          </Paragraph2>
                         </div>
+                        <ParagraphLink2 className="font-bold text-[14px] col-span-2 ">
+                          {product.selectedCategory.name}
+                        </ParagraphLink2>
+                        <p className="text-gray-500 ">
+                          ₦{" "}
+                          {new Intl.NumberFormat("en-US").format(
+                            Number(product.selectedCategory.price)
+                          )}
+                        </p>
+          
+                      
                       </div>
                     ))}
                     <div className=" grid grid-cols-1 xl:grid-cols-2 items-center gap-4 sm:gap-[20px] ">
                       <div>
-                        <ParagraphLink2 className="  text-[14px] font-bold ">
-                          Shipping Fee
-                        </ParagraphLink2>
-                        <div className=" p-4 bg-white rounded-[12px]">
-                          <p className=" text-[14px] ">
-                            ₦{" "}
-                            {new Intl.NumberFormat("en-US", {}).format(
-                              Number(selectedOrder.shippingFee)
-                            )}{" "}
-                          </p>
-                        </div>
+                        {/*  */}
                       </div>
                       <div>
                         <ParagraphLink2 className="  text-[14px] font-bold ">
                           Total Paid
                         </ParagraphLink2>
                         <div className=" p-4 bg-white rounded-[12px] border-b border-secondary">
-                          <p className=" text-[14px] ">
+                          <p className=" text-[14px] font-bold ">
                             ₦{" "}
                             {new Intl.NumberFormat("en-US", {}).format(
                               Number(selectedOrder.totalPaid)

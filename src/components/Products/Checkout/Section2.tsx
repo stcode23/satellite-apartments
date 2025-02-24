@@ -1,76 +1,183 @@
-"use client";
-
-import React from "react";
-import { Paragraph1, Paragraph2 } from "../../Text";
+import React, { useState, useEffect } from "react";
+import { Paragraph1, ParagraphLink2 } from "../../Text";
 import { useExchangeRateStore } from "@/stores/exchangeRateStore";
+import useBookingStore from "@/stores/useBookingStore";
+import { db } from "@/lib/firebase";
+import { collection, getDocs } from "firebase/firestore";
+import ProductCard from "./ProductCard";
 
-function Section2() {
+interface Apartment {
+  id: string;
+  name: string;
+  productImageURL1: string;
+  selectedCategory?: {
+    name: string;
+    price: number;
+  };
+  BookedDays?: string[]; // Fetch booked days from Firestore
+}
+
+function Section2({
+  handleInnerBack,
+  handleInnerNext,
+}: {
+  handleInnerBack: () => void;
+  handleInnerNext: () => void;
+}) {
   const { selectedCurrency, exchangeRate } = useExchangeRateStore();
+  const { period, apartmentType, guests, setSelectedApartments } =
+    useBookingStore();
+  const [availableApartments, setAvailableApartments] = useState<Apartment[]>(
+    []
+  );
+  const [currentIndices, setCurrentIndices] = useState<number[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const price = 30000;
-  const currencySymbol = selectedCurrency === "USD" ? "$" : "₦";
-  const displayPrice =
-    selectedCurrency === "USD" && exchangeRate > 0
-      ? price / exchangeRate // Convert to USD
-      : price; // Default to NGN
+  useEffect(() => {
+    const fetchAvailableApartments = async () => {
+      try {
+        setLoading(true);
+        setError(null);
 
-  const formattedPrice =
-    selectedCurrency === "USD"
-      ? displayPrice.toFixed(2) // Format for USD with 2 decimal places
-      : new Intl.NumberFormat("en-NG").format(displayPrice); // Format for NGN (comma-separated)
+        const querySnapshot = await getDocs(collection(db, "products"));
+        const productsData: Apartment[] = querySnapshot.docs.map(
+          (doc) => ({ id: doc.id, ...doc.data() } as Apartment)
+        );
+
+        // Filter apartments based on availability
+        const filteredApartments = productsData.filter((apartment) => {
+          const categoryMatch =
+            apartment.selectedCategory?.name === apartmentType;
+          const isAvailable =
+            !apartment.BookedDays ||
+            apartment.BookedDays.every((date) => !period.includes(date)); // Check if selected dates are available
+
+          return categoryMatch && isAvailable;
+        });
+
+        if (filteredApartments.length === 0) {
+          setError(
+            "The selected dates are unavailable. Please choose different dates."
+          );
+        }
+
+        // Ensure enough apartments for the number of guests
+        const maxGuestsPerApartment = 2;
+        const requiredApartments = Math.ceil(
+          Number(guests) / maxGuestsPerApartment
+        );
+
+        if (filteredApartments.length < requiredApartments) {
+          setError(
+            `Not enough apartments available for ${guests} guests. Please adjust your selection.`
+          );
+        }
+
+        setAvailableApartments(filteredApartments);
+
+        // Initialize with unique random indices
+        const totalCards = Math.min(
+          filteredApartments.length,
+          requiredApartments
+        );
+        setCurrentIndices(
+          generateUniqueIndices(filteredApartments.length, totalCards)
+        );
+      } catch (error) {
+        console.error("Error fetching apartments:", error);
+        setError("Failed to load apartments. Please try again.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (apartmentType && period.length) {
+      fetchAvailableApartments();
+    } else {
+      setLoading(false);
+    }
+  }, [apartmentType, period, guests]);
+
+  const generateUniqueIndices = (max: number, count: number) => {
+    const indices = new Set<number>();
+    while (indices.size < count) {
+      indices.add(Math.floor(Math.random() * max));
+    }
+    return Array.from(indices);
+  };
+
+  const handleNextApartment = (index: number) => {
+    setCurrentIndices((prevIndices) => {
+      const usedIndices = new Set(prevIndices);
+      let nextIndex = (prevIndices[index] + 1) % availableApartments.length;
+
+      while (usedIndices.has(nextIndex)) {
+        nextIndex = (nextIndex + 1) % availableApartments.length;
+      }
+
+      const newIndices = [...prevIndices];
+      newIndices[index] = nextIndex;
+      return newIndices;
+    });
+  };
+
+  // Save selected apartments before moving to the next section
+  const handleNextWithSave = () => {
+    const selectedApartments = currentIndices.map(
+      (index) => availableApartments[index]
+    );
+
+    setSelectedApartments(selectedApartments); // Save to booking store
+    handleInnerNext(); // Proceed to next step
+  };
+
+  if (loading) return <Paragraph1>Loading available apartments...</Paragraph1>;
+
   return (
-    <div>
-      <div className=" flex flex-col items-center justify-center ">
-        {/* Apartment card */}
+    <div className="flex flex-col items-center justify-center">
+      {error && <Paragraph1 className="text-red-500 mb-4">{error}</Paragraph1>}
 
-        <div className=" w-full items-center">
-          <div className=" flex flex-col gap-1 items-center ">
-            <div className="rounded-[10px] w-full overflow-hidden border">
-              <div className=" h-[400px] sm:h-[400px] overflow-hidden rounded-[20px]- w-full sm:w-[600px]- bg-primary">
-                <img
-                  src="https://res.cloudinary.com/dvao98wnj/image/upload/v1739438628/jason-briscoe-GliaHAJ3_5A-unsplash_buyidn.jpg"
-                  alt=""
-                  className=" h-full w-full object-cover"
-                />
-              </div>
-              <div className="bg-white sm:px-4 p-2 sm:pb-4">
-                <Paragraph1 className="font-bold">
-                  {/* {plan.title} */}No. 200 - Standard Apartment
-                </Paragraph1>
-                <Paragraph2>
-                  {" "}
-                  <span className=" font-bold">
-                    {" "}
-                    {`${currencySymbol}
-                  ${formattedPrice}`}{" "}
-                  </span>{" "}
-                  per day
-                </Paragraph2>
-              </div>
-            </div>
+      {!error &&
+        currentIndices.map((apartmentIndex, index) => {
+          const apartment = availableApartments[apartmentIndex];
+          const price = apartment?.selectedCategory?.price || 30000;
+          const currencySymbol = selectedCurrency === "USD" ? "$" : "₦";
+          const displayPrice =
+            selectedCurrency === "USD" && exchangeRate > 0
+              ? price / exchangeRate
+              : price;
+          const formattedPrice =
+            selectedCurrency === "USD"
+              ? displayPrice.toFixed(2)
+              : new Intl.NumberFormat("en-NG").format(displayPrice);
 
-            <div className=" flex w-full items-center gap-2 justify-between">
-              <Paragraph2>3 Alternatives Available</Paragraph2>
-              <button className="border flex gap-2 items-center py-1  px-2  rounded-lg ">
-                <Paragraph2>Change</Paragraph2>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="size-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
+          return (
+            <ProductCard
+              key={apartment.id} // Use apartment ID instead of index
+              apartment={apartment}
+              currencySymbol={currencySymbol}
+              formattedPrice={formattedPrice}
+              onNextApartment={() => handleNextApartment(index)}
+              alternativesAvailable={availableApartments.length - 1}
+            />
+          );
+        })}
+
+      <div className="flex w-full items-center gap-2 justify-between mt-4">
+        <button
+          className="p-2 bg-gray-300 w-full hover:bg-gray-200 rounded"
+          onClick={handleInnerBack}
+        >
+          <ParagraphLink2 className="sm:text-[16px]">Back</ParagraphLink2>
+        </button>
+        <button
+          className="p-2 bg-primary hover:bg-black w-full text-white rounded disabled:opacity-50"
+          onClick={handleNextWithSave}
+          disabled={!!error || availableApartments.length === 0} // Next button disabled if there's an error
+        >
+          <ParagraphLink2 className="sm:text-[16px]">Next</ParagraphLink2>
+        </button>
       </div>
     </div>
   );
