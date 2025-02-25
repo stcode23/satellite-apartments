@@ -157,12 +157,7 @@ const CartSummary: React.FC<CartSummaryProps> = ({ isOpen, onClose }) => {
 
         {products.length > 0 ? (
           products.map((product) => (
-            <ProductCartCard
-              key={product.id}
-              product={product}
-              onRemove={handleRemoveProduct}
-              onQuantityChange={handleQuantityChange}
-            />
+            <ProductCartCard key={product.id} product={product} />
           ))
         ) : (
           <p className="text-center text-gray-500">Empty</p>
