@@ -337,7 +337,10 @@ function Footer() {
             <ParagraphLink2 className="  text-[#ECECEC]- ">
               © 2025 Satellite Apartment Ltd. All rights reserved.
             </ParagraphLink2>
-            <Link href="https://cybalbuzz-cybalbuzz.vercel.app/" className="sm:py-0 py-2">
+            <Link
+              href="https://cybalbuzz-codefiles.vercel.app/"
+              className="sm:py-0 py-2"
+            >
               {" "}
               <ParagraphLink2 className="  text-[#ECECEC]- ">
                 Built with ❤️ by CybalBuzz
