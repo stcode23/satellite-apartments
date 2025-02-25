@@ -43,7 +43,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
   }
 
   return (
-    <div className="sm:col-span-4 hidden mt-[50px] sm:block border rounded-lg p-4">
+    <div className="sm:col-span-4 hidden bg-white mt-[50px]- sm:block border rounded-lg p-4">
       <div className="bg-gray-10-">
         <div className=" space-y-1">
           <div className="flex justify-between">
@@ -71,11 +71,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
         <div className="space-y-4 ">
           {products.length > 0 ? (
             products.map((product) => (
-              <ProductCartCard
-                key={product.id}
-                product={product}
-                
-              />
+              <ProductCartCard key={product.id} product={product} />
             ))
           ) : (
             <p className="text-center text-gray-500">

@@ -44,22 +44,22 @@ const CheckOutOverview = () => {
   };
 
   return (
-    <div>
+    <div className=" bg-bg_gray-">
       <div className="container1 py-[120px]">
         <Header4 className="mb-4">Reservation</Header4>
-        <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 bg-white rounded-lg">
-          <BookingSummary
-            isSummaryVisible={isSummaryVisible}
-            toggleSummary={toggleSummary}
-            currencySymbol={currencySymbol}
-            selectedCurrency={selectedCurrency}
-            exchangeRate={exchangeRate}
-            totalBill={subtotal}
-            products={selectedApartments} // Pass apartments instead of products
-          />
+        <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 bg-white- rounded-lg">
+            <BookingSummary
+              isSummaryVisible={isSummaryVisible}
+              toggleSummary={toggleSummary}
+              currencySymbol={currencySymbol}
+              selectedCurrency={selectedCurrency}
+              exchangeRate={exchangeRate}
+              totalBill={subtotal}
+              products={selectedApartments} // Pass apartments instead of products
+            />
 
           {/* Right section - Checkout */}
-          <div className="xl:col-span-8 border- rounded-lg">
+          <div className="xl:col-span-8 sm:border bg-white rounded-lg sm:p-4">
             <div className="rounded-lg">
               <Checkout
                 products={selectedApartments}
@@ -73,14 +73,15 @@ const CheckOutOverview = () => {
           </div>
 
           {/* Left section - Product Details */}
-          <ProductDetails
-            products={selectedApartments}
-            currencySymbol={currencySymbol}
-            selectedCurrency={selectedCurrency}
-            exchangeRate={exchangeRate}
-            shippingFee={shippingFee}
-            totalBill={subtotal}
-          />
+         
+            <ProductDetails
+              products={selectedApartments}
+              currencySymbol={currencySymbol}
+              selectedCurrency={selectedCurrency}
+              exchangeRate={exchangeRate}
+              shippingFee={shippingFee}
+              totalBill={subtotal}
+            />
         </div>
       </div>
     </div>

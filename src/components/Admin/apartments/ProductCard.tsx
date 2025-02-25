@@ -113,7 +113,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
           <Paragraph2 className=" font-medium text-center pb-2  whitespace-nowrap w-[100%] truncate overflow-hidden">
             {" "}
-            Standard Apartment
+            {product.selectedCategory.name}{" "}
           </Paragraph2>
         </div>
       </div>

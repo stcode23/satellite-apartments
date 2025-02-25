@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Paragraph1, Paragraph2 } from "../../Text";
 
 interface Apartment {
   id: string;
   name: string;
   productImageURL1: string;
+  productImageURL2?: string;
+  productImageURL3?: string;
   selectedCategory?: {
     name: string;
     price: number;
@@ -26,11 +28,40 @@ const ProductCard: React.FC<ProductCardProps> = ({
   onNextApartment,
   alternativesAvailable,
 }) => {
+  const images = [
+    apartment.productImageURL1,
+    apartment.productImageURL2,
+    apartment.productImageURL3,
+  ].filter(Boolean);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const openModal = (index: number) => {
+    setCurrentImageIndex(index);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
   return (
     <div className="w-full items-center mb-4">
       <div className="flex flex-col gap-1 items-center">
         <div className="rounded-[10px] w-full overflow-hidden border">
-          <div className="h-[400px] overflow-hidden rounded-t-[10px] w-full bg-primary">
+          <div
+            onClick={() => openModal(0)}
+            className="h-[400px] cursor-pointer overflow-hidden rounded-t-[10px] w-full bg-primary"
+          >
             <img
               src={apartment?.productImageURL1}
               alt="Apartment"
@@ -75,6 +106,33 @@ const ProductCard: React.FC<ProductCardProps> = ({
           )}
         </div>
       </div>
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
+          <button
+            className="absolute top-4 right-4 text-white text-3xl"
+            onClick={closeModal}
+          >
+            &times;
+          </button>
+          <button
+            className="absolute left-4 text-white text-3xl"
+            onClick={prevImage}
+          >
+            &#10094;
+          </button>
+          <img
+            src={images[currentImageIndex]}
+            alt="Apartment"
+            className="w-[90%] max-h-[80vh] object-cover"
+          />
+          <button
+            className="absolute right-4 text-white text-3xl"
+            onClick={nextImage}
+          >
+            &#10095;
+          </button>
+        </div>
+      )}
     </div>
   );
 };

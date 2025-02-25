@@ -109,7 +109,7 @@ const Pricing = () => {
           text="Book Now"
           href="/products"
           isLink={true}
-          border="border-2 border-primary "
+          border="border-2- border-primary- "
           additionalClasses="border-primary xl:w-fit- flex justify-center  w-full- "
         />
       </div>

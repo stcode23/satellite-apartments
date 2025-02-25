@@ -79,13 +79,13 @@ function CheckAvailability({
   };
 
   return (
-    <div className="sm:p-4 bg-white bg-opacity-70 rounded-[20px] flex flex-col items-center">
+    <div className="p-4 bg-white bg-opacity-70 rounded-[20px] flex flex-col items-center">
       <Header3 className="text-center">Apartments & Suites</Header3>
-      <Paragraph1 className="max-w-[800px] text-center">
+      <Paragraph1 className="max-w-[800px] hidden- text-center">
         Explore our premium apartments designed to offer modern comfort and
         luxury. Booking your ideal stay is just a few clicks away:
       </Paragraph1>
-      <div className="grid grid-cols-2 gap-4 py-4 xl:grid-cols-4 w-full items-center">
+      <div className="grid grid-cols-2 sm:gap-4 py-4 xl:grid-cols-4 w-full items-center">
         <BookingDatePicker
           checkIn={checkIn}
           checkOut={checkOut}

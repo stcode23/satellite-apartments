@@ -13,7 +13,7 @@ function Overview() {
   });
 
   return (
-    <div className=" bg-bg_gray py-[70px] xl:py-[100px]">
+    <div className=" bg-bg_gray py-[70px] xl:py-[150px]">
       <div
         className=" container1   bg-white text-p_black"
         data-aos="flip-right"

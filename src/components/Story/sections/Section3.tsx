@@ -25,11 +25,11 @@ function Section3() {
   return (
     <div>
       {" "}
-      <div className=" container1 py-[24px] xl:py-[100px]  text-p_black">
+      <div className=" container1 py-[24px] xl:py-[80px]  text-p_black">
         {" "}
         <div
           className=" flex xl:gap-[24px] flex-col items-center w-full mb-[24px] xl:mb-[64px]"
-          data-aos="fade-up"
+          // data-aos="fade-up"
         >
           <Header3>Get to Know Us</Header3>
           <Paragraph1 className="max-w-[883px] text-center">

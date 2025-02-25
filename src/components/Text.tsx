@@ -74,11 +74,11 @@ export const Header4: React.FC<{
   children: React.ReactNode;
   className?: string;
 }> = ({ children, className = "" }) => (
-  <h4
+  <h2
     className={`text-[20px] uppercase sm:text-[24px]    font-bold ${body_Font_Regular.className} ${className}`}
   >
     {children}
-  </h4>
+  </h2>
 );
 
 export const Header5: React.FC<{

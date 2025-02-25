@@ -41,18 +41,29 @@ function Section2() {
         </div>
         <div className=" grid grid-cols-1 xl:grid-cols-5  sm:grid-cols-1 gap-[24px] xl:gap-[30px]">
           <div className="  xl:col-span-3">
-            <div className=" bg-bg_gray rounded-[20px] overflow-hidden " data-aos="fade-right">
+            <div
+              className=" bg-bg_gray rounded-[20px] overflow-hidden "
+              data-aos="fade-right"
+            >
               <img
                 src="https://res.cloudinary.com/dvao98wnj/image/upload/v1738849472/lagos-pic-13_nc3jec.jpg"
                 alt="branding"
                 className="w-full "
               />{" "}
               <div className=" space-y-[20px] xl:space-y-[32px] p-[24px] xl:p-[32px] flex flex-col w-full">
-                <Header4>Your Perfect Stay Awaits</Header4>{" "}
-<Paragraph1>
-  A home away from home with fully furnished apartments that cater to all your needs. Each unit boasts a modern kitchen, cozy living spaces with a flat-screen TV, and luxurious beds designed for ultimate comfort. Enjoy complimentary cleaning services, free high-speed Wi-Fi, and 24/7 front desk support to ensure a seamless stay. On-site car parking adds convenience to your travel plans.  
-
-</Paragraph1>
+                <Header4>
+                  Prime Serviced Apartments in Lagos – Perfect for Short & Long
+                  Stays
+                </Header4>{" "}
+                <Paragraph1>
+                  A home away from home with fully furnished apartments that
+                  cater to all your needs. Each unit boasts a modern kitchen,
+                  cozy living spaces with a flat-screen TV, and luxurious beds
+                  designed for ultimate comfort. Enjoy complimentary cleaning
+                  services, free high-speed Wi-Fi, and 24/7 front desk support
+                  to ensure a seamless stay. On-site car parking adds
+                  convenience to your travel plans.
+                </Paragraph1>
                 <Button
                   text="Book an apartment"
                   href="/apply"
@@ -68,10 +79,15 @@ function Section2() {
               data-aos="fade-down-left"
             >
               <div className="space-y-[24px] xl:space-y-[32px] p-[24px] xl:p-[32px]">
-                <Header4>At the Center of the African Experience</Header4>{" "}
+                <Header4>Living at the Heart of Africa’s Vibrance</Header4>{" "}
                 <Paragraph1>
-                    Nestled in a quiet and serene location, the apartments are less than 30 minutes from essential amenities, including pharmacies, supermarkets, restaurants, schools, hospitals, and Lagos' major commercial hubs. Whether you're visiting for business, leisure, or a family trip, these apartments provide the perfect balance of comfort, convenience, and accessibility.  
-
+                  Nestled in a quiet and serene location, the apartments are
+                  less than 30 minutes from essential amenities, including
+                  pharmacies, supermarkets, restaurants, schools, hospitals, and
+                  Lagos' major commercial hubs. Whether you're visiting for
+                  business, leisure, or a family trip, these apartments provide
+                  the perfect balance of comfort, convenience, and
+                  accessibility.
                 </Paragraph1>
                 {/* <img src="/images/people.svg" alt="branding" className="w-" />{" "} */}
               </div>
@@ -87,14 +103,17 @@ function Section2() {
                 <div className=" flex w-full justify-end  ">
                   <img src="/images/3_circles.svg" alt="" />
                 </div>
-                <Header4>Seamless Booking</Header4>{" "}
+                <Header4>
+                  Quick & Easy Apartment Reservations - Book Your Stay in
+                  Minutes{" "}
+                </Header4>{" "}
                 <Paragraph1>
                   Enjoy easy booking and secure international payment options
                   for a hassle-free experience anywhere in the world.
                 </Paragraph1>
                 <div>
                   <Link
-                    href="/apply"
+                    href="/contact-us"
                     className=" text-[20px] font-bold text-white underline"
                   >
                     <ParagraphLink1> Let{"'"}s talk</ParagraphLink1>

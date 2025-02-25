@@ -12,16 +12,15 @@ function HeroSection() {
     });
   });
   return (
-    <div className="mt-[90px]">
-      <div className=" container1 relative h-[460px xl:rounded-lg overflow-hidden w-full bg-black">
+    <div className="sm:mt-[120px]">
+      <div className=" container1 relative h- [460px xl:rounded-lg overflow-hidden w-full bg-black">
         <div
           className="relative z-10 px-2 xl:p-[100px] py-[32px] pt-[150px] xl:py-[70px]"
           data-aos="fade-right"
         >
           <div className=" flex flex-col xl:w-[60%] w-full xl:space-y-[24px] ">
             <Header3 className="text-white col-span-1">
-              Experience comfort and style with our
-              <span className="border-primary"> premium apartments. </span>
+              Stay in Style: Premium Furnished Apartments for Every Traveler
             </Header3>
             <Paragraph3 className="xl:mt-[16px] mb-[24px] xl:mb-[48px] text-white">
               We provide thoughtfully designed spaces that combine luxury,
@@ -30,7 +29,7 @@ function HeroSection() {
 
             <Button
               text="Book Your Stay Now"
-              href="/booking"
+              href="/reservation/checkout"
               isLink={true}
               additionalClasses="border-primary xl:w-fit w-full"
             />
@@ -46,7 +45,7 @@ function HeroSection() {
           }}
         ></div>
         {/* Dark overlay for the background image */}
-        <div className="absolute inset-0  bg-black opacity-70 z-0"></div>
+        <div className="absolute inset-0  bg-black opacity-55 z-0"></div>
       </div>
     </div>
   );

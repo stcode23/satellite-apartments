@@ -18,6 +18,7 @@ import SearchBar from "./SearchBar";
 import SummaryBlocks from "./SummaryBlocks";
 import { AnyARecord } from "dns";
 import countries from "../logistics/CountriesWithFlags";
+import { format, isAfter, parseISO } from "date-fns";
 
 type Product = {
   id: string;
@@ -38,7 +39,13 @@ type Order = {
   firstName: string;
   lastName: string;
   email: string;
+  checkIn: string;
+  period: string[];
+  checkOut: string;
+  guests: number;
+  selectedApartments: any;
   phoneNumber: string;
+  expired: any;
   currency: string;
   address: string;
   country: string;
@@ -74,6 +81,17 @@ function NewOrders() {
         const ordersData: Order[] = querySnapshot.docs.map((doc) => {
           const data = doc.data();
           const products = data.products || []; // Ensure products is defined as an array
+
+          // Get today's date
+          const today = new Date();
+
+          // Check if orders have expired
+          const lastDate = data.period?.length
+            ? parseISO(data.period[data.period.length - 1])
+            : null;
+
+          const isExpired = lastDate ? isAfter(today, lastDate) : false;
+
           return {
             id: doc.id,
             name: `${doc.data().firstName} ${doc.data().lastName}`,
@@ -89,6 +107,12 @@ function NewOrders() {
             phoneNumber: data.phoneNumber,
             currency: data.currency,
             address: data.address,
+            expired: isExpired, // Add expired status to the order
+            guests: data.guests,
+            checkIn: data.checkIn,
+            period: data.period,
+            checkOut: data.checkOut,
+            selectedApartments: data.selectedApartments,
             country: data.country,
             city: data.city,
             state: data.state,
@@ -320,7 +344,7 @@ function NewOrders() {
                     {selectedOrder.products.map((product, index) => (
                       <div
                         key={index}
-                        className="flex- grid grid-cols-6 relative justify-between items-center bg-white p-2   rounded-lg"
+                        className="flex grid- grid-cols-6 relative justify-between items-center bg-white p-2 rounded-lg"
                       >
                         <img
                           src={product.productImageURL1.replace(
@@ -330,28 +354,32 @@ function NewOrders() {
                           alt={product.name}
                           className="w-16 h-16 object-cover rounded"
                         />
-                        <div className=" flex flex-col gap-2">
-                          <Paragraph2 className=" font-bold  w-[150px]-">
-                            No. {product.name}
-                          </Paragraph2>
-                        </div>
+                        <Paragraph2 className=" font-bold  w-[150px]-">
+                          No. {product.name}
+                        </Paragraph2>
                         <ParagraphLink2 className="font-bold text-[14px] col-span-2 ">
                           {product.selectedCategory.name}
                         </ParagraphLink2>
-                        <p className="text-gray-500 ">
+
+                        <p className="text-[14px]">
+                          Nights: {selectedOrder.period.length}
+                        </p>
+                        <p className="text-[14px]">
+                          Check-In: {selectedOrder.checkIn}
+                        </p>
+                        <p className="text-[14px]">
+                          Check-Out {selectedOrder.checkOut}
+                        </p>
+                        <p className="text-gray-500 text-[14px]">
                           ₦{" "}
                           {new Intl.NumberFormat("en-US").format(
-                            Number(product.selectedCategory.price)
-                          )}
+                            Number(product.selectedCategory.price )
+                          )} per night
                         </p>
-          
-                      
                       </div>
                     ))}
                     <div className=" grid grid-cols-1 xl:grid-cols-2 items-center gap-4 sm:gap-[20px] ">
-                      <div>
-                        {/*  */}
-                      </div>
+                      <div>{/*  */}</div>
                       <div>
                         <ParagraphLink2 className="  text-[14px] font-bold ">
                           Total Paid
@@ -478,21 +506,21 @@ function NewOrders() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex justify-center gap-4">
+                  <div className="flex justify-center gap-4 ">
                     <button
-                      className="px-4 py-1  rounded-lg text-black bg-bg_gray text-[14px] hover:b"
+                      className="px-4 py-1  rounded-lg text-black hidden bg-bg_gray text-[14px] hover:b"
                       onClick={() => {
                         markAsRetured(selectedOrder.id);
                         handleClick(selectedOrder);
                       }}
                     >
-                      Returned
+                      Cancled
                     </button>
                     <button
                       className={`px-4 py-1 rounded-lg text-white text-[14px] ${
                         selectedOrder.shipped
                           ? "bg-gray-400 cursor-not-allowed"
-                          : "bg-primary hover:bg-black"
+                          : "bg-black hover:bg-primary"
                       }`}
                       onClick={() => {
                         markAsShipped(selectedOrder.id);
@@ -500,7 +528,7 @@ function NewOrders() {
                       }}
                       disabled={selectedOrder.shipped}
                     >
-                      Done
+                      Checked-In
                     </button>
                   </div>
                 </div>
@@ -518,7 +546,7 @@ function NewOrders() {
                     // @ts-ignore
                     onSearchResults={setFilteredOrders} // Use setFilteredOrders to update results
                   />
-                  <div className="relative">
+                  <div className="relative hidden">
                     <button onClick={toggleFilter}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -575,13 +603,13 @@ function NewOrders() {
                   {filteredOrders.map((order, index) => (
                     <div
                       key={order.id}
-                      className={`flex items-center border px-2  space-x-4 py-2 bg-white rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300 ${
+                      className={`flex- grid grid-cols-2 sm:grid-cols-8 items-center border px-2  space-x-4 py-2 bg-white rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300 ${
                         order.viewed ? "text-gray-400" : "" // Change text color for viewed orders
                       }`}
                       onClick={() => handleClick(order)}
                     >
                       <div
-                        className={`w-[10%] h-full flex items-center justify-center  text- rounded-lg  `}
+                        className={` h-full flex items-center justify-center  text- rounded-lg  `}
                       >
                         {/* <img src="/images/testProduct.jpg" alt="" /> */}
                         <svg
@@ -595,43 +623,52 @@ function NewOrders() {
                           <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                            d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z"
                           />
                         </svg>
                       </div>
-                      <Paragraph1 className="sm:text-lg font-semibold w-full sm:w-[20%] whitespace-nowrap truncate overflow-hidden">
+                      <Paragraph1 className="sm:text-lg font-semibold w-full  whitespace-nowrap truncate overflow-hidden">
                         {order.name}
                       </Paragraph1>
-                      <Paragraph1 className="w-[10%] sm:block hidden whitespace-nowrap truncate overflow-hidden ">
-                        Qt: {order.quantity}
+                      <Paragraph1 className=" sm:block hidden whitespace-nowrap truncate overflow-hidden ">
+                        Guests: {order.guests}
                       </Paragraph1>
-                      <Paragraph1 className="w-[10%] sm:block hidden whitespace-nowrap truncate overflow-hidden ">
-                        {order.state}
+                      <Paragraph1 className=" sm:block hidden whitespace-nowrap truncate overflow-hidden ">
+                        Apartments: {order.selectedApartments.length}
                       </Paragraph1>
-                      <Paragraph1 className="w-[10%] sm:block hidden whitespace-nowrap truncate overflow-hidden ">
+                      <Paragraph1 className=" sm:block hidden whitespace-nowrap truncate overflow-hidden ">
                         {countries.find(
                           (country) => country.code === order.country
                         )?.name || order.country}{" "}
                       </Paragraph1>
-                      <Paragraph1 className="w-[10%] sm:block hidden whitespace-nowrap truncate overflow-hidden ">
+                      <Paragraph1 className=" sm:block hidden whitespace-nowrap truncate overflow-hidden ">
                         {new Date(order.timestamp).toLocaleDateString("en-US")}
                       </Paragraph1>
-                      <Paragraph1 className="w-[18%] sm:block hidden whitespace-nowrap font-bold truncate overflow-hidden ">
+                      <Paragraph1 className="sm:block hidden whitespace-nowrap font-bold truncate overflow-hidden ">
                         ₦
                         {new Intl.NumberFormat("en-US", {}).format(
                           Number(order.totalPaid)
                         )}
                       </Paragraph1>
                       <Paragraph1
-                        className={`sm:w-[2%] w-[12%] text-primary- whitespace-nowrap truncate overflow-hidden ${
-                          order.returned
+                        key={order.id}
+                        className={`text-primary- whitespace-nowrap truncate overflow-hidden ${
+                          order.expired
+                            ? "text-gray-500" // Expired orders
+                            : order.returned
                             ? "text-red-500"
                             : order.shipped
-                            ? "text-primary"
+                            ? "text-green-500"
                             : "text-[#e6c533]"
                         }`}
                       >
-                        {order.returned ? "x" : order.shipped ? "✔" : "o"}{" "}
+                        {order.expired
+                          ? "Expired"
+                          : order.returned
+                          ? "x"
+                          : order.shipped
+                          ? "✔ Checked-in"
+                          : "Pending"}
                       </Paragraph1>
                     </div>
                   ))}

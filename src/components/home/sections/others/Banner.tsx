@@ -2,6 +2,7 @@ import Button from "@/components/Button";
 import { Header3, Paragraph1, ParagraphLink1 } from "@/components/Text";
 import React, { useState, useEffect } from "react";
 import CheckAvailability from "./CheckAvailability";
+import AOS from "aos";
 
 interface BannerCarouselProps {
   imageUrls: string[];
@@ -11,6 +12,12 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [images, setImages] = useState<HTMLImageElement[]>([]);
 
+  React.useEffect(() => {
+      AOS.init({
+        duration: 2000,
+      });
+  });
+  
   useEffect(() => {
     // Load images from external URLs
     const imagePromises = imageUrls.map((url) => {
@@ -54,26 +61,20 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ imageUrls }) => {
     />
   );
 
+  const handleInnerNext = () => {
+    console.log(" ");
+  };
+
   return (
     <div className="relative container1- flex justify-center items-center">
       <div className="absolute z-10 p-2 xl:p-4">
-        <div className="flex - hidden- flex-col bg-primary w-full bounce-animation bg-opacity-50 xl:p-8 rounded-[20px] justify-center items-center">
-          <div className=" flex flex-col space-y-5 xl:pb-6- ">
-            {/* <Header3 className=" text-white">Apartments & Suites </Header3>
-            <Paragraph1 className=" w-[500px]">
-              Discover the perfect blend of comfort and elegance with our
-              thoughtfully designed apartments and suites. Each space is
-              tailored to provide a luxurious and relaxing experience
-            </Paragraph1>{" "}
-            <Button
-              text="Learn More"
-              href="/products"
-              isLink={true}
-              border="border-2 border-primary "
-              additionalClasses="border-primary xl:w-fit- flex justify-center  w-full "
-            />{" "} */}
+        <div
+          data-aos="zoom-in-up"
+          className="flex - hidden- flex-col bg-primary w-full bounce-animation - bg-opacity-50 xl:p-8 rounded-[20px] justify-center items-center"
+        >
+          <div className="">
+            <CheckAvailability handleInnerNext={handleInnerNext} />
           </div>
-         <CheckAvailability /> 
         </div>
       </div>
 

@@ -41,24 +41,12 @@ function Navbar() {
           ["/contact-us", "/privacy-policy", "/terms-of-service"].includes(
             pathname
           )
-            ? "bg-bg_gray- bg-white py-[8px]-- border-b border-primary -   flex w-full z-20 py-[8px] "
+            ? "bg-bg_gray- bg-white py-[8px]-- border-b border-primary-   flex w-full z-20 py-[8px] "
             : " bg-white py-[8px]-  flex w-full border-b border-primary- z-20"
         }
       >
         <div className="  w-full">
           <div className=" container1 flex justify-between font-semibold- w-full items-center">
-            <div className="lg:hidden border p-2 flex items-center rounded-lg">
-              <button onClick={toggleMenu} className="focus:outline-none">
-                <Image
-                  height={2}
-                  width={20}
-                  src={menuOpen ? "/icons/close.svg" : "/icons/menu.svg"}
-                  alt="menu"
-                  className=""
-                />
-              </button>
-            </div>
-
             <Link href="/">
               <img
                 src="/images/logo.png"
@@ -133,8 +121,20 @@ function Navbar() {
 
               {/* <SearchBar toggleMenu={toggleMenu} /> */}
             </div>
-            <CurrencySwitcher />
-
+            <div className="hidden lg:flex items-center gap-[24px]">
+              <CurrencySwitcher />
+            </div>
+            <div className="lg:hidden border p-2 flex items-center rounded-lg">
+              <button onClick={toggleMenu} className="focus:outline-none">
+                <Image
+                  height={2}
+                  width={20}
+                  src={menuOpen ? "/icons/close.svg" : "/icons/menu.svg"}
+                  alt="menu"
+                  className=""
+                />
+              </button>
+            </div>
             {/* <div
               onClick={() => toggleCart()}
               className=" border rounded-lg p-2 cursor-pointer flex relative "
@@ -222,7 +222,7 @@ function Navbar() {
                     Contact us
                   </ParagraphLink1>
                 </Link>
-                {/* <CurrencySwitcher /> */}
+                <CurrencySwitcher />
                 {/* <SearchBar toggleMenu={toggleMenu} /> */}
               </div>{" "}
             </div>

@@ -31,7 +31,7 @@ const HotLines = () => {
 
 
   return (
-    <div className="bg- bg-slate-100 [#f8f5c9] py-12">
+    <div className="bg- bg-slate-100 [#f8f5c9] py-12 hidden">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <Header3 className="text-3xl font-bold text-gray-800 mb-8">
           Have any queries?{" "}

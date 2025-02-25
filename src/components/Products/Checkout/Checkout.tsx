@@ -20,6 +20,12 @@ import CheckAvailability from "@/components/home/sections/others/CheckAvailabili
 import PeriodDisplay from "./PeriodDisplay";
 import useBookingStore from "@/stores/useBookingStore";
 import BookingReceipt from "./BookingReceipt";
+import {
+  PayPalButtons,
+  PayPalScriptProvider,
+  ReactPayPalScriptOptions,
+  PayPalButtonsComponentProps,
+} from "@paypal/react-paypal-js";
 
 type CheckoutProps = {
   products: any;
@@ -89,6 +95,7 @@ const Checkout: React.FC<CheckoutProps> = ({
   const [paymentDenied, setPaymentDenied] = useState(false);
   const [canceledPay, setCanceledPay] = useState(false);
   const [paymentResponse, setPaymentResponse] = useState<string>(""); // State to store payment response
+  const [paymentError, setPaymentError] = useState<string | null>(null);
 
   const { selectedCurrency, exchangeRate } = useExchangeRateStore();
 
@@ -178,6 +185,16 @@ const Checkout: React.FC<CheckoutProps> = ({
   // @ts-ignore
   const handleFlutterPayment = useFlutterwave(config);
 
+  const initialOptions: ReactPayPalScriptOptions = {
+    clientId:
+      "Aep-bAXPWzzmKCG5WzKI7LH8wO6CkGZKPAbJza0hxxH4EG9uatH_UkW6Z2tUk5JTD72ZbMMv73SfxUBe",
+    // Add other options as needed
+  };
+  const styles: PayPalButtonsComponentProps["style"] = {
+    label: "pay",
+    disableMaxWidth: true,
+    shape: "rect",
+  };
   const submitOrderToFirestore = async (values: any) => {
     setIsLoading(true);
     try {
@@ -314,7 +331,7 @@ const Checkout: React.FC<CheckoutProps> = ({
             {/* Inner Tab Content */}
             <div className="">
               {innerTab === 0 && (
-                <div>
+                <div className=" border rounded-lg">
                   <CheckAvailability handleInnerNext={handleInnerNext} />
 
                   {/* <PeriodDisplay /> */}
@@ -337,25 +354,24 @@ const Checkout: React.FC<CheckoutProps> = ({
                     onSubmit={(values) => {
                       // handleNext(values);
                       handleSaveInfo(values, values.saveInfo);
-                      submitOrderToFirestore(shippingInfo);
-
-                      // handleFlutterPayment({
-                      //   callback: (response) => {
-                      //     console.log(response);
-                      //     if (response.status === "successful") {
-                      //       const PaymentFlw_ref = response.flw_ref;
-                      //       setPaymentResponse(PaymentFlw_ref);
-                      //       submitOrderToFirestore(shippingInfo);
-                      //       setActiveTab(2);
-                      //     } else {
-                      //       setPaymentDenied(true);
-                      //     }
-                      //     closePaymentModal();
-                      //   },
-                      //   onClose: () => {
-                      //     setCanceledPay(true);
-                      //   },
-                      // });
+                      // submitOrderToFirestore(shippingInfo);
+                      handleFlutterPayment({
+                        callback: (response) => {
+                          console.log(response);
+                          if (response.status === "successful") {
+                            const PaymentFlw_ref = response.flw_ref;
+                            setPaymentResponse(PaymentFlw_ref);
+                            submitOrderToFirestore(shippingInfo);
+                            setActiveTab(2);
+                          } else {
+                            setPaymentDenied(true);
+                          }
+                          closePaymentModal();
+                        },
+                        onClose: () => {
+                          setCanceledPay(true);
+                        },
+                      });
                     }}
                   >
                     {({ setFieldValue }) => (
@@ -530,6 +546,11 @@ const Checkout: React.FC<CheckoutProps> = ({
                             </ParagraphLink2>{" "}
                           </button>
                         </div>
+                        <div className=" hidden">
+                          <PayPalScriptProvider options={initialOptions}>
+                            <PayPalButtons style={styles} />
+                          </PayPalScriptProvider>
+                        </div>
                       </Form>
                     )}
                   </Formik>
@@ -544,6 +565,25 @@ const Checkout: React.FC<CheckoutProps> = ({
 
       {/* Payment Tab */}
 
+      {activeTab === 1 && (
+        <div className="hidden">
+          {" "}
+          <button
+            type="submit"
+            className={`w-full font-bold bg-primary text-white p-2 rounded-md hover:bg-black ml-4 ${
+              paymentDenied || canceledPay
+                ? "opacity-50 cursor-not-allowed"
+                : ""
+            }`}
+            disabled={paymentDenied || canceledPay} // Disable the button conditionally
+          >
+            <ParagraphLink2 className=" whitespace-nowrap">
+              Proceed to Payment
+            </ParagraphLink2>{" "}
+          </button>
+          v <button></button>
+        </div>
+      )}
       {/* Receipt Tab */}
       {activeTab === 2 && (
         <BookingReceipt

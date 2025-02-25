@@ -2,9 +2,6 @@
 
 import React from "react";
 import BannerCarousel from "./others/Banner";
-import Image from "next/image";
-import Button from "@/components/Button";
-import { ParagraphLink1 } from "@/components/Text";
 
 const HomePage = () => {
   const imageUrls = [
@@ -42,26 +39,7 @@ const HomePage = () => {
       </div>
       <BannerCarousel imageUrls={imageUrls} />
 
-      
-     
-      {/* <div className="flex container1 justify-center-  xl: flex-row -flex-col items-center mt-4 gap-4 xl:gap-[32px]">
-        <Button
-          text="Shop Now"
-          href="/products"
-          isLink={true}
-          border="border-2 border-primary "
-          additionalClasses="border-primary xl:w-fit- flex justify-center  w-full "
-        />
-        <Button
-          text="About Us"
-          href="/about-us"
-          isLink={true}
-          color="text-white"
-          backgroundColor=" bg-p_black"
-          border="border-2 border-white "
-          additionalClasses=" xl: w-fit- justify-center flex w-full "
-        />
-      </div> */}
+    
     </div>
   );
 };

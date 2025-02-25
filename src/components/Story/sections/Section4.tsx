@@ -64,7 +64,7 @@ function Section4() {
                 </Paragraph2>
                 <div>
                   <Link
-                    href="/search"
+                    href="/reservation/checkout"
                     className="text-[20px] font-bold underline"
                   >
                     <ParagraphLink1>Start Your Search</ParagraphLink1>
@@ -92,16 +92,15 @@ function Section4() {
                     />
                   </svg>
                 </div>
-                <Header4>Book & Customize</Header4>
+                <Header4>Choose Your Apartment</Header4>
                 <Paragraph2>
-                  Choose your preferred apartment and proceed to book securely.
-                  Customize your stay with additional options such as extra
-                  cleaning services or airport pickups for a truly tailored
-                  experience.
+                  Select your ideal apartment and proceed with a secure booking.
+                  Enjoy a seamless reservation experience designed for your
+                  comfort and convenience.
                 </Paragraph2>
                 <div>
                   <Link
-                    href="/booking"
+                    href="/reservation/checkout"
                     className="text-[20px] font-bold underline"
                   >
                     <ParagraphLink1>Proceed to Book</ParagraphLink1>
@@ -137,10 +136,7 @@ function Section4() {
                   adventure during your stay.
                 </Paragraph2>
                 <div>
-                  <Link
-                    href="/about"
-                    className="text-[20px] font-bold underline"
-                  >
+                  <Link href="/" className="text-[20px] font-bold underline">
                     <ParagraphLink1>Explore Amenities</ParagraphLink1>
                   </Link>
                 </div>
