@@ -99,12 +99,13 @@ const FormComponent = () => {
         >
           <img src="/images/logo.png" alt="" className="h-[50px]" />
           <div>
-            <ParagraphLink1 className="  text-cente font-bold ">
-              Successful!{" "}
-            </ParagraphLink1>{" "}
+            <ParagraphLink1 className="text-center font-bold">
+              Submission Successful!
+            </ParagraphLink1>
             <p>
-              Thanks for your interest in working with me! <br /> we{"’"}ll be
-              in touch within 48 hours.
+              Thank you for reaching out to Satellite Apartments! <br />
+              Our team will review your request and get back to you within 48
+              hours.
             </p>
           </div>
           <Button
