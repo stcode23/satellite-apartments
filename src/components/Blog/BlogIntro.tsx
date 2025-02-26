@@ -56,7 +56,7 @@ function BlogIntro() {
           data-aos="fade-up"
         >
           <Header3>
-            Explore the World of{" "}
+            Explore the World of
             <span className="text-primary text-center">Beauty</span> and
             Wellness
           </Header3>
