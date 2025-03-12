@@ -10,7 +10,7 @@ const Pricing = () => {
 
   const plans = [
     {
-      title: "BUDGET HIDEAWAY",
+      title: "BUDGET HIDEAWAY APARTMENT",
       price: 25000,
       features: [
         "1 Bedroom",
@@ -19,10 +19,10 @@ const Pricing = () => {
         "Weekly Cleaning Service",
       ],
       image:
-        "https://res.cloudinary.com/dvao98wnj/image/upload/v1739438630/naomi-hebert-MP0bgaS_d1c-unsplash_hpvmp6.jpg",
+        "https://res.cloudinary.com/dvao98wnj/image/upload/v1741814702/axhkmpqi91iyqma7ogxr.heic",
     },
     {
-      title: "COZY CORNER",
+      title: "COZY CORNER APARTMENT",
       price: 35000,
       features: [
         "2 Bedrooms",
@@ -32,10 +32,10 @@ const Pricing = () => {
         "Quiet Location",
       ],
       image:
-        "https://res.cloudinary.com/dvao98wnj/image/upload/v1739438626/outsite-co-R-LK3sqLiBw-unsplash_lsdfkh.jpg",
+        "https://res.cloudinary.com/dvao98wnj/image/upload/v1741816779/hgvqasw4zpimgx2y4oxf.heic",
     },
     {
-      title: "THE CLASSIC APARTMENT",
+      title: "THE CLASSIC STUDIO APARTMENT",
       price: 45000,
       features: [
         "3 Bedrooms",
@@ -46,10 +46,10 @@ const Pricing = () => {
         "Free Parking",
       ],
       image:
-        "https://res.cloudinary.com/dvao98wnj/image/upload/v1739438628/jason-briscoe-GliaHAJ3_5A-unsplash_buyidn.jpg",
+        "https://res.cloudinary.com/dvao98wnj/image/upload/v1741816415/nct8jzqzpy3sxvouptvy.heic ",
     },
     {
-      title: "THE LUXE HAVEN",
+      title: "THE LUXE HAVEN APARTMENT",
       price: 55000,
       features: [
         "1 Bedroom",
@@ -58,10 +58,10 @@ const Pricing = () => {
         "Weekly Cleaning Service",
       ],
       image:
-        "https://res.cloudinary.com/dvao98wnj/image/upload/v1739438630/naomi-hebert-MP0bgaS_d1c-unsplash_hpvmp6.jpg",
+        "https://res.cloudinary.com/dvao98wnj/image/upload/v1741814321/wsebkgyq991ufpiwlqto.heic",
     },
     {
-      title: "COZY 1 BEDROOM",
+      title: "COZY 1 BEDROOM APARTMENT",
       price: 102000,
       features: [
         "2 Bedrooms",
@@ -71,10 +71,10 @@ const Pricing = () => {
         "Quiet Location",
       ],
       image:
-        "https://res.cloudinary.com/dvao98wnj/image/upload/v1739438626/outsite-co-R-LK3sqLiBw-unsplash_lsdfkh.jpg",
+        "https://res.cloudinary.com/dvao98wnj/image/upload/v1741798080/busjl3yikc2engxvv5px.heic",
     },
     {
-      title: "COZY 2 BEDROOM",
+      title: "COZY 2 BEDROOM APARTMENT",
       price: 120000,
       features: [
         "3 Bedrooms",
@@ -85,7 +85,7 @@ const Pricing = () => {
         "Free Parking",
       ],
       image:
-        "https://res.cloudinary.com/dvao98wnj/image/upload/v1739438628/jason-briscoe-GliaHAJ3_5A-unsplash_buyidn.jpg",
+        "https://res.cloudinary.com/dvao98wnj/image/upload/v1741811958/plbqdlkd0jbucvdlailk.heic",
     },
   ];
 
@@ -112,7 +112,11 @@ const Pricing = () => {
               className="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300"
             >
               <img
-                src={plan.image}
+                src={
+                  plan.image
+                    ? plan.image.replace("/upload/", "/upload/w_500,f_auto/")
+                    : "/images/default-product.png"
+                }
                 alt={plan.title}
                 className="w-full h-48 object-cover"
               />
