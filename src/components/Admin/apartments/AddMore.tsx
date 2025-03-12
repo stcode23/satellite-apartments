@@ -212,7 +212,14 @@ const AddMore: React.FC<AddMoreProps> = ({ onRefetch }) => {
                             ) : (
                               <div className="h-[100px] object-cover w-full bg-gray-200 rounded-lg overflow-hidden">
                                 <img
-                                  src={values.productImageURL1}
+                                  src={
+                                    values.productImageURL1
+                                      ? values.productImageURL1.replace(
+                                          "/upload/",
+                                          "/upload/w_500,f_auto/"
+                                        )
+                                      : "/images/default-product.png"
+                                  }
                                   alt="Uploaded Preview"
                                   className="h-full w-full object-cover"
                                 />

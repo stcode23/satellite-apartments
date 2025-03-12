@@ -10,7 +10,7 @@ function TopNav() {
           {" "}
           <div className=" flex gap-4 items-center ">
             <Link
-              href="https://www.instagram.com/s"
+              href="https://www.instagram.com/satellite.apartments/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -32,12 +32,12 @@ function TopNav() {
               />
             </Link>
             <Link
-              href="https://www.x.com/"
+              href="https://www.tiktok.com/@satellite.apartments"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
-                src="https://res.cloudinary.com/dcb4ilgmr/image/upload/v1729675779/utilities/templates/twitter_3_sihd1i.png"
+                src="https://res.cloudinary.com/dvao98wnj/image/upload/v1741756618/tik-tok_d6cfjv.png"
                 alt=""
                 className="w-[14px] h-[14px]"
               />
@@ -78,7 +78,7 @@ function TopNav() {
                 />
               </svg>
 
-              <Paragraph2> +234 707 832 8640</Paragraph2>
+              <Paragraph2> +234 903 028 4261</Paragraph2>
             </div>{" "}
           </div>
         </div>

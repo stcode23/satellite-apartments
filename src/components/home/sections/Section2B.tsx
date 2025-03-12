@@ -10,8 +10,8 @@ const Pricing = () => {
 
   const plans = [
     {
-      title: "Basic Apartments",
-      price: 30000,
+      title: "BUDGET HIDEAWAY",
+      price: 25000,
       features: [
         "1 Bedroom",
         "Free Wi-Fi",
@@ -22,7 +22,7 @@ const Pricing = () => {
         "https://res.cloudinary.com/dvao98wnj/image/upload/v1739438630/naomi-hebert-MP0bgaS_d1c-unsplash_hpvmp6.jpg",
     },
     {
-      title: "Standard Apartments",
+      title: "COZY CORNER",
       price: 35000,
       features: [
         "2 Bedrooms",
@@ -35,8 +35,47 @@ const Pricing = () => {
         "https://res.cloudinary.com/dvao98wnj/image/upload/v1739438626/outsite-co-R-LK3sqLiBw-unsplash_lsdfkh.jpg",
     },
     {
-      title: "Premium Suites",
-      price: 40000,
+      title: "THE CLASSIC APARTMENT",
+      price: 45000,
+      features: [
+        "3 Bedrooms",
+        "Luxury Furnishings",
+        "24/7 Concierge Service",
+        "Daily Cleaning Service",
+        "Private Balcony",
+        "Free Parking",
+      ],
+      image:
+        "https://res.cloudinary.com/dvao98wnj/image/upload/v1739438628/jason-briscoe-GliaHAJ3_5A-unsplash_buyidn.jpg",
+    },
+    {
+      title: "THE LUXE HAVEN",
+      price: 55000,
+      features: [
+        "1 Bedroom",
+        "Free Wi-Fi",
+        "Basic Kitchen Setup",
+        "Weekly Cleaning Service",
+      ],
+      image:
+        "https://res.cloudinary.com/dvao98wnj/image/upload/v1739438630/naomi-hebert-MP0bgaS_d1c-unsplash_hpvmp6.jpg",
+    },
+    {
+      title: "COZY 1 BEDROOM",
+      price: 102000,
+      features: [
+        "2 Bedrooms",
+        "Smart TV",
+        "Fully Equipped Kitchen",
+        "Bi-Weekly Cleaning Service",
+        "Quiet Location",
+      ],
+      image:
+        "https://res.cloudinary.com/dvao98wnj/image/upload/v1739438626/outsite-co-R-LK3sqLiBw-unsplash_lsdfkh.jpg",
+    },
+    {
+      title: "COZY 2 BEDROOM",
+      price: 120000,
       features: [
         "3 Bedrooms",
         "Luxury Furnishings",
@@ -107,7 +146,7 @@ const Pricing = () => {
         {" "}
         <Button
           text="Book Now"
-          href="/products"
+          href="/reservation/checkout"
           isLink={true}
           border="border-2- border-primary- "
           additionalClasses="border-primary xl:w-fit- flex justify-center  w-full- "

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Paragraph1, Paragraph2 } from "../../Text";
+import CategoryDetail from "./CategoryDetail";
 
 interface Apartment {
   id: string;
@@ -7,6 +8,8 @@ interface Apartment {
   productImageURL1: string;
   productImageURL2?: string;
   productImageURL3?: string;
+  productImageURL4?: string;
+  productImageURL5?: string;
   selectedCategory?: {
     name: string;
     price: number;
@@ -32,6 +35,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
     apartment.productImageURL1,
     apartment.productImageURL2,
     apartment.productImageURL3,
+    apartment.productImageURL4,
+    apartment.productImageURL5,
   ].filter(Boolean);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -63,7 +68,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
             className="h-[400px] cursor-pointer overflow-hidden rounded-t-[10px] w-full bg-primary"
           >
             <img
-              src={apartment?.productImageURL1}
+              src={
+                apartment?.productImageURL1
+                  ? apartment?.productImageURL1.replace(
+                      "/upload/",
+                      "/upload/w_1000,f_auto/"
+                    )
+                  : "/images/default-product.png"
+              }
               alt="Apartment"
               className="h-full w-full object-cover"
             />
@@ -109,28 +121,44 @@ const ProductCard: React.FC<ProductCardProps> = ({
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
           <button
-            className="absolute top-4 right-4 text-white text-3xl"
+            className="absolute top-4 right-4 text-white text-3xl z-10"
             onClick={closeModal}
           >
             &times;
           </button>
-          <button
-            className="absolute left-4 text-white text-3xl"
-            onClick={prevImage}
-          >
-            &#10094;
-          </button>
-          <img
-            src={images[currentImageIndex]}
-            alt="Apartment"
-            className="w-[90%] max-h-[80vh] object-cover"
-          />
-          <button
-            className="absolute right-4 text-white text-3xl"
-            onClick={nextImage}
-          >
-            &#10095;
-          </button>
+
+          <div className=" grid sm:grid-cols-4 w-[90%] gap-4 bg-white- bg-opacity-65- rounded-lg ">
+            <div className=" sm:col-span-3 relative flex justify-center items-center">
+              <button
+                className="absolute left-4 text-white text-3xl bg-black bg-opacity-50 rounded-full p-2"
+                onClick={prevImage}
+              >
+                &#10094;
+              </button>
+              <button
+                className="absolute right-4 text-white text-3xl bg-black bg-opacity-50 rounded-full p-2 "
+                onClick={nextImage}
+              >
+                &#10095;
+              </button>
+              <img
+                src={
+                  images[currentImageIndex]
+                    ? images[currentImageIndex].replace(
+                        "/upload/",
+                        "/upload/w_2000,f_auto/"
+                      )
+                    : "/images/default-product.png"
+                }
+                alt="Apartment"
+                className=" w-[100%] max-h-[80vh] object-cover"
+              />
+            </div>
+            <CategoryDetail
+              apartmentName={apartment?.name}
+              selectedCategory={apartment?.selectedCategory?.name}
+            />
+          </div>
         </div>
       )}
     </div>

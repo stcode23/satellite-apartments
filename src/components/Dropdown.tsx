@@ -60,7 +60,7 @@ const Dropdown: React.FC<DropdownProps> = ({
       </button>
       {isOpen && (
         <ul
-          className={`absolute z-10 mt-1 w-full bg-white border border-gray-300 overflow-hidden rounded-lg shadow-lg ${dropdownClassName}`}
+          className={`absolute right-0 z-10 mt-1 w-[250px] bg-white border border-gray-300 overflow-hidden rounded-lg shadow-lg ${dropdownClassName}`}
         >
           {options.map((option) => (
             <li

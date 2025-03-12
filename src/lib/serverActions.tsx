@@ -5,12 +5,13 @@ import { sendMail, compileWelcomeTemplate } from "@/lib/mail";
 
 export const sendEmail = async () => {
   await sendMail({
-    to: "smith03office@gmail.com",
-    name: "Best-Pro Templates",
-    subject: "New client at  Salford Studio,",
+    to: "stapartments23@gmail.com",
+    name: "Satellite Apartments & Shortlet Homes Website",
+    subject: "New Submission at  Satellite Apartments,",
     body: compileWelcomeTemplate(
-      "Test",
-      "https://your-website.vercel.app/admin/dashboard"
+      "Admin",
+      "https://your-website.vercel.app/admin/dashboard",
+      
     ),
   });
 };

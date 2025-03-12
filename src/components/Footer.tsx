@@ -105,7 +105,7 @@ function Footer() {
             <div className=" flex flex-col  gap-2 items-center- justify-center-">
               <div className=" flex gap-4 items-center mb-2">
                 <Link
-                  href="https://www.instagram.com/grandiosegrin"
+                  href="https://www.instagram.com/satellite.apartments/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -127,12 +127,12 @@ function Footer() {
                   />
                 </Link>
                 <Link
-                  href="https://www.x.com/"
+                  href="https://www.tiktok.com/@satellite.apartments"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <img
-                    src="https://res.cloudinary.com/dvao98wnj/image/upload/v1739497214/twitter_txevzm.png"
+                    src="https://res.cloudinary.com/dvao98wnj/image/upload/v1741757129/tik-tok_1_xld8rp.png"
                     alt=""
                     className="w-[20px] h-[20px]"
                   />
@@ -173,7 +173,7 @@ function Footer() {
                   />
                 </svg>
 
-                <Paragraph2> +234 707 832 8640</Paragraph2>
+                <Paragraph2> +234 903 028 4261</Paragraph2>
               </div>
             </div>
 
@@ -237,7 +237,7 @@ function Footer() {
               <div className=" flex flex-col p-4- gap-2 items-center- justify-center-">
                 <div className=" flex gap-4 items-center mb-4">
                   <Link
-                    href="https://www.instagram.com/grandiosegrin"
+                    href="https://www.instagram.com/satellite.apartments/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -254,10 +254,10 @@ function Footer() {
                       className="w-[14px] h-[14px]"
                     />
                   </Link>
-                  <Link href="/">
+                  <Link href="https://www.tiktok.com/@satellite.apartments">
                     <img
-                      src="https://res.cloudinary.com/dvao98wnj/image/upload/v1739497214/twitter_txevzm.png"
-                      alt=""
+                      src="https://res.cloudinary.com/dvao98wnj/image/upload/v1741757129/tik-tok_1_xld8rp.png"
+                      alt="tiktok"
                       className="w-[14px] h-[14px]"
                     />
                   </Link>
@@ -296,7 +296,7 @@ function Footer() {
                     />
                   </svg>
 
-                  <Paragraph2> +234 707 832 8640</Paragraph2>
+                  <Paragraph2> +234 903 028 4261</Paragraph2>
                 </div>
               </div>
             </div>

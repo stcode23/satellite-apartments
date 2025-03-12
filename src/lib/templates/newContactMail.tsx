@@ -42,13 +42,10 @@ export const newContactMail = `
                 style="height: 48px; background-color: #f9fafb"
               >
                 <img
-                  style="
-                    padding: 12px 48px;
-                    border-radius: 50px;
-                    height: 158px;
-                  "
-                src="https://res.cloudinary.com/dcb4ilgmr/image/upload/v1729544814/utilities/templates/GetBee_1_bxzwaf.png"
-                alt="">
+                  style="padding: 12px 48px; border-radius: 50px; height: 158px"
+                  src="https://res.cloudinary.com/dvao98wnj/image/upload/v1738849472/download__2_-removebg-preview_ub5wnp.png"
+                  alt=""
+                />
               </td>
             </tr>
 
@@ -66,9 +63,11 @@ export const newContactMail = `
                   Hello {{name}},
                 </h1>
                 <p style="font-size: 18px; color: #4b5563; margin-bottom: 32px">
-                  You have a new submission by a potential client at Salford
-                  Studio. Login to your dashboard to see it.
+                  You have a new submission at
+                  <strong>Satellite Apartments</strong>. Log in to your
+                  dashboard to view the details.
                 </p>
+
                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
                   <tr>
                     <td align="center">
@@ -76,7 +75,7 @@ export const newContactMail = `
                         href="{{url}}"
                         style="
                           display: inline-block;
-                          background-color: #f48c04;
+                          background-color: #708090;
                           color: white;
                           text-decoration: none;
                           padding: 12px 48px;
@@ -98,7 +97,7 @@ export const newContactMail = `
             <tr>
               <td
                 style="
-                  background-color: #f48c04;
+                  background-color: #708090;
                   color: white;
                   padding: 16px;
                   text-align: center;
@@ -106,10 +105,11 @@ export const newContactMail = `
                 "
               >
                 <p style="margin: 4px 0">
-                  23 Goto Street PMB 5768, San Francisco, CA 54533
+                  15 Awori Crescent, off Peter Ememesi Street, Satellite Town,
+                  Lagos 102102, Lagos
                 </p>
                 <p style="margin: 4px 0">
-                  © 2024 your brand. All rights reserved.
+                  © 2025 Satellite Apartments. All rights reserved.
                 </p>
               </td>
             </tr>
@@ -119,6 +119,8 @@ export const newContactMail = `
     </table>
   </body>
 </html>
+
+
 
 
 `;

@@ -20,12 +20,6 @@ import CheckAvailability from "@/components/home/sections/others/CheckAvailabili
 import PeriodDisplay from "./PeriodDisplay";
 import useBookingStore from "@/stores/useBookingStore";
 import BookingReceipt from "./BookingReceipt";
-import {
-  PayPalButtons,
-  PayPalScriptProvider,
-  ReactPayPalScriptOptions,
-  PayPalButtonsComponentProps,
-} from "@paypal/react-paypal-js";
 
 type CheckoutProps = {
   products: any;
@@ -42,10 +36,8 @@ const validationSchema = Yup.object({
   country: Yup.string().required("Required"),
   firstName: Yup.string().required("Required"),
   lastName: Yup.string().required("Required"),
-  address: Yup.string().required("Required"),
   city: Yup.string().required("Required"),
   state: Yup.string().required("Required"),
-  // zipCode: Yup.string().required("Required"),
 });
 
 const Checkout: React.FC<CheckoutProps> = ({
@@ -60,10 +52,8 @@ const Checkout: React.FC<CheckoutProps> = ({
     country,
     firstName,
     lastName,
-    address,
     city,
     state,
-    zipCode,
     saveInfo,
     setUserInfo,
   } = useUserInfoStore();
@@ -74,10 +64,8 @@ const Checkout: React.FC<CheckoutProps> = ({
     country: country || "",
     firstName: firstName || "",
     lastName: lastName || "",
-    address: address || "",
     city: city || "",
     state: state || "",
-    zipCode: zipCode || "",
     saveInfo: saveInfo || true,
     note: "",
   });
@@ -185,16 +173,7 @@ const Checkout: React.FC<CheckoutProps> = ({
   // @ts-ignore
   const handleFlutterPayment = useFlutterwave(config);
 
-  const initialOptions: ReactPayPalScriptOptions = {
-    clientId:
-      "Aep-bAXPWzzmKCG5WzKI7LH8wO6CkGZKPAbJza0hxxH4EG9uatH_UkW6Z2tUk5JTD72ZbMMv73SfxUBe",
-    // Add other options as needed
-  };
-  const styles: PayPalButtonsComponentProps["style"] = {
-    label: "pay",
-    disableMaxWidth: true,
-    shape: "rect",
-  };
+  
   const submitOrderToFirestore = async (values: any) => {
     setIsLoading(true);
     try {
@@ -267,6 +246,7 @@ const Checkout: React.FC<CheckoutProps> = ({
           <div className="animate-spin rounded-full h-[100px] w-[100px] border-t-2 border-b-2 border-primary"></div>
         </div>
       )}
+      {/* <button onClick={async () => await sendEmail()}>Send Email</button> */}
 
       <div className="flex justify-around- items-center gap-2 border-b- pb-3">
         <div
@@ -315,7 +295,7 @@ const Checkout: React.FC<CheckoutProps> = ({
           />
         </svg>
         <div
-          onClick={() => setActiveTab(2)}
+          // onClick={() => setActiveTab(2)}
           className={`text-sm  ${
             activeTab === 2 ? "text-primary font-semibold" : "text-gray-400"
           }`}
@@ -353,6 +333,8 @@ const Checkout: React.FC<CheckoutProps> = ({
                     validationSchema={validationSchema}
                     onSubmit={(values) => {
                       // handleNext(values);
+                      console.log("Submit clicked", values); // Add this
+
                       handleSaveInfo(values, values.saveInfo);
                       // submitOrderToFirestore(shippingInfo);
                       handleFlutterPayment({
@@ -376,7 +358,7 @@ const Checkout: React.FC<CheckoutProps> = ({
                   >
                     {({ setFieldValue }) => (
                       <Form className="space-y-4 min-h-screen">
-                        <div>
+                        <form>
                           <div className="grid grid-cols-2 gap-4">
                             <div>
                               <ParagraphLink2 className="block text-sm font-bold text-gray-700">
@@ -408,7 +390,7 @@ const Checkout: React.FC<CheckoutProps> = ({
                               />
                             </div>
                           </div>
-                        </div>
+                        </form>
 
                         <div className="grid grid-cols-2 gap-4">
                           <div>
@@ -546,14 +528,11 @@ const Checkout: React.FC<CheckoutProps> = ({
                             </ParagraphLink2>{" "}
                           </button>
                         </div>
-                        <div className=" hidden">
-                          <PayPalScriptProvider options={initialOptions}>
-                            <PayPalButtons style={styles} />
-                          </PayPalScriptProvider>
-                        </div>
+                        
                       </Form>
                     )}
                   </Formik>
+                  
                 </div>
               )}
             </div>

@@ -89,7 +89,7 @@ const CategorySelector: React.FC<CategorySelectorProps> = ({
 
 
   return (
-    <div className="flex gap-2 w-fit scrollbar-hide items-center mb-4 flex-nowrap">
+    <div className="flex  gap-2 w-fit scrollbar-hide items-center mb-4 flex-wrap justify-center">
       <button
         className={`w-fit py-2 rounded-lg px-4 ${
           !selectedCategory
@@ -120,7 +120,7 @@ const CategorySelector: React.FC<CategorySelectorProps> = ({
               }}
             >
               <ParagraphLink2 className="whitespace-nowrap">
-                {category.name}
+                {category.name} APARTMENTS
               </ParagraphLink2>
             </button>
 

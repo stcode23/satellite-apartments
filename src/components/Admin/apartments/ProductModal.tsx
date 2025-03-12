@@ -311,7 +311,14 @@ const ProductModal: React.FC<ModalProps> = ({ product, onClose }) => {
                         ) : (
                           <div className="h-[100px] object-cover w-full bg-gray-200 rounded-lg overflow-hidden">
                             <img
-                              src={values.productImageURL1}
+                              src={
+                                values.productImageURL1
+                                  ? values.productImageURL1.replace(
+                                      "/upload/",
+                                      "/upload/w_500,f_auto/"
+                                    )
+                                  : "/images/default-product.png"
+                              }
                               alt="Uploaded Preview"
                               className="h-full w-full object-cover"
                             />
@@ -350,7 +357,14 @@ const ProductModal: React.FC<ModalProps> = ({ product, onClose }) => {
                         ) : (
                           <div className="h-[100px] object-cover w-full bg-gray-200 rounded-lg overflow-hidden">
                             <img
-                              src={values.productImageURL2}
+                              src={
+                                values.productImageURL2
+                                  ? values.productImageURL2.replace(
+                                      "/upload/",
+                                      "/upload/w_500,f_auto/"
+                                    )
+                                  : "/images/default-product.png"
+                              }
                               alt="Uploaded Preview"
                               className="h-full w-full object-cover"
                             />
@@ -389,7 +403,14 @@ const ProductModal: React.FC<ModalProps> = ({ product, onClose }) => {
                         ) : (
                           <div className="h-[100px] object-cover w-full bg-gray-200 rounded-lg overflow-hidden">
                             <img
-                              src={values.productImageURL3}
+                              src={
+                                values.productImageURL3
+                                  ? values.productImageURL3.replace(
+                                      "/upload/",
+                                      "/upload/w_500,f_auto/"
+                                    )
+                                  : "/images/default-product.png"
+                              }
                               alt="Uploaded Preview"
                               className="h-full w-full object-cover"
                             />
@@ -428,7 +449,14 @@ const ProductModal: React.FC<ModalProps> = ({ product, onClose }) => {
                         ) : (
                           <div className="h-[100px] object-cover w-full bg-gray-200 rounded-lg overflow-hidden">
                             <img
-                              src={values.productImageURL4}
+                              src={
+                                values.productImageURL4
+                                  ? values.productImageURL4.replace(
+                                      "/upload/",
+                                      "/upload/w_500,f_auto/"
+                                    )
+                                  : "/images/default-product.png"
+                              }
                               alt="Uploaded Preview"
                               className="h-full w-full object-cover"
                             />
@@ -467,7 +495,14 @@ const ProductModal: React.FC<ModalProps> = ({ product, onClose }) => {
                         ) : (
                           <div className="h-[100px] object-cover w-full bg-gray-200 rounded-lg overflow-hidden">
                             <img
-                              src={values.productImageURL5}
+                              src={
+                                values.productImageURL5
+                                  ? values.productImageURL5.replace(
+                                      "/upload/",
+                                      "/upload/w_500,f_auto/"
+                                    )
+                                  : "/images/default-product.png"
+                              }
                               alt="Uploaded Preview"
                               className="h-full w-full object-cover"
                             />
@@ -491,7 +526,7 @@ const ProductModal: React.FC<ModalProps> = ({ product, onClose }) => {
                     className="text-red-500 text-[12px]"
                   />
                 </div>
-                
+
                 <div>
                   <label>Category</label>
                   {loadingCategories ? (
@@ -538,8 +573,7 @@ const ProductModal: React.FC<ModalProps> = ({ product, onClose }) => {
                     className="text-red-500 text-[12px]"
                   />
                 </div>
-            
-               
+
                 <div className="flex justify-between">
                   <button
                     type="button"
