@@ -64,7 +64,7 @@ const CategoryDetail: React.FC<CategoryDetailProps> = ({
   const details = categoryDetails[categoryName] || ["No details available."];
 
   return (
-    <div className=" h-[150px] sm:bg-white bg-opacity-90   text-white sm:text-black p-4 sm:rounded-lg sm:h-full overflow-y-auto scrollbar-">
+    <div className=" h-[200px] sm:bg-white bg-opacity-90   text-white sm:text-black p-4 sm:rounded-lg sm:h-full overflow-y-auto scrollbar-">
       <div className="  w-full justify-center items-center mb-2 sm:flex hidden">
         <img
           src="/images/logo.png"
