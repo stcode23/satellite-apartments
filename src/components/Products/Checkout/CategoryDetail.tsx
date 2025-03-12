@@ -1,4 +1,4 @@
-import { Paragraph1, Paragraph2 } from "@/components/Text";
+import { Paragraph1, Paragraph2, Paragraph3 } from "@/components/Text";
 import React from "react";
 
 interface CategoryDetailProps {
@@ -64,7 +64,7 @@ const CategoryDetail: React.FC<CategoryDetailProps> = ({
   const details = categoryDetails[categoryName] || ["No details available."];
 
   return (
-    <div className=" h-[150px] bg-white p-4 sm:rounded-lg sm:h-full overflow-y-auto scrollbar-">
+    <div className=" h-[150px] sm:bg-white bg-opacity-90   text-white sm:text-black p-4 sm:rounded-lg sm:h-full overflow-y-auto scrollbar-">
       <div className="  w-full justify-center items-center mb-2 sm:flex hidden">
         <img
           src="/images/logo.png"
@@ -72,7 +72,7 @@ const CategoryDetail: React.FC<CategoryDetailProps> = ({
           className="h-[60px] xl:flex- hidden-"
         />
       </div>
-      <Paragraph2 className="text-xl font-bold mb-2 ">
+      <Paragraph2 className="sm:text-xl font-bold mb-2 ">
         No. {apartmentName} - {categoryName} APARTMENT
       </Paragraph2>
       <ul className="list-disc pl-5-">

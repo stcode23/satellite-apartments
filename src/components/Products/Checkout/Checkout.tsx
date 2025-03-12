@@ -229,7 +229,7 @@ const Checkout: React.FC<CheckoutProps> = ({
       // Send email notification
       await sendEmail();
 
-      // useBookingStore.getState().reset();
+      useBookingStore.getState().reset();
 
       setIsLoading(false); // Mark loading as complete
       console.log("Order and product quantities updated successfully.");
@@ -240,7 +240,7 @@ const Checkout: React.FC<CheckoutProps> = ({
   };
 
   return (
-    <div className="  space-y-6 bg-white  p-0 relative rounded-lg">
+    <div className="  space-y-6 bg-white   p-0 relative rounded-lg">
       {isloading && (
         <div className=" absolute inset-0 flex items-center justify-center bg-white bg-opacity-50 z-50">
           <div className="animate-spin rounded-full h-[100px] w-[100px] border-t-2 border-b-2 border-primary"></div>

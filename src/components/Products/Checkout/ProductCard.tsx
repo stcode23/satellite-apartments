@@ -65,14 +65,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <div className="rounded-[10px] w-full overflow-hidden border">
           <div
             onClick={() => openModal(0)}
-            className="h-[400px] cursor-pointer overflow-hidden rounded-t-[10px] w-full bg-primary"
+            className="h-[400px] cursor-pointer overflow-hidden rounded-t-[10px] w-full bg-black"
           >
             <img
               src={
                 apartment?.productImageURL1
                   ? apartment?.productImageURL1.replace(
                       "/upload/",
-                      "/upload/w_1000,f_auto/"
+                      "/upload/w_800,f_auto/"
                     )
                   : "/images/default-product.png"
               }
@@ -130,29 +130,31 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <div className=" grid sm:grid-cols-4 w-[90%] gap-4 bg-white- bg-opacity-65- rounded-lg ">
             <div className=" sm:col-span-3 relative flex justify-center items-center">
               <button
-                className="absolute left-4 text-white text-3xl bg-black bg-opacity-50 rounded-full p-2"
+                className="absolute left-4 text-white sm:text-3xl bg-black bg-opacity-50 rounded-full p-2"
                 onClick={prevImage}
               >
                 &#10094;
               </button>
               <button
-                className="absolute right-4 text-white text-3xl bg-black bg-opacity-50 rounded-full p-2 "
+                className="absolute right-4 text-white sm:text-3xl bg-black bg-opacity-50 rounded-full p-2 "
                 onClick={nextImage}
               >
                 &#10095;
               </button>
-              <img
-                src={
-                  images[currentImageIndex]
-                    ? images[currentImageIndex].replace(
-                        "/upload/",
-                        "/upload/w_2000,f_auto/"
-                      )
-                    : "/images/default-product.png"
-                }
-                alt="Apartment"
-                className=" w-[100%] max-h-[80vh] object-cover"
-              />
+              <div className="max-h-[80vh] overflow-hidden w-full bg-black min-h-[300px]">
+                <img
+                  src={
+                    images[currentImageIndex]
+                      ? images[currentImageIndex].replace(
+                          "/upload/",
+                          "/upload/w_1000,f_auto/"
+                        )
+                      : " "
+                  }
+                  alt="Apartment"
+                  className=" w-[100%] max-h-[80vh] h-full  object-cover"
+                />
+              </div>
             </div>
             <CategoryDetail
               apartmentName={apartment?.name}
