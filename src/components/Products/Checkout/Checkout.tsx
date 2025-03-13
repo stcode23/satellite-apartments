@@ -229,7 +229,6 @@ const Checkout: React.FC<CheckoutProps> = ({
       // Send email notification
       await sendEmail();
 
-      useBookingStore.getState().reset();
 
       setIsLoading(false); // Mark loading as complete
       console.log("Order and product quantities updated successfully.");
@@ -311,7 +310,7 @@ const Checkout: React.FC<CheckoutProps> = ({
             {/* Inner Tab Content */}
             <div className="">
               {innerTab === 0 && (
-                <div className=" border rounded-lg">
+                <div className=" ">
                   <CheckAvailability handleInnerNext={handleInnerNext} />
 
                   {/* <PeriodDisplay /> */}

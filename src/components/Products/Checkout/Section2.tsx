@@ -70,7 +70,7 @@ function Section2({
 
         if (filteredApartments.length < requiredApartments) {
           setError(
-            `Not enough apartments available for ${guests} guests within your selected time of stay. Please adjust your selection.`
+            `Not enough ${apartmentType} apartments available for ${guests} guests within your selected time of stay. Please adjust your selection.`
           );
         }
 

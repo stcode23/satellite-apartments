@@ -82,7 +82,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </div>
           <div className="bg-white px-4 p-2 pb-4">
             <Paragraph1 className="font-bold">
-              No. {apartment?.name} - {apartment?.selectedCategory?.name}
+              No. {apartment?.name} - {apartment?.selectedCategory?.name}{" "}
+              APARTMENT
             </Paragraph1>
             <Paragraph2>
               <span className="font-bold">{`${currencySymbol}${formattedPrice}`}</span>{" "}
@@ -90,9 +91,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
             </Paragraph2>
           </div>
         </div>
-        <div className="flex w-full items-center gap-2 justify-between">
+        <div className="flex w-full items-center gap-2 justify-between lowercase">
           <Paragraph2>
-            {alternativesAvailable} Alternatives Available
+            <span className=" font-bold">{alternativesAvailable}</span>{" "}
+            Alternatives Available <br /> for this apartment type
           </Paragraph2>
           {alternativesAvailable > 0 && (
             <button

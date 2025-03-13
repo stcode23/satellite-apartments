@@ -81,7 +81,7 @@ const BookingReceipt: React.FC<BookingReceiptProps> = ({
          link.click();
        }
 
-
+      useBookingStore.getState().reset();
        window.location.href = "/";
      };
   return (
