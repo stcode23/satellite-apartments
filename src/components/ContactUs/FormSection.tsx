@@ -23,9 +23,7 @@ const validationSchema = Yup.object({
   contact_methods: Yup.array()
     .of(Yup.string())
     .min(1, "Please select at least one contact method"),
-  services_needed: Yup.array()
-    .of(Yup.string())
-    .min(1, "Please select at least one service"),
+ 
   location: Yup.string().required("location is required"),
   productDetail: Yup.string().required("Product Detail is required"),
 });
@@ -72,7 +70,6 @@ const FormComponent = () => {
       email: "",
       phoneNumber: "",
       contact_methods: [],
-      services_needed: [],
       location: "",
       productDetail: "",
       aboutushow: "",
@@ -290,115 +287,7 @@ const FormComponent = () => {
               ) : null}
             </div>
 
-            <div className="mb-6 hidden">
-              <p className="text-gray-700">
-                <ParagraphLink1 className="  text-cente font-bold ">
-                  {" "}
-                  Product Category
-                </ParagraphLink1>
-              </p>
-
-              <div className="flex flex-col space-y-3">
-                <div className=" grid grid-cols-2 gap-3">
-                  <label className="inline-flex items-center">
-                    <input
-                      type="checkbox"
-                      name="services_needed"
-                      value="Creams"
-                      onChange={formik.handleChange}
-                      className="form-checkbox min-h-5 min-w-5 text-orange-500 appearance-none checked:bg-primary checked:border-transparent focus:outline-none border border-primary rounded checked:after:content-['✓'] checked:after:text-white checked:after:text-xs checked:after:flex checked:after:justify-center"
-                    />
-                    <span className="ml-2 text-gray-700">
-                      <ParagraphLink1 className="  text-cente ">
-                        {" "}
-                        Creams
-                      </ParagraphLink1>
-                    </span>
-                  </label>
-                  <label className="inline-flex items-center">
-                    <input
-                      type="checkbox"
-                      name="services_needed"
-                      value="Lipsticks"
-                      onChange={formik.handleChange}
-                      className="form-checkbox min-h-5 min-w-5 text-orange-500 appearance-none checked:bg-primary checked:border-transparent focus:outline-none border border-primary rounded checked:after:content-['✓'] checked:after:text-white checked:after:text-xs checked:after:flex checked:after:justify-center"
-                    />
-                    <span className="ml-2 text-gray-700">
-                      <ParagraphLink1 className="  text-cente ">
-                        {" "}
-                        Lipsticks
-                      </ParagraphLink1>
-                    </span>
-                  </label>
-                  <label className="inline-flex items-center">
-                    <input
-                      type="checkbox"
-                      name="services_needed"
-                      value="Foundations"
-                      onChange={formik.handleChange}
-                      className="form-checkbox min-h-5 min-w-5 text-orange-500 appearance-none checked:bg-primary checked:border-transparent focus:outline-none border border-primary rounded checked:after:content-['✓'] checked:after:text-white checked:after:text-xs checked:after:flex checked:after:justify-center"
-                    />
-                    <span className="ml-2 text-gray-700">
-                      <ParagraphLink1 className="  text-cente ">
-                        {" "}
-                        Foundations
-                      </ParagraphLink1>
-                    </span>
-                  </label>
-                  <label className="inline-flex items-center">
-                    <input
-                      type="checkbox"
-                      name="services_needed"
-                      value="commercial"
-                      onChange={formik.handleChange}
-                      className="form-checkbox min-h-5 min-w-5 text-orange-500 appearance-none checked:bg-primary checked:border-transparent focus:outline-none border border-primary rounded checked:after:content-['✓'] checked:after:text-white checked:after:text-xs checked:after:flex checked:after:justify-center"
-                    />
-                    <span className="ml-2 text-gray-700">
-                      <ParagraphLink1 className="  text-cente ">
-                        {" "}
-                        Serums
-                      </ParagraphLink1>
-                    </span>
-                  </label>
-                  <label className="inline-flex items-center">
-                    <input
-                      type="checkbox"
-                      name="services_needed"
-                      value="Lotion"
-                      onChange={formik.handleChange}
-                      className="form-checkbox min-h-5 min-w-5 text-orange-500 appearance-none checked:bg-primary checked:border-transparent focus:outline-none border border-primary rounded checked:after:content-['✓'] checked:after:text-white checked:after:text-xs checked:after:flex checked:after:justify-center"
-                    />
-                    <span className="ml-2 text-gray-700">
-                      <ParagraphLink1 className="  text-cente ">
-                        {" "}
-                        Lotion
-                      </ParagraphLink1>
-                    </span>
-                  </label>
-                  <label className="inline-flex items-center">
-                    <input
-                      type="checkbox"
-                      name="services_needed"
-                      value="others"
-                      onChange={formik.handleChange}
-                      className="form-checkbox min-h-5 min-w-5 text-orange-500 appearance-none checked:bg-primary checked:border-transparent focus:outline-none border border-primary rounded checked:after:content-['✓'] checked:after:text-white checked:after:text-xs checked:after:flex checked:after:justify-center"
-                    />
-                    <span className="ml-2 text-gray-700">
-                      <ParagraphLink1 className="  text-cente ">
-                        {" "}
-                        Others
-                      </ParagraphLink1>
-                    </span>
-                  </label>
-                </div>
-              </div>
-              {formik.touched.services_needed &&
-              formik.errors.services_needed ? (
-                <div className="text-red-500 ">
-                  {formik.errors.services_needed}
-                </div>
-              ) : null}
-            </div>
+          
           </div>
 
           <div className=" space-y-[24px] xl:space-y-[32px]">

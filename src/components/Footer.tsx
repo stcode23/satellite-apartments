@@ -155,7 +155,7 @@ function Footer() {
                   />
                 </svg>
 
-                <Paragraph2> stapartments@gmail.com</Paragraph2>
+                <Paragraph2> stapartments23@gmail.com</Paragraph2>
               </div>
               <div className=" flex items-center gap-2 text-[#ECECEC]- ">
                 <svg
@@ -278,7 +278,7 @@ function Footer() {
                     />
                   </svg>
 
-                  <Paragraph2> stapartments@gmail.com</Paragraph2>
+                  <Paragraph2> stapartments23@gmail.com</Paragraph2>
                 </div>
                 <div className=" flex items-center gap-2 text-[#ECECEC]- ">
                   <svg
