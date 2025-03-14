@@ -85,10 +85,7 @@ const BookingReceipt: React.FC<BookingReceiptProps> = ({
        window.location.href = "/";
      };
   return (
-    <div
-      id="receipt"
-      className="max-w-[793px] bg-white p-6 border rounded-lg"
-    >
+    <div id="receipt" className="max-w-[793px] bg-white p-6 border rounded-lg">
       {/* Header */}
       <div className="text-center">
         <img src={logoUrl} alt="Company Logo" className="mx-auto h-20" />
@@ -174,7 +171,14 @@ const BookingReceipt: React.FC<BookingReceiptProps> = ({
             >
               <div className="col-span-2 flex items-center gap-2">
                 <img
-                  src={product.productImageURL1}
+                  src={
+                    product.productImageURL1
+                      ? product.productImageURL1.replace(
+                          "/upload/",
+                          "/upload/w_500,f_auto/"
+                        )
+                      : " "
+                  }
                   alt={product.name}
                   className="w-16 h-16 rounded object-cover"
                 />
