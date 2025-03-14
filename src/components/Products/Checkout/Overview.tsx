@@ -47,7 +47,7 @@ const CheckOutOverview = () => {
     <div className=" bg-bg_gray-">
       <div className="container1 py-[120px]">
         <Header4 className="mb-4">Reservation</Header4>
-        <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 bg-white- rounded-lg">
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 bg-white- rounded-lg">
             <BookingSummary
               isSummaryVisible={isSummaryVisible}
               toggleSummary={toggleSummary}

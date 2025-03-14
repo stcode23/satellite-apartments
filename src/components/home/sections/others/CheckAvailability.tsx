@@ -85,14 +85,14 @@ function CheckAvailability({
         Explore our premium apartments designed to offer modern comfort and
         luxury. Booking your ideal stay is just a few clicks away:
       </Paragraph1>
-      <div className="grid grid-cols-2 sm:gap-4 py-4 xl:grid-cols-4 w-full items-center">
+      <div className="grid grid-cols-2 sm:gap-4 py-4 sm:grid-cols-4 w-full items-center">
         <BookingDatePicker
           checkIn={checkIn}
           checkOut={checkOut}
           setCheckIn={setCheckIn}
           setCheckOut={setCheckOut}
         />
-        <div className="xl:border-r border-primary flex w-full flex-col gap-2 items-center p-4">
+        <div className="sm:border-r border-primary flex w-full flex-col gap-2 items-center p-4">
           <ParagraphLink1 className="text-start font-bold">
             Guest
           </ParagraphLink1>
@@ -104,7 +104,7 @@ function CheckAvailability({
             className="bg-white w-[120px] border bg-opacity-50 p-2 rounded-lg text-center outline-none"
           />
         </div>
-        <div className="xl:border-r- border-primary flex w-full flex-col gap-2 items-center p-4">
+        <div className="sm:border-r- border-primary flex w-full flex-col gap-2 items-center p-4">
           <ParagraphLink1 className="text-start font-bold whitespace-nowrap">
             Apartment Type
           </ParagraphLink1>

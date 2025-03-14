@@ -43,7 +43,7 @@ const BookingSummary: React.FC<BookingSummaryProps> = ({
   }
 
   return (
-    <div className="block sm:hidden">
+    <div className="block xl:hidden">
       <div className="flex justify-between border p-2 px-2 rounded-lg items-center">
         <button
           onClick={toggleSummary}

@@ -21,7 +21,7 @@ const BookingDatePicker: React.FC<BookingDatePickerProps> = ({
   return (
     <div className="col-span-2 grid-cols-2 grid">
       {/* Check-in Date Picker */}
-      <div className="xl:border-r border-primary flex w-full flex-col gap-2 items-center p-4">
+      <div className="sm:border-r border-primary flex w-full flex-col gap-2 items-center p-4">
         <Paragraph1 className="text-start font-bold">Check-in</Paragraph1>
         <DatePicker
           selected={checkIn ? new Date(checkIn) : null}
@@ -37,7 +37,7 @@ const BookingDatePicker: React.FC<BookingDatePickerProps> = ({
       </div>
 
       {/* Check-out Date Picker */}
-      <div className="xl:border-r border-primary flex w-full flex-col gap-2 items-center p-4">
+      <div className="sm:border-r border-primary flex w-full flex-col gap-2 items-center p-4">
         <Paragraph1 className="text-start font-bold">Check-out</Paragraph1>
         <DatePicker
           selected={checkOut ? new Date(checkOut) : null}

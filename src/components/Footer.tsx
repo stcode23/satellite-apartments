@@ -19,14 +19,14 @@ function Footer() {
     <div
       className={
         ["/reservation", "/blog", "/reservation/checkout"].includes(pathname)
-          ? "bg-bg_gray hidden sm:py-[100px]-"
-          : " bg-white  sm:py-[100px]-"
+          ? "bg-bg_gray hidden xl:py-[100px]-"
+          : " bg-white  xl:py-[100px]-"
       }
     >
       <div className="  bg-bg_gray [#4A4A4A]  ">
-        <div className=" container1 py-[32px] sm:py-[40px] ">
+        <div className=" container1 py-[32px] xl:py-[40px] ">
           {/* desktop */}
-          <div className="sm:flex hidden items-start justify-between ">
+          <div className="xl:flex hidden items-start justify-between ">
             <div className="w-[300px] relative hidden- space-y-4">
               <img
                 src="/images/logo2.png"
@@ -198,10 +198,10 @@ function Footer() {
               </div>
             </div>
           </div>
-          <div className=" sm:flex justify-center items-center hidden py-4"></div>
+          <div className=" xl:flex justify-center items-center hidden py-4"></div>
 
           {/* mobile  */}
-          <div className=" mb-[24px] sm:hidden sm:mb-[110px]">
+          <div className=" mb-[24px] xl:hidden xl:mb-[110px]">
             <div className=" space-y-[24px] mb-[24px] ">
               {" "}
               <Link href="/">
@@ -301,7 +301,7 @@ function Footer() {
               </div>
             </div>
 
-            <div className="col-span-1 order-2 sm:order-1 hidden">
+            <div className="col-span-1 order-2 xl:order-1 hidden">
               {" "}
               <img
                 src="/images/logo2.png"
@@ -311,8 +311,8 @@ function Footer() {
             </div>
           </div>
 
-          <div className=" border-t border-p_black pt-[24px] sm:pt-[32px] flex flex-wrap justify-between">
-            <div className=" flex justify-center items-center sm:hidden py-4">
+          <div className=" border-t border-p_black pt-[24px] xl:pt-[32px] flex flex-wrap justify-between">
+            <div className=" flex justify-center items-center xl:hidden py-4">
               <div className=" py-2 px-4 rounded-lg bg-white flex justify-center items-center gap-2 flex-col">
                 <p className=" text-[12px]  ">
                   {" "}
@@ -339,7 +339,7 @@ function Footer() {
             </ParagraphLink2>
             <Link
               href="https://cybalbuzz-codefiles.vercel.app/"
-              className="sm:py-0 py-2"
+              className="xl:py-0 py-2"
             >
               {" "}
               <ParagraphLink2 className="  text-[#ECECEC]- ">

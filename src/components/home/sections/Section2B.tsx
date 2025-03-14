@@ -94,7 +94,7 @@ const Pricing = () => {
       <Header3 className="text-3xl font-bold text-center text-gray-800 mb-8">
         Pricing Plans
       </Header3>
-      <div className="grid gap-8 grid-cols-1 md:grid-cols-3">
+      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
         {plans.map((plan, index) => {
           const displayPrice =
             selectedCurrency === "USD" && exchangeRate > 0

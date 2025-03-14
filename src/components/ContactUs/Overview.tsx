@@ -19,7 +19,7 @@ function Overview() {
         data-aos="flip-right"
       >
         {" "}
-        <div className="  xl:px-[100px] xl:py-[50px] py-8 flex flex-col  xl:gap-[24px] items-center w-full mb-[24px] xl:mb-[64px]-">
+        <div className="  xl:px-[100px] sm:py-[50px] py-8 flex flex-col  xl:gap-[24px] items-center w-full mb-[24px] xl:mb-[64px]-">
           <Header1Plus className="text-center">
             Let’s <span className="text-primary">Enhance</span> Your Stay
           </Header1Plus>
