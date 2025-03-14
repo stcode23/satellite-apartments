@@ -41,6 +41,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   const openModal = (index: number) => {
     setCurrentImageIndex(index);
@@ -52,7 +53,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
   };
 
   const nextImage = () => {
+    setLoading(true);
     setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    setTimeout(() => setLoading(false), 2000);
   };
 
   const prevImage = () => {
@@ -132,13 +135,20 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <div className=" grid sm:grid-cols-4 w-[90%] gap-4 bg-white- bg-opacity-65- rounded-lg ">
             <div className=" sm:col-span-3 relative flex justify-center items-center">
               <button
-                className="absolute left-4 text-white sm:text-3xl bg-black bg-opacity-50 rounded-full p-2"
+                className="absolute xl:left-4 left-2 text-white sm:text-3xl bg-black bg-opacity-50 rounded-full p-2 px-4"
                 onClick={prevImage}
               >
                 &#10094;
               </button>
+
+              {loading && (
+                <div className="absolute w-full h-screen flex items-center justify-center">
+                  <div className="w-12 h-12 border-4 border-gray-200 border-t-primary rounded-full animate-spin"></div>
+                </div>
+              )}
+
               <button
-                className="absolute right-4 text-white sm:text-3xl bg-black bg-opacity-50 rounded-full p-2 "
+                className="absolute xl:right-4 right-2 text-white sm:text-3xl bg-black bg-opacity-50 rounded-full p-2  px-4 "
                 onClick={nextImage}
               >
                 &#10095;
@@ -149,7 +159,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                     images[currentImageIndex]
                       ? images[currentImageIndex].replace(
                           "/upload/",
-                          "/upload/w_1000,f_auto/"
+                          "/upload/w_800,f_auto/"
                         )
                       : " "
                   }
