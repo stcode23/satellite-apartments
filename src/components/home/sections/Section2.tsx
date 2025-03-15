@@ -47,7 +47,7 @@ function Section2() {
             >
               <img
                 src="https://res.cloudinary.com/dvao98wnj/image/upload/v1738849472/lagos-pic-13_nc3jec.jpg"
-                alt="branding"
+                alt="Satellite Apartment"
                 className="w-full "
               />{" "}
               <div className=" space-y-[20px] xl:space-y-[32px] p-[24px] xl:p-[32px] flex flex-col w-full">
@@ -97,11 +97,11 @@ function Section2() {
               data-aos="fade-up-left"
             >
               <div className=" absolute bottom-0 -right-[60px] flex w-full justify-end  ">
-                <img src="/images/wave2.svg" alt="" />
+                <img src="/images/wave2.svg" alt="Satellite Apartment" />
               </div>
               <div className="xl:space-y-[6px] 2xl:space-y-[32px] space-y-[24px] p-[24px] xl:p-[32px]">
                 <div className=" flex w-full justify-end  ">
-                  <img src="/images/3_circles.svg" alt="" />
+                  <img src="/images/3_circles.svg" alt="Satellite Apartment" />
                 </div>
                 <Header4>
                   Quick & Easy Apartment Reservations - Book Your Stay in

@@ -31,7 +31,7 @@ function Footer() {
               <img
                 src="/images/logo2.png"
                 className="h-[200px]-"
-                alt="photographer"
+                alt="Satellite Apartment"
               />
 
               <Paragraph2>
@@ -111,7 +111,7 @@ function Footer() {
                 >
                   <img
                     src="https://res.cloudinary.com/dvao98wnj/image/upload/v1739497214/instagram_xheimp.png"
-                    alt=""
+                    alt="Lagos Apartment"
                     className="w-[20px] h-[20px]"
                   />
                 </Link>
@@ -122,7 +122,7 @@ function Footer() {
                 >
                   <img
                     src="https://res.cloudinary.com/dvao98wnj/image/upload/v1739497214/facebook-app-symbol_uqjczg.png"
-                    alt=""
+                    alt="Satellite Apartment"
                     className="w-[20px] h-[20px]"
                   />
                 </Link>
@@ -133,7 +133,7 @@ function Footer() {
                 >
                   <img
                     src="https://res.cloudinary.com/dvao98wnj/image/upload/v1741757129/tik-tok_1_xld8rp.png"
-                    alt=""
+                    alt="Satellite Apartment"
                     className="w-[20px] h-[20px]"
                   />
                 </Link>
@@ -187,12 +187,12 @@ function Footer() {
                 {" "}
                 <img
                   src="https://res.cloudinary.com/dtipo8fg3/image/upload/v1732661439/image-removebg-preview_6_sygmis.png"
-                  alt=""
+                  alt="Satellite Apartment"
                   className=" w-[30px] h-[30px]"
                 />{" "}
                 <img
                   src="https://res.cloudinary.com/dtipo8fg3/image/upload/v1732660748/image-removebg-preview_5_doqrew.png"
-                  alt=""
+                  alt="Satellite Apartment"
                   className=" w-[200px]"
                 />
               </div>
@@ -243,21 +243,21 @@ function Footer() {
                   >
                     <img
                       src="https://res.cloudinary.com/dvao98wnj/image/upload/v1739497214/instagram_xheimp.png"
-                      alt="instagram"
+                      alt="Satellite Apartment"
                       className="w-[14px] h-[14px]"
                     />
                   </Link>
                   <Link href="/">
                     <img
                       src="https://res.cloudinary.com/dvao98wnj/image/upload/v1739497214/facebook-app-symbol_uqjczg.png"
-                      alt="facebook"
+                      alt="Satellite Apartment"
                       className="w-[14px] h-[14px]"
                     />
                   </Link>
                   <Link href="https://www.tiktok.com/@satellite.apartments">
                     <img
                       src="https://res.cloudinary.com/dvao98wnj/image/upload/v1741757129/tik-tok_1_xld8rp.png"
-                      alt="tiktok"
+                      alt="Satellite Apartment"
                       className="w-[14px] h-[14px]"
                     />
                   </Link>
@@ -305,7 +305,7 @@ function Footer() {
               {" "}
               <img
                 src="/images/logo2.png"
-                alt="photographer"
+                alt="Satellite Apartment"
                 className=" "
               />{" "}
             </div>
@@ -323,12 +323,12 @@ function Footer() {
                   {" "}
                   <img
                     src="https://res.cloudinary.com/dtipo8fg3/image/upload/v1732661439/image-removebg-preview_6_sygmis.png"
-                    alt=""
+                    alt="Lagos Apartment"
                     className=" w-[20px] h-[20px]"
                   />{" "}
                   <img
                     src="https://res.cloudinary.com/dtipo8fg3/image/upload/v1732660748/image-removebg-preview_5_doqrew.png"
-                    alt=""
+                    alt="Satellite Apartment"
                     className=" w-[150px]"
                   />
                 </div>

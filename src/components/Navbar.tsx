@@ -53,7 +53,7 @@ function Navbar() {
                   height={2}
                   width={20}
                   src={menuOpen ? "/icons/close.svg" : "/icons/menu.svg"}
-                  alt="menu"
+                  alt="Lagos Apartment"
                   className=""
                 />
               </button>
@@ -61,7 +61,7 @@ function Navbar() {
             <Link href="/">
               <img
                 src="/images/logo.png"
-                alt=""
+                alt="Satellite Apartment"
                 className="h-[60px] xl:flex hidden-"
               />
               {/* <img

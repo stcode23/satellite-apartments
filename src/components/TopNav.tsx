@@ -16,7 +16,7 @@ function TopNav() {
             >
               <img
                 src="https://res.cloudinary.com/dcb4ilgmr/image/upload/v1729676533/utilities/templates/instagram_2_ujmgac.png"
-                alt=""
+                alt="Hotels In Nigeria"
                 className="w-[14px] h-[14px]"
               />
             </Link>
@@ -27,7 +27,7 @@ function TopNav() {
             >
               <img
                 src="https://res.cloudinary.com/dcb4ilgmr/image/upload/v1729676725/utilities/templates/facebook-app-symbol_x2whit.png"
-                alt=""
+                alt="Satellite Apartment"
                 className="w-[14px] h-[14px]"
               />
             </Link>
@@ -38,7 +38,7 @@ function TopNav() {
             >
               <img
                 src="https://res.cloudinary.com/dvao98wnj/image/upload/v1741756618/tik-tok_d6cfjv.png"
-                alt=""
+                alt="Satellite Apartment"
                 className="w-[14px] h-[14px]"
               />
             </Link>

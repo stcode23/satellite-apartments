@@ -117,7 +117,7 @@ const Pricing = () => {
                     ? plan.image.replace("/upload/", "/upload/w_500,f_auto/")
                     : "/images/default-product.png"
                 }
-                alt={plan.title}
+                alt="Satellite Apartment"
                 className="w-full h-48 object-cover"
               />
               <div className="p-5">

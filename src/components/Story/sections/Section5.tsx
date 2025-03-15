@@ -108,7 +108,7 @@ function Section5() {
                         ? "/icons/dash.svg"
                         : "/icons/plus.svg"
                     }
-                    alt=""
+                    alt="Lagos Apartment"
                     className=""
                     style={{
                       transform:
