@@ -47,9 +47,16 @@ const Pricing: React.FC = () => {
       price: price[categories[1]?.id] || 0,
       features: [
         "1 Bedroom",
-        "Free Wi-Fi",
-        "Basic Kitchen Setup",
-        "Weekly Cleaning Service",
+        "Wi-Fi",
+        "Air Conditioning",
+        "24Hr Power Supply",
+        "Cleaning Service",
+        "Laundry Service",
+        "Kitchen (No Gas)",
+        "Fridge",
+        "Smart TV",
+        "Wardrobe",
+        "Work Desk",
       ],
       image:
         "https://res.cloudinary.com/dvao98wnj/image/upload/v1741814702/axhkmpqi91iyqma7ogxr.heic",
@@ -58,11 +65,17 @@ const Pricing: React.FC = () => {
       title: categories[4]?.name || "Default Title",
       price: price[categories[4]?.id] || 0,
       features: [
-        "2 Bedrooms",
+        "1 Bedrooms",
+        "Wi-Fi",
+        "Air Conditioning",
+        "24Hr Power Supply",
+        "Cleaning Service",
+        "Laundry Service",
+        "Kitchen (No Gas)",
+        "Fridge",
         "Smart TV",
-        "Fully Equipped Kitchen",
-        "Bi-Weekly Cleaning Service",
-        "Quiet Location",
+        "Wardrobe",
+        "Work Desk",
       ],
       image:
         "https://res.cloudinary.com/dvao98wnj/image/upload/v1741816779/hgvqasw4zpimgx2y4oxf.heic",
@@ -71,12 +84,17 @@ const Pricing: React.FC = () => {
       title: categories[3]?.name || "Default Title",
       price: price[categories[3]?.id] || 0,
       features: [
-        "3 Bedrooms",
-        "Luxury Furnishings",
-        "24/7 Concierge Service",
-        "Daily Cleaning Service",
-        "Private Balcony",
-        "Free Parking",
+        "1 Bedroom",
+        "Wi-Fi",
+        "Air Conditioning",
+        "24Hr Power Supply",
+        "Cleaning Service",
+        "Laundry Service",
+        "Kitchen (No Gas)",
+        "Fridge",
+        "Smart TV",
+        "Wardrobe",
+        "Work Desk",
       ],
       image:
         "https://res.cloudinary.com/dvao98wnj/image/upload/v1741816415/nct8jzqzpy3sxvouptvy.heic ",
@@ -86,9 +104,16 @@ const Pricing: React.FC = () => {
       price: price[categories[2]?.id] || 0,
       features: [
         "1 Bedroom",
-        "Free Wi-Fi",
-        "Basic Kitchen Setup",
-        "Weekly Cleaning Service",
+        "Wi-Fi",
+        "Air Conditioning",
+        "24Hr Power Supply",
+        "Cleaning Service",
+        "Laundry Service",
+        "Kitchen (Gas)",
+        "Fridge",
+        "Smart TV",
+        "Wardrobe",
+        "Work Desk",
       ],
       image:
         "https://res.cloudinary.com/dvao98wnj/image/upload/v1741814321/wsebkgyq991ufpiwlqto.heic",
@@ -97,11 +122,17 @@ const Pricing: React.FC = () => {
       title: categories[0]?.name || "Default Title",
       price: price[categories[0]?.id] || 0,
       features: [
-        "2 Bedrooms",
+        "1 Bedroom",
+        "Wi-Fi",
+        "Air Conditioning",
+        "24Hr Power Supply",
+        "Cleaning Service",
+        "Laundry Service",
+        "Kitchen (Gas Cooker, Eating Utensils, Cooking Utensils)",
+        "Fridge",
         "Smart TV",
-        "Fully Equipped Kitchen",
-        "Bi-Weekly Cleaning Service",
-        "Quiet Location",
+        "Wardrobe",
+        "Work Desk",
       ],
       image:
         "https://res.cloudinary.com/dvao98wnj/image/upload/v1741798080/busjl3yikc2engxvv5px.heic",
@@ -110,17 +141,23 @@ const Pricing: React.FC = () => {
       title: categories[5]?.name || "Default Title",
       price: price[categories[5]?.id] || 0,
       features: [
-        "3 Bedrooms",
-        "Luxury Furnishings",
-        "24/7 Concierge Service",
-        "Daily Cleaning Service",
-        "Private Balcony",
-        "Free Parking",
+        "2 Bedrooms",
+        "Wi-Fi",
+        "Air Conditioning",
+        "24Hr Power Supply",
+        "Cleaning Service",
+        "Laundry Service",
+        "Kitchen (Gas Cooker, Eating Utensils, Cooking Utensils)",
+        "Fridge",
+        "Smart TV",
+        "Wardrobe",
+        "Work Desk",
       ],
       image:
         "https://res.cloudinary.com/dvao98wnj/image/upload/v1741811958/plbqdlkd0jbucvdlailk.heic",
     },
   ];
+
 
   return (
     <div className="bg-bg_gray py-10 px-5">
@@ -155,7 +192,7 @@ const Pricing: React.FC = () => {
               />
               <div className="p-5">
                 <Paragraph1 className="text-xl font-bold text-gray-800 mb-3">
-                  {plan.title}
+                  {plan.title} APARTMENT
                 </Paragraph1>
                 <Paragraph2>
                   <span className=" font-bold">
