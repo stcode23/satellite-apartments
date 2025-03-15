@@ -18,7 +18,7 @@ import SearchBar from "./SearchBar";
 import SummaryBlocks from "./SummaryBlocks";
 import { AnyARecord } from "dns";
 import countries from "../logistics/CountriesWithFlags";
-import { format, isAfter, parseISO } from "date-fns";
+import { format, isAfter, parseISO, isSameDay } from "date-fns";
 
 type Product = {
   id: string;
@@ -91,6 +91,12 @@ function NewOrders() {
             : null;
 
           const isExpired = lastDate ? isAfter(today, lastDate) : false;
+
+          // Check if any date in the period matches today's date
+          const isInService =
+            data.period?.some((date: any) => isSameDay(parseISO(date), today)) ??
+            false;
+
 
           return {
             id: doc.id,
@@ -667,7 +673,7 @@ function NewOrders() {
                           : order.returned
                           ? "x"
                           : order.shipped
-                          ? "✔ Checked-in"
+                          ? "In Service"
                           : "Pending"}
                       </Paragraph1>
                     </div>

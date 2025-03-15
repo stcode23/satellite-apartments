@@ -66,22 +66,43 @@ const ProductCard: React.FC<ProductCardProps> = ({
     <div className="w-full items-center mb-4">
       <div className="flex flex-col gap-1 items-center">
         <div className="rounded-[10px] w-full overflow-hidden border">
-          <div
-            onClick={() => openModal(0)}
-            className="h-[400px] cursor-pointer overflow-hidden rounded-t-[10px] w-full bg-black"
-          >
-            <img
-              src={
-                apartment?.productImageURL1
-                  ? apartment?.productImageURL1.replace(
-                      "/upload/",
-                      "/upload/w_800,f_auto/"
-                    )
-                  : "/images/default-product.png"
-              }
-              alt="Apartment"
-              className="h-full w-full object-cover"
-            />
+          <div className="h-[400px] cursor-pointer overflow-hidden rounded-t-[10px] w-full bg-black">
+            <div className=" sm:col-span-3 relative flex  h-full justify-center items-center">
+              <button
+                className="absolute xl:left-4 left-2 text-white sm:text-3xl bg-black bg-opacity-50 rounded-full p-2 px-4"
+                onClick={prevImage}
+              >
+                &#10094;
+              </button>
+
+              {loading && (
+                <div className="absolute w-full h-screen flex items-center justify-center">
+                  <div className="w-12 h-12 border-4 border-gray-200 border-t-primary rounded-full animate-spin"></div>
+                </div>
+              )}
+
+              <button
+                className="absolute xl:right-4 right-2 text-white sm:text-3xl bg-black bg-opacity-50 rounded-full p-2  px-4 "
+                onClick={nextImage}
+              >
+                &#10095;
+              </button>
+              <div className="max-h-[80vh]- h-full overflow-hidden w-full bg-black min-h-[300px]">
+                <img
+                  onClick={() => openModal(0)}
+                  src={
+                    images[currentImageIndex]
+                      ? images[currentImageIndex].replace(
+                          "/upload/",
+                          "/upload/w_1000,f_auto/"
+                        )
+                      : " "
+                  }
+                  alt="Apartment"
+                  className=" w-[100%] max-h-[80vh]- h-full  object-cover"
+                />
+              </div>
+            </div>
           </div>
           <div className="bg-white px-4 p-2 pb-4">
             <Paragraph1 className="font-bold">
