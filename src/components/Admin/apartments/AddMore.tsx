@@ -465,14 +465,14 @@ const AddMore: React.FC<AddMoreProps> = ({ onRefetch }) => {
       <div className=" flex fixed bottom-[24px] z-20 right-[24px] ">
         <div className=" relative">
           {isAddMoreOpen && (
-            <div className="absolute py-2 right-0 -top-[120px] z-20 mt-2 w-[250px] whitespace-nowrap px-4 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+            <div className="absolute py-2 right-0 -top-[100px] z-20 mt-2 w-[250px] whitespace-nowrap px-4 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
               <div
                 onClick={() => setIsAddProductOpen(!isAddProductOpen)}
                 className="py-1"
               >
                 <ParagraphLink1>Create New Product </ParagraphLink1>
               </div>
-              <div className="py-1">
+              <div className="py-1 hidden">
                 <ManageCategories onRefetch={onRefetch} />
               </div>
             </div>

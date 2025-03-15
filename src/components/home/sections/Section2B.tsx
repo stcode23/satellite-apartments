@@ -1,17 +1,50 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useExchangeRateStore } from "@/stores/exchangeRateStore";
-import { Header2, Header3, Paragraph1, Paragraph2 } from "@/components/Text";
+import { Header3, Paragraph1, Paragraph2 } from "@/components/Text";
 import Button from "@/components/Button";
+import { db } from "@/lib/firebase";
+import { collection, getDocs } from "firebase/firestore";
 
-const Pricing = () => {
+type Category = {
+  id: string;
+  name: string;
+  price?: number;
+};
+
+const Pricing: React.FC = () => {
   const { selectedCurrency, exchangeRate } = useExchangeRateStore();
-
   const currencySymbol = selectedCurrency === "USD" ? "$" : "₦";
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [price, setPrice] = useState<Record<string, number>>({});
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "category"));
+        const categoriesData = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        })) as Category[];
+
+        const priceData: Record<string, number> = {};
+        categoriesData.forEach((category) => {
+          priceData[category.id] = category.price || 0;
+        });
+
+        setCategories(categoriesData);
+        setPrice(priceData);
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      }
+    };
+
+    fetchCategories();
+  }, []);
 
   const plans = [
     {
-      title: "BUDGET HIDEAWAY APARTMENT",
-      price: 25000,
+      title: categories[1]?.name || "Default Title",
+      price: price[categories[1]?.id] || 0,
       features: [
         "1 Bedroom",
         "Free Wi-Fi",
@@ -22,8 +55,8 @@ const Pricing = () => {
         "https://res.cloudinary.com/dvao98wnj/image/upload/v1741814702/axhkmpqi91iyqma7ogxr.heic",
     },
     {
-      title: "COZY CORNER APARTMENT",
-      price: 35000,
+      title: categories[4]?.name || "Default Title",
+      price: price[categories[4]?.id] || 0,
       features: [
         "2 Bedrooms",
         "Smart TV",
@@ -35,8 +68,8 @@ const Pricing = () => {
         "https://res.cloudinary.com/dvao98wnj/image/upload/v1741816779/hgvqasw4zpimgx2y4oxf.heic",
     },
     {
-      title: "THE CLASSIC STUDIO APARTMENT",
-      price: 45000,
+      title: categories[3]?.name || "Default Title",
+      price: price[categories[3]?.id] || 0,
       features: [
         "3 Bedrooms",
         "Luxury Furnishings",
@@ -49,8 +82,8 @@ const Pricing = () => {
         "https://res.cloudinary.com/dvao98wnj/image/upload/v1741816415/nct8jzqzpy3sxvouptvy.heic ",
     },
     {
-      title: "THE LUXE HAVEN APARTMENT",
-      price: 55000,
+      title: categories[2]?.name || "Default Title",
+      price: price[categories[2]?.id] || 0,
       features: [
         "1 Bedroom",
         "Free Wi-Fi",
@@ -61,8 +94,8 @@ const Pricing = () => {
         "https://res.cloudinary.com/dvao98wnj/image/upload/v1741814321/wsebkgyq991ufpiwlqto.heic",
     },
     {
-      title: "COZY 1 BEDROOM APARTMENT",
-      price: 102000,
+      title: categories[0]?.name || "Default Title",
+      price: price[categories[0]?.id] || 0,
       features: [
         "2 Bedrooms",
         "Smart TV",
@@ -74,8 +107,8 @@ const Pricing = () => {
         "https://res.cloudinary.com/dvao98wnj/image/upload/v1741798080/busjl3yikc2engxvv5px.heic",
     },
     {
-      title: "COZY 2 BEDROOM APARTMENT",
-      price: 120000,
+      title: categories[5]?.name || "Default Title",
+      price: price[categories[5]?.id] || 0,
       features: [
         "3 Bedrooms",
         "Luxury Furnishings",
@@ -98,13 +131,13 @@ const Pricing = () => {
         {plans.map((plan, index) => {
           const displayPrice =
             selectedCurrency === "USD" && exchangeRate > 0
-              ? plan.price / exchangeRate // Convert to USD
-              : plan.price; // Default to NGN
+              ? plan.price / exchangeRate
+              : plan.price;
 
           const formattedPrice =
             selectedCurrency === "USD"
-              ? displayPrice.toFixed(2) // Format for USD with 2 decimal places
-              : new Intl.NumberFormat("en-NG").format(displayPrice); // Format for NGN (comma-separated)
+              ? displayPrice.toFixed(2)
+              : new Intl.NumberFormat("en-NG").format(displayPrice);
 
           return (
             <div
@@ -125,11 +158,9 @@ const Pricing = () => {
                   {plan.title}
                 </Paragraph1>
                 <Paragraph2>
-                  {" "}
                   <span className=" font-bold">
-                    {" "}
-                    {`${currencySymbol} ${formattedPrice}`}{" "}
-                  </span>{" "}
+                    {`${currencySymbol} ${formattedPrice}`}
+                  </span>
                   per day
                 </Paragraph2>
                 <ul className="text-gray-600 mb-4 space-y-2">
@@ -145,16 +176,8 @@ const Pricing = () => {
           );
         })}
       </div>
-
-      <div className=" flex justify-center mt-8">
-        {" "}
-        <Button
-          text="Book Now"
-          href="/reservation/checkout"
-          isLink={true}
-          border="border-2- border-primary- "
-          additionalClasses="border-primary xl:w-fit- flex justify-center  w-full- "
-        />
+      <div className="flex justify-center mt-8">
+        <Button text="Book Now" href="/reservation/checkout" isLink={true} />
       </div>
     </div>
   );
