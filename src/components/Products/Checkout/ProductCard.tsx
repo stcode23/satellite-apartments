@@ -159,7 +159,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                     images[currentImageIndex]
                       ? images[currentImageIndex].replace(
                           "/upload/",
-                          "/upload/w_800,f_auto/"
+                          "/upload/w_1000,f_auto/"
                         )
                       : " "
                   }
