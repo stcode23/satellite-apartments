@@ -10,7 +10,7 @@ function TopNav() {
           {" "}
           <div className=" flex gap-4 items-center ">
             <Link
-              href="https://www.instagram.com/satellite.apartments/"
+              href="https://www.instagram.com/satelliteapartments"
               target="_blank"
               rel="noopener noreferrer"
             >

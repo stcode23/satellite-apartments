@@ -128,7 +128,7 @@ const Overview: React.FC = () => {
         />
       </div>
 
-      <div className="sm:grid grid-cols-5 rounded-lg px-4 hidden ">
+      <div className="xl:grid grid-cols-5 rounded-lg px-4 hidden ">
         <ParagraphLink1 className="text-gray-500 font-bold">
           Name
         </ParagraphLink1>
@@ -150,7 +150,7 @@ const Overview: React.FC = () => {
           {filteredOrders.map((order: any) => (
             <div
               key={order.email}
-              className="grid sm:grid-cols-5 bg-white rounded-lg mb-4 p-4"
+              className="grid xl:grid-cols-5 bg-white rounded-lg mb-4 p-4"
             >
               <div className=" flex gap-2 items-center">
                 <svg
