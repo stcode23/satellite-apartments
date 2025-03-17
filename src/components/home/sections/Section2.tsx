@@ -66,7 +66,7 @@ function Section2() {
                 </Paragraph1>
                 <Button
                   text="Book an apartment"
-                  href="/apply"
+                  href="/reservation/checkout"
                   isLink={true}
                   additionalClasses="border-0 xl:w-fit w-full "
                 />
