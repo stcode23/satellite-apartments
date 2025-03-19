@@ -470,7 +470,7 @@ const AddMore: React.FC<AddMoreProps> = ({ onRefetch }) => {
                 onClick={() => setIsAddProductOpen(!isAddProductOpen)}
                 className="py-1"
               >
-                <ParagraphLink1>Create New Product </ParagraphLink1>
+                <ParagraphLink1>Create New Apartment </ParagraphLink1>
               </div>
               <div className="py-1 hidden">
                 <ManageCategories onRefetch={onRefetch} />

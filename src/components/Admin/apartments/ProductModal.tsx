@@ -586,7 +586,7 @@ const ProductModal: React.FC<ModalProps> = ({ product, onClose }) => {
                     type="submit"
                     className="mt-4 w-fit py-1 px-4 bg-primary text-white rounded-md"
                   >
-                    Update Product
+                    Update Apartment
                   </button>
                 </div>
               </Form>
