@@ -59,7 +59,7 @@ const Pricing: React.FC = () => {
         "Work Desk",
       ],
       image:
-        "https://res.cloudinary.com/dvao98wnj/image/upload/v1741814702/axhkmpqi91iyqma7ogxr.heic",
+        "https://res.cloudinary.com/dvao98wnj/image/upload/v1741814737/fmnjnc4d4ojalzhrvssi.heic",
     },
     {
       title: categories[4]?.name || "Default Title",
@@ -97,7 +97,7 @@ const Pricing: React.FC = () => {
         "Work Desk",
       ],
       image:
-        "https://res.cloudinary.com/dvao98wnj/image/upload/v1741816415/nct8jzqzpy3sxvouptvy.heic ",
+        "https://res.cloudinary.com/dvao98wnj/image/upload/v1741816427/taxhvdeiv68mtpz4z72s.heic ",
     },
     {
       title: categories[2]?.name || "Default Title",
