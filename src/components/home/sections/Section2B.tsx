@@ -198,7 +198,7 @@ const Pricing: React.FC = () => {
                   <span className=" font-bold">
                     {`${currencySymbol} ${formattedPrice}`}
                   </span>
-                  per day
+                 {" "} per day
                 </Paragraph2>
                 <ul className="text-gray-600 mb-4 space-y-2">
                   {plan.features.map((feature, i) => (
