@@ -1,19 +1,23 @@
-"use client"
+"use client";
 
 import React from "react";
-import { HeaderAny, Paragraph1, Paragraph2, ParagraphLink1, ParagraphLink2 } from "./Text";
+import {
+  HeaderAny,
+  Paragraph1,
+  Paragraph2,
+  ParagraphLink1,
+  ParagraphLink2,
+} from "./Text";
 import Button from "./Button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-
 function Footer() {
   const pathname = usePathname();
-  
+
   if (pathname.includes("/admin")) {
     return null; // Return null to hide the navbar
   }
-
 
   return (
     <div
@@ -337,10 +341,7 @@ function Footer() {
             <ParagraphLink2 className="  text-[#ECECEC]- ">
               © 2025 Satellite Apartment Ltd. All rights reserved.
             </ParagraphLink2>
-            <Link
-              href="https://cybalbuzz-codefiles.vercel.app/"
-              className="xl:py-0 py-2"
-            >
+            <Link href="https://www.cybalbuzz.com/" className="xl:py-0 py-2">
               {" "}
               <ParagraphLink2 className="  text-[#ECECEC]- ">
                 Built with ❤️ by CybalBuzz
