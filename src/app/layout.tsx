@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 import Head from "next/head"; // Import Head for adding custom scripts
 import NetworkStatusChecker from "./NetworkStatusChecker";
 import { Toaster } from "react-hot-toast"; // Import Toaster
+import Script from "next/script";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -130,7 +131,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         {/* Add Cloudinary widget script */}
         <script
           src="https://widget.cloudinary.com/v2.0/global/all.js"
@@ -142,21 +143,20 @@ export default function RootLayout({
         <script src="https://www.paypal.com/sdk/js?client-id=Aep-bAXPWzzmKCG5WzKI7LH8wO6CkGZKPAbJza0hxxH4EG9uatH_UkW6Z2tUk5JTD72ZbMMv73SfxUBe"></script>
 
         {/* Google Analytics */}
-        <script
+        <Script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-F2YRYGXF65"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-F2YRYGXF65');
-            `,
-          }}
+          src="https://www.googletagmanager.com/gtag/js?id=G-TRZ7X2BXBB"
+          strategy="afterInteractive"
         />
-      </Head>
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-TRZ7X2BXBB');
+          `}
+        </Script>
+      </head>
       <body className=" bg-[#f1efe8]-">
         <Toaster />
         <NetworkStatusChecker />
