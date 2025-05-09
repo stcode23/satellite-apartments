@@ -143,7 +143,7 @@ export default function RootLayout({
         <script src="https://www.paypal.com/sdk/js?client-id=Aep-bAXPWzzmKCG5WzKI7LH8wO6CkGZKPAbJza0hxxH4EG9uatH_UkW6Z2tUk5JTD72ZbMMv73SfxUBe"></script>
 
         {/* Google Analytics */}
-        <Script
+        {/* <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-TRZ7X2BXBB"
           strategy="afterInteractive"
@@ -155,6 +155,21 @@ export default function RootLayout({
             gtag('js', new Date());
             gtag('config', 'G-TRZ7X2BXBB');
           `}
+        </Script> */}
+
+        {/* Google Analytics */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-4ECWYYWKDM"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4ECWYYWKDM');
+  `}
         </Script>
       </head>
       <body className=" bg-[#f1efe8]-">
