@@ -35,7 +35,7 @@ function ForgotPasswordForm() {
               <div className=" flex relative ">
                 {" "}
                 <img
-                  src="https://res.cloudinary.com/dcb4ilgmr/image/upload/v1729544814/utilities/templates/GetBee_1_bxzwaf.png"
+                  src="/images/logo2.png"
                   alt="branding"
                   className="w-full "
                 />{" "}
